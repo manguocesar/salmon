@@ -3,7 +3,6 @@ import Link from "next/link"
 import { products } from "./constants/products"
 
 export default function Home() {
-
   return (
     <div className="space-y-12 text-black">
       <section className="text-center">
