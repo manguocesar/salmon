@@ -5,12 +5,7 @@ if (!process.env.NEXT_PUBLIC_STRIPE_SECRET_KEY) {
 }
 const stripe = new Stripe(process.env.NEXT_PUBLIC_STRIPE_SECRET_KEY);
 
-import { NextApiRequest, NextApiResponse } from "next";
 import { NextRequest } from "next/server";
-
-export async function GET(req: NextApiRequest, res: NextApiResponse) {
-  return Response.json("data");
-}
 
 export async function POST(req: NextRequest) {
   const body = await req.json();
