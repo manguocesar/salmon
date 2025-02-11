@@ -21,28 +21,25 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
     localStorage.setItem("cart", JSON.stringify(cart))
   }, [cart])
 
-  const addToCart = useCallback((item: CartItem) => {
+  const addToCart = (item: CartItem) => {
+    toast.success(`Produit ${item.name} ajouté au panier`)
+
     setCart((prevCart) => {
       const existingItem = prevCart.find((cartItem) => cartItem.id === item.id)
       if (existingItem) {
         const updatedCart = prevCart.map((cartItem) =>
           cartItem.id === item.id ? { ...cartItem, quantity: cartItem.quantity + 1 } : cartItem,
         )
-        // toast.success(`Produit ${item.name} ajouté au panier`)
         return updatedCart
       }
-      // toast.success(`Produit ${item.name} ajouté au panier`)
       return [...prevCart, { ...item, quantity: 1 }]
     })
-  }, [])
+  }
 
-  const removeFromCart = useCallback((id: number) => {
+  const removeFromCart = useCallback((item: CartItem) => {
+    toast.success(`Produit ${item.name} retiré de votre panier`)
     setCart((prevCart) => {
-      const removedItem = prevCart.find((item) => item.id === id)
-      if (removedItem) {
-        toast.success(`Produit ${removedItem.name} retiré de votre panier`)
-      }
-      return prevCart.filter((item) => item.id !== id)
+      return prevCart.filter((cartItem) => cartItem.id !== item.id)
     })
   }, [])
 

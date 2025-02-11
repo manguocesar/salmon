@@ -50,7 +50,7 @@ export default function Cart() {
                                         <td className="px-6 py-4 whitespace-nowrap">{item.quantity}</td>
                                         <td className="px-6 py-4 whitespace-nowrap">{(item.price * item.quantity).toFixed(2)} €</td>
                                         <td className="px-6 py-4 whitespace-nowrap">
-                                            <button onClick={() => removeFromCart(item.id)} className="text-red-600 hover:text-red-900">
+                                            <button onClick={() => removeFromCart(item)} className="text-red-600 hover:text-red-900">
                                                 Supprimer
                                             </button>
                                         </td>

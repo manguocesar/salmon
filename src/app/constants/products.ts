@@ -36,7 +36,7 @@ export const products = [
     id: 4,
     name: "Saumon fumé pavé",
     img: "saumon-fume-pave-1.webp",
-    price: 32,
+    price: 50,
     description: "Vide",
     available: true,
     details:
@@ -46,7 +46,7 @@ export const products = [
     id: 5,
     name: "Saumon Gravlax Entier",
     img: "saumon-gravad-entier-1.jpg",
-    price: 28.99,
+    price: 65,
     description:
       "Mariné selon une recette traditionnelle scandinave, notre gravlax est un équilibre délicat de saveurs.",
     available: true,
@@ -57,7 +57,7 @@ export const products = [
     id: 6,
     name: "Saumon Gravad Prétranché",
     img: "saumon-gravad-pretranche-1.jpg",
-    price: 27.99,
+    price: 65,
     description:
       "Mariné façon gravlax où sel, poivres, sucre et aneth se mêlent en un parfait accord pour un saumon relevé",
     available: true,
@@ -68,7 +68,7 @@ export const products = [
     id: 7,
     name: "Saumon Fumé à Chaud au Poivre Entier",
     img: "saumon-fume-chaud-poivre-entier-1.jpg",
-    price: 26.99,
+    price: 65,
     description:
       "Fumé à chaud pour conserver l'humidité, puis fini avec un enrobage de poivre noir concassé pour un coup de piquant.",
     available: true,
@@ -78,8 +78,8 @@ export const products = [
   {
     id: 8,
     name: "Saumon Fumé à Chaud Poivre Pavé",
-    img: "saumon-fume-chaud-nature.jpg",
-    price: 26.99,
+    img: "saumon-fume-chaud-poivre-pave-1.webp",
+    price: 50,
     description:
       "Notre saumon fumé à chaud classique, préparé pour laisser les saveurs naturelles du poisson s'exprimer pleinement.",
     available: true,
@@ -90,7 +90,7 @@ export const products = [
     id: 9,
     name: "Saumon Fumé à Chaud Nature Pavé",
     img: "saumon-fume-chaud-nature.jpg",
-    price: 26.99,
+    price: 50,
     description:
       "Notre saumon fumé à chaud classique, préparé pour laisser les saveurs naturelles du poisson s'exprimer pleinement.",
     available: true,
@@ -112,7 +112,7 @@ export const products = [
     id: 11,
     name: "Truite Arc-en-ciel",
     img: "truite-1.jpg",
-    price: 17.99,
+    price: 25,
     description:
       "Provenant des ruisseaux locaux, notre truite est nettoyée et filetée à la main pour une saveur des plus fraîches.",
     available: true,
@@ -123,7 +123,7 @@ export const products = [
     id: 12,
     name: "Crevettes Groenland",
     img: "crevettes-1.jpg",
-    price: 32.99,
+    price: 15,
     description:
       "Soigneusement sélectionnées et préparées, nos crevettes sont un délice qui témoigne de notre engagement envers la qualité.",
     available: true,
