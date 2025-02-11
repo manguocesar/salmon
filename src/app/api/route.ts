@@ -69,8 +69,8 @@ export async function POST(req: NextRequest) {
         { shipping_rate: "shr_1LAZVmAZSYffeW1tdCdnyBh1" },
       ],
       line_items: items,
-      success_url: `http://localhost:3000/success`,
-      cancel_url: `http://localhost:3000/cancel`,
+      success_url: `${process.env.NEXT_PUBLIC_URL}success`,
+      cancel_url: `${process.env.NEXT_PUBLIC_URL}cancel`,
     });
 
     return Response.json(session);
