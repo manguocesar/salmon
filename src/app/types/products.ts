@@ -18,6 +18,7 @@ export type CartContextType = {
   cart: CartItem[];
   addToCart: (item: CartItem) => void;
   removeFromCart: (item: CartItem) => void;
+  updateQuantity: (id: number, newQuantity: number) => void;
   clearCart: () => void;
   getCartTotal: () => number;
 };

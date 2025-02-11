@@ -4,10 +4,7 @@ import Image from "next/image"
 import { useCart } from "../contexts/CartContext"
 import toast from "react-hot-toast"
 import { products } from "../constants/products"
-import { format } from "date-fns";
 import { Product } from "../types/products"
-
-const orderDeadline = format(new Date(2025, 4, 1), "yyyy-MM-dd")
 
 export default function Products() {
     const { addToCart } = useCart()
@@ -23,7 +20,7 @@ export default function Products() {
         <div>
             <h1 className="text-black text-3xl font-bold mb-8 text-center">Nos Produits Artisanaux</h1>
             <p className="text-center mb-8 text-red-600 font-semibold">
-                Commandez avant le {orderDeadline} pour assurer la livraison pour les fêtes à venir !
+                Commandez avant le 1er Mai pour assurer la livraison pour les fêtes à venir !
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {products.map((product) => (

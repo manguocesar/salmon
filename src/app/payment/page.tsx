@@ -23,8 +23,6 @@ export default function Payment() {
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault()
-        // Ici, vous enverriez normalement les données de paiement à votre serveur ou à un processeur de paiement
-        console.log("Paiement soumis:", formData)
         clearCart()
         toast.success("Paiement réussi ! Vous allez recevoir un email de confirmation.")
         router.push("/")
