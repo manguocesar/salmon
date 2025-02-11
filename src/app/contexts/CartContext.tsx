@@ -52,12 +52,23 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
     return cart.reduce((total, item) => total + item.price * item.quantity, 0)
   }, [cart])
 
+  const updateQuantity = useCallback((id: number, newQuantity: number) => {
+    setCart((prevCart) => {
+      if (newQuantity <= 0) {
+        return prevCart.filter((item) => item.id !== id)
+      }
+      return prevCart.map((item) => (item.id === id ? { ...item, quantity: newQuantity } : item))
+    })
+  }, [])
+
+
   const value = {
     cart,
     addToCart,
     removeFromCart,
     clearCart,
     getCartTotal,
+    updateQuantity,
   }
 
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>

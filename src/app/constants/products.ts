@@ -45,7 +45,7 @@ export const products = [
   {
     id: 5,
     name: "Saumon Gravlax Entier",
-    img: "saumon-gravad-entier-1.jpg",
+    img: "saumon-gravad-entier-2.jpg",
     price: 65,
     description:
       "Mariné selon une recette traditionnelle scandinave, notre gravlax est un équilibre délicat de saveurs.",
@@ -99,7 +99,7 @@ export const products = [
   },
   {
     id: 10,
-    name: "Filet de Flétan",
+    name: "Filet de Flétan Fumé",
     img: "fletan-1.jpg",
     price: 65,
     description:
@@ -110,7 +110,7 @@ export const products = [
   },
   {
     id: 11,
-    name: "Truite Arc-en-ciel",
+    name: "Truite Fumée",
     img: "truite-1.jpg",
     price: 25,
     description:
