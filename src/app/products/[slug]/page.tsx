@@ -8,7 +8,7 @@ import { Product } from "../../types/products"
 import { useParams } from "next/navigation"
 import clsx from "clsx"
 
-export default function page() {
+export default function Page() {
     const { slug } = useParams()
     const { addToCart } = useCart()
     const handleAddToCart = (product: Product) => {
