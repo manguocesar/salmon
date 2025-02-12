@@ -25,22 +25,22 @@ const Header = () => (
       </Link>
       <ul className="flex space-x-4">
         <li>
-          <Link href="/" className="hover:text-gray-300">
+          <Link href="/" className="text-2xl hover:text-gray-300">
             Accueil
           </Link>
         </li>
         <li>
-          <Link href="/products" className="hover:text-gray-300">
+          <Link href="/products" className="text-2xl hover:text-gray-300">
             Produits
           </Link>
         </li>
         <li>
-          <Link href="/contact" className="hover:text-gray-300">
+          <Link href="/contact" className="text-2xl hover:text-gray-300">
             Contact
           </Link>
         </li>
         <li>
-          <Link href="/cart" className="hover:text-gray-300">
+          <Link href="/cart" className="text-2xl hover:text-gray-300">
             Panier
           </Link>
         </li>

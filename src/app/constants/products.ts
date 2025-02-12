@@ -1,6 +1,9 @@
+import { url } from "inspector";
+
 export const products = [
   {
     id: 1,
+    url: "saumon-fume-entier",
     name: "Saumon Fumé Entier",
     img: "saumon-fume-entier-1.jpg",
     price: 65,
@@ -12,6 +15,7 @@ export const products = [
   },
   {
     id: 2,
+    url: "saumon-fume-pretranche",
     name: "Saumon Fumé Prétranché",
     img: "saumon-fume-pretranche-1.jpg",
     price: 65,
@@ -23,6 +27,7 @@ export const products = [
   },
   {
     id: 3,
+    url: "coeur-saumon",
     name: "Coeur de saumon",
     img: "coeur-saumon-1.png",
     price: 25,
@@ -34,6 +39,7 @@ export const products = [
   },
   {
     id: 4,
+    url: "saumon-fume-pave",
     name: "Saumon fumé pavé",
     img: "saumon-fume-pave-1.webp",
     price: 50,
@@ -44,6 +50,7 @@ export const products = [
   },
   {
     id: 5,
+    url: "saumon-gravad-entier",
     name: "Saumon Gravlax Entier",
     img: "saumon-gravad-entier-2.jpg",
     price: 65,
@@ -55,6 +62,7 @@ export const products = [
   },
   {
     id: 6,
+    url: "saumon-gravad-pretranche",
     name: "Saumon Gravad Prétranché",
     img: "saumon-gravad-pretranche-1.jpg",
     price: 65,
@@ -66,6 +74,7 @@ export const products = [
   },
   {
     id: 7,
+    url: "saumon-fume-chaud-poivre-entier",
     name: "Saumon Fumé à Chaud au Poivre Entier",
     img: "saumon-fume-chaud-poivre-entier-1.jpg",
     price: 65,
@@ -77,6 +86,7 @@ export const products = [
   },
   {
     id: 8,
+    url: "saumon-fume-chaud-poivre-pave",
     name: "Saumon Fumé à Chaud Poivre Pavé",
     img: "saumon-fume-chaud-poivre-pave-1.webp",
     price: 50,
@@ -88,6 +98,7 @@ export const products = [
   },
   {
     id: 9,
+    url: "saumon-fume-chaud-nature-pave",
     name: "Saumon Fumé à Chaud Nature Pavé",
     img: "saumon-fume-chaud-nature.jpg",
     price: 50,
@@ -99,6 +110,7 @@ export const products = [
   },
   {
     id: 10,
+    url: "filet-fletan-fume",
     name: "Filet de Flétan Fumé",
     img: "fletan-1.jpg",
     price: 65,
@@ -110,6 +122,7 @@ export const products = [
   },
   {
     id: 11,
+    url: "truite-fumee",
     name: "Truite Fumée",
     img: "truite-1.jpg",
     price: 25,
@@ -121,6 +134,7 @@ export const products = [
   },
   {
     id: 12,
+    url: "crevettes-groenland",
     name: "Crevettes Groenland",
     img: "crevettes-1.jpg",
     price: 15,
