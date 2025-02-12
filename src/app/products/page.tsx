@@ -5,6 +5,7 @@ import { useCart } from "../contexts/CartContext"
 import toast from "react-hot-toast"
 import { products } from "../constants/products"
 import { Product } from "../types/products"
+import clsx from "clsx"
 
 export default function Products() {
     const { addToCart } = useCart()
@@ -41,7 +42,7 @@ export default function Products() {
                             <p className="text-red-600 mb-2">Rupture de Stock</p>
                         )}
                         <button
-                            className={`bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300 ${!product.available && "opacity-50 cursor-not-allowed"}`}
+                            className={clsx(!product.available && "opacity-50 cursor-not-allowed", "bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300")}
                             onClick={() => handleAddToCart(product)}
                             disabled={!product.available}
                         >

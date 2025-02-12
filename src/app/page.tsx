@@ -3,15 +3,17 @@ import Link from "next/link"
 import { products } from "./constants/products"
 
 import { ReactNode } from "react"
+import clsx from "clsx"
 
 const Section = ({ children, className = "" }: { children: ReactNode, className?: string }) => (
-  <section className={`p-8 rounded-lg ${className}`}>{children}</section>
+  <section className={clsx("p-8 rounded-lg", className)}>{children}</section>
 )
 
 interface Product {
   id: number;
   name: string;
   img: string;
+  url: string;
 }
 
 const ProductCard = ({ product }: { product: Product }) => (
@@ -27,7 +29,7 @@ const ProductCard = ({ product }: { product: Product }) => (
     <p className="text-gray-600 mb-4">
       {product.name} méticuleusement préparé selon des méthodes traditionnelles.
     </p>
-    <Link href="/products" className="text-blue-600 font-semibold hover:underline">
+    <Link href={`/products/${product.url}`} className="text-blue-600 font-semibold hover:underline">
       En Savoir Plus
     </Link>
   </div>
