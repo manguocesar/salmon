@@ -6,13 +6,13 @@ export default function Contact() {
                 <p className="mb-6">Pour toute demande ou pour passer une commande, veuillez contacter directement Mikael Hertz :</p>
                 <ul className="space-y-2 mb-6">
                     <li>
-                        <strong>Téléphone :</strong> +33 1 23 45 67 89
+                        <strong>Téléphone :</strong> 00 33 (0) 6 62 19 63 58
                     </li>
                     <li>
-                        <strong>Email :</strong> mikael.hertz@example.com
+                        <strong>Email :</strong> hertzmik@numericable.com
                     </li>
                     <li>
-                        <strong>Adresse :</strong> 123 Rue de la Poissonnerie, 69000 Lyon, France
+                        <strong>Adresse :</strong> 21 ROUTE DE CREST, 26400 SAOU
                     </li>
                 </ul>
                 <p className="mb-6">
