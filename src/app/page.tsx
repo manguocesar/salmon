@@ -50,13 +50,13 @@ export default function Home() {
       </Section>
 
       <Section className="bg-gray-100">
-        <h2 className="text-3xl">Notre Processus Artisanal</h2>
+        <h2 className="text-3xl">Un Processus Artisanal</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div>
             <h3 className="text-2xl">Techniques Traditionnelles</h3>
             <p className="text-gray-700 mb-4">
-              Notre processus de fumage a été perfectionné au fil des générations, utilisant des méthodes
-              traditionnelles qui font ressortir les meilleures saveurs de chaque morceau de poisson.
+              Un processus de fumage perfectionné au fil des générations, utilisant des méthodes
+              traditionnelles qui font ressortir les meilleures saveurs de chaque filet de poisson.
             </p>
           </div>
           <div>
@@ -70,7 +70,7 @@ export default function Home() {
       </Section>
 
       <Section>
-        <h2 className="text-3xl">Notre Sélection Artisanale</h2>
+        <h2 className="text-3xl">Sélection Artisanale</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
           {products.map((product) => (
             <ProductCard key={product.id} product={product} />
@@ -79,13 +79,13 @@ export default function Home() {
       </Section>
 
       <Section className="bg-gray-100">
-        <h2 className="text-3xl">La Promesse de l'Artisan</h2>
+        <h2 className="text-3xl">La Promesse Artisanale</h2>
         <ul className="list-disc pl-6 space-y-2">
-          <li>Poissons de qualité premium sourcés localement</li>
+          <li>Poissons de qualité premium & traditionel</li>
           <li>Techniques de fumage traditionnelles transmises de génération en génération</li>
           <li>Préparation à la main avec une attention méticuleuse aux détails</li>
-          <li>Pratiques d'élevage durables pour préserver notre savoir-faire pour les générations futures</li>
-          <li>Livraison disponible à Lyon avant Noël et Pâques</li>
+          <li>Pratiques d'élevage durables pour préserver un savoir-faire pour les générations futures</li>
+          <li>Livraison disponible aux alentours de Lyon avant Noël et Pâques</li>
         </ul>
       </Section>
     </div>
