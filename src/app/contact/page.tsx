@@ -21,8 +21,17 @@ export default function Contact() {
                 <p className="mb-6">
                     Nous livrons nos produits de poisson fumé et d'élevage de qualité supérieure dans la région lyonnaise avant Noël et Pâques.
                 </p>
+                <p className="">
+                    Le saumon, le flétan du Groenland, les crevettes & la truite de la meilleure qualité deviennent des spécialités gastronomiques après avoir été fumés dans le fumoir au Danemark.
+                </p>
                 <p className="mb-6">
-                    Le saumon, le flétan du Groenland, les crevettes & la truite de la meilleure qualité deviennent des spécialités gastronomiques après avoir été fumés dans le fumoir au Danemark. Des années d'expérience et de tradition, associées à un traitement sans compromis de la matière première, le poisson est fumé sur des copeaux de hêtre entre 10 et 36 heures. Le vent et la météo du jour, ainsi que les connaissances et l'expérience du maître de la fumée détermineront quand le poisson aura atteint l'arôme de fumée délicat et légèrement épicé. Nous fournissons des produits fumés à froid et à chaud à des clients du monde entier - du saumon entier ou tranché salé à la main, avec la queue suspendue, au flétan du Groenland le plus délicat dans des variétés spéciales coupées verticalement.
+                    Des années d'expérience et de tradition, associées à un traitement sans compromis de la matière première, le poisson est fumé sur des copeaux de hêtre entre 10 et 36 heures.
+                </p>
+                <p className="mb-6">
+                    Le vent et la météo du jour, ainsi que les connaissances et l'expérience du maître de la fumée détermineront quand le poisson aura atteint l'arôme de fumée délicat et légèrement épicé.
+                </p>
+                <p className="mb-6">
+                    Nous fournissons des produits fumés à froid et à chaud à des clients du monde entier - du saumon entier ou tranché salé à la main, avec la queue suspendue, au flétan du Groenland le plus délicat dans des variétés spéciales coupées verticalement.
                 </p>
                 <p className="mb-6">
                     Le saumon norvégien fumé à chaud (Salmo salar). Du saumon norvégien : Forfaits de vente au détail Taille des forfaits de restauration Côtés entiers Portions Saumon effiloché   </p>

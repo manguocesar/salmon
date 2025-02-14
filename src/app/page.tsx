@@ -14,6 +14,7 @@ interface Product {
   name: string;
   img: string;
   url: string;
+  description: string;
 }
 
 const ProductCard = ({ product }: { product: Product }) => (
@@ -23,11 +24,11 @@ const ProductCard = ({ product }: { product: Product }) => (
       alt={product.name}
       width={300}
       height={200}
-      className="w-full h-48 object-cover mb-4 rounded"
+      className="w-full h-48 mb-4 rounded"
     />
     <h3 className="text-xl font-semibold mb-2">{product.name}</h3>
     <p className="text-gray-600 mb-4">
-      {product.name} méticuleusement préparé selon des méthodes traditionnelles.
+      {product.description}
     </p>
     <Link href={`/products/${product.url}`} className="text-blue-600 font-semibold hover:underline">
       En Savoir Plus
@@ -50,8 +51,8 @@ export default function Home() {
       </Section>
 
       <Section className="bg-gray-100">
-        <h2 className="text-3xl">Un Processus Artisanal</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <h2 className="text-3xl">Un Processus Artisanal:</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-3">
           <div>
             <h3 className="text-2xl">Techniques Traditionnelles</h3>
             <p className="text-gray-700 mb-4">
@@ -79,7 +80,7 @@ export default function Home() {
       </Section>
 
       <Section className="bg-gray-100">
-        <h2 className="text-3xl">La Promesse Artisanale</h2>
+        <h2 className="text-3xl mb-3">La Promesse Artisanale</h2>
         <ul className="list-disc pl-6 space-y-2">
           <li>Poissons de qualité premium & traditionel</li>
           <li>Techniques de fumage traditionnelles transmises de génération en génération</li>

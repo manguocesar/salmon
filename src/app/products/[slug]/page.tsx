@@ -37,7 +37,7 @@ export default function Page() {
                 <Image
                     src={`/products/${product.img}`}
                     alt={product.name}
-                    className="w-full h-48 object-cover mb-4 rounded"
+                    className="w-full h-48 mb-4 rounded"
                     width={500}
                     height={500}
                 />
