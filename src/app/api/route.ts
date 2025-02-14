@@ -56,6 +56,8 @@ export async function POST(req: NextRequest) {
     const session = await stripe.checkout.sessions.create({
       submit_type: "pay",
       mode: "payment",
+      customer_creation: "always",
+      allow_promotion_codes: true,
       payment_method_types: ["card"],
       phone_number_collection: {
         enabled: true,
@@ -63,10 +65,12 @@ export async function POST(req: NextRequest) {
       shipping_address_collection: {
         allowed_countries: ["FR"],
       },
-      billing_address_collection: "auto" as "auto" | "required",
+      locale: "fr",
+      billing_address_collection: "required" as "auto" | "required",
       shipping_options: [
         { shipping_rate: "shr_1LAZWeAZSYffeW1toZSqsS2W" },
         { shipping_rate: "shr_1LAZVmAZSYffeW1tdCdnyBh1" },
+        { shipping_rate: "shr_1QsBwyAZSYffeW1tDsbklX4C" },
       ],
       line_items: items,
       success_url: `${process.env.NEXT_PUBLIC_URL}success`,
