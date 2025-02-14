@@ -6,13 +6,16 @@ export default function Contact() {
                 <p className="mb-6">Pour toute demande ou pour passer une commande, veuillez contacter directement Mikael Hertz :</p>
                 <ul className="space-y-2 mb-6">
                     <li>
-                        <strong>Téléphone :</strong> 00 33 (0) 6 62 19 63 58
+                        <strong>Téléphone :</strong> 06 62 19 63 58
                     </li>
                     <li>
-                        <strong>Email :</strong> hertzmik@numericable.com
+                        <strong>Email :</strong> mikaelhertz@me.com
                     </li>
                     <li>
                         <strong>Adresse :</strong> 21 ROUTE DE CREST, 26400 SAOU
+                    </li>
+                    <li>
+                        <strong>RC ROMANS 383 519 501 21 </strong> FR 96383519501
                     </li>
                 </ul>
                 <p className="mb-6">
