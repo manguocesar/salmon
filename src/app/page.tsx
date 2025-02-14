@@ -6,7 +6,7 @@ import { ReactNode } from "react"
 import clsx from "clsx"
 
 const Section = ({ children, className = "" }: { children: ReactNode, className?: string }) => (
-  <section className={clsx("p-8 rounded-lg", className)}>{children}</section>
+  <section className={clsx("p-4 rounded-lg", className)}>{children}</section>
 )
 
 interface Product {
@@ -38,13 +38,13 @@ const ProductCard = ({ product }: { product: Product }) => (
 
 export default function Home() {
   return (
-    <div className="space-y-12 text-black">
+    <div className="space-y-8 text-black">
       <Section className="text-center">
         <h1 className="text-4xl">Poissons Fumés Artisanalement</h1>
-        <p className="text-xl mb-8">Saumons, truites et flétans exquis</p>
+        <p className="text-2xl m-8">Saumons, truites et flétans exquis</p>
         <Link
           href="/products"
-          className="bg-blue-600 text-white px-8 py-5 rounded-lg text-3xl font-semibold hover:bg-blue-700 transition-all duration-300"
+          className="bg-blue-600 text-white p-5 rounded-lg text-3xl font-semibold hover:bg-blue-700 transition-all duration-300"
         >
           Découvrir Nos Produits
         </Link>
