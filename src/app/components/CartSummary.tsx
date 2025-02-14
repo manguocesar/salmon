@@ -16,7 +16,7 @@ export function CartSummary() {
     if (cart.length === 0) return null
 
     return (
-        <div className={clsx(hidden && "translate-x-56 opacity-30", "transition-all  hidden  sm:block  sm:fixed right-4 top-20 text-black bg-white p-4 rounded-lg shadow-md w-64")}>
+        <div className={clsx(hidden && "translate-x-56 opacity-30", "transition-all  hidden  sm:block  sm:fixed right-4 top-24 text-black bg-white p-4 rounded-lg shadow-md w-64")}>
             <div className="flex justify-between items-center">
                 <button
                     className={'px-2 border-slate-600 text-white font-bold border-2 rounded-full bg-slate-400'}
