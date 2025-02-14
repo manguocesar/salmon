@@ -3,10 +3,10 @@ import Link from "next/link"
 import { products } from "./constants/products"
 
 import { ReactNode } from "react"
-import clsx from "clsx"
+import { cn } from "./utils/utils"
 
 const Section = ({ children, className = "" }: { children: ReactNode, className?: string }) => (
-  <section className={clsx("p-4 rounded-lg", className)}>{children}</section>
+  <section className={cn("p-4 rounded-lg", className)}>{children}</section>
 )
 
 interface Product {
