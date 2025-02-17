@@ -7,7 +7,7 @@ import { products } from "../../constants/products"
 import { Product } from "../../types/products"
 import { useParams } from "next/navigation"
 import Link from "next/link"
-import { CircleChevronLeft } from "lucide-react"
+import { CircleChevronLeft, CircleChevronRight } from "lucide-react"
 
 export default function Page() {
     const { slug } = useParams()
@@ -33,7 +33,7 @@ export default function Page() {
             <p className="text-center mb-8 text-red-600 font-semibold">
                 Commandez avant le 1er Mai pour assurer la livraison pour les fêtes à venir !
             </p>
-            <div className="grid grid-cols-1 bg-gray-100 p-5 md:grid-cols-2 lg:grid-cols-2 gap-8 shadow-lg rounded-md">
+            <div className="grid grid-cols-1 bg-gray-100 p-5 md:grid-cols-2 lg:grid-cols-2 gap-3 md:gap-8 shadow-lg rounded-md">
                 <Image
                     src={`/products/${product.img}`}
                     alt={product.name}
@@ -46,7 +46,7 @@ export default function Page() {
                     <p className="text-2xl text-black font-semibold mb-4">{product.price} €</p>
                     <p className="text-sm text-gray-500 mb-4">{product.details}</p>
                 </div>
-                <Link href="/products" className="flex text-black">
+                <Link href="/products" className="flex items-center text-black">
                     <CircleChevronLeft /> <p className="text-xl ml-3">Retour à la liste des produits</p>
                 </Link>
                 <button
@@ -55,7 +55,14 @@ export default function Page() {
                 >
                     Ajouter au Panier
                 </button>
-
+                <Link href="/cart" className="flex text-black">
+                    <button
+                        onClick={() => handleAddToCart(product)}
+                        className="w-full bg-gray-600 text-white px-6 py-3 rounded-lg text-lg font-semibold hover:bg-blue-700 transition duration-300"
+                    >
+                        Voir mon panier
+                    </button>
+                </Link>
             </div>
         </div>
     )
