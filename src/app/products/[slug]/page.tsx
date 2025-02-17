@@ -20,6 +20,7 @@ import { saumonGravadEntierUrls } from "@/app/constants/saumonGravadEntierUrls"
 import { saumonGravadPretrancheUrls } from "@/app/constants/saumonGravadPretrancheUrls"
 import { saumonFumeChaudEntierPoivreUrls } from "@/app/constants/saumonFumeChaudEntierPoivreUrls"
 import { saumonFumeChaudPavePoivreUrls } from "@/app/constants/saumonFumeChaudPavePoivreUrls"
+import { truitesUrls } from "@/app/constants/truitesUrls"
 
 export default function Page() {
     const { slug } = useParams()
@@ -67,6 +68,9 @@ export default function Page() {
             break;
         case 'fletan':
             images = fletanUrls
+            break;
+        case 'truite-fumee':
+            images = truitesUrls
             break;
         default:
             images = products.map((product) => product.img)
