@@ -44,7 +44,7 @@ export default function Home() {
         <p className="text-2xl m-8">Saumons, truites et flétans exquis</p>
         <Link
           href="/products"
-          className="bg-blue-600 text-white p-5 rounded-lg text-3xl font-semibold hover:bg-blue-700 transition-all duration-300"
+          className="bg-blue-600  text-white p-5 rounded-lg md:text-3xl font-semibold hover:bg-blue-700 transition-all duration-300"
         >
           Découvrir Nos Produits
         </Link>
