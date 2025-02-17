@@ -33,11 +33,11 @@ export default function Page() {
             <p className="text-center mb-8 text-red-600 font-semibold">
                 Commandez avant le 1er Mai pour assurer la livraison pour les fêtes à venir !
             </p>
-            <div className="grid grid-cols-1 bg-gray-100 p-5 md:grid-cols-2 lg:grid-cols-2 gap-3 md:gap-8 shadow-lg rounded-md">
+            <div className=" bg-gray-100 space-y-3 p-5 md:grid-cols-2 lg:grid-cols-2 gap-3 md:gap-8 shadow-lg rounded-md">
                 <Image
                     src={`/products/${product.img}`}
                     alt={product.name}
-                    className="w-full h-48 md:mb-4 rounded"
+                    className="justify-center mx-auto cover md:mb-4 rounded"
                     width={500}
                     height={500}
                 />
@@ -51,12 +51,12 @@ export default function Page() {
                 </Link>
                 <button
                     onClick={() => handleAddToCart(product)}
-                    className="w-full bg-blue-600 text-white px-6 py-3 rounded-lg text-lg font-semibold hover:bg-blue-700 transition duration-300"
+                    className="flex justify-center mx-auto w-8/12 bg-blue-600 text-white px-6 py-3 rounded-lg text-lg font-semibold hover:bg-blue-700 transition duration-300"
                 >
                     Ajouter au Panier
                 </button>
                 <Link href="/cart" className="flex text-black">
-                    <button className="w-full bg-gray-600 text-white px-6 py-3 rounded-lg text-lg font-semibold hover:bg-blue-700 transition duration-300"
+                    <button className="mx-auto w-8/12 bg-gray-600 text-white px-6 py-3 rounded-lg text-lg font-semibold hover:bg-blue-700 transition duration-300"
                     >
                         Voir mon panier
                     </button>
