@@ -34,8 +34,6 @@ export async function POST(req: NextRequest) {
 
   const body: Item[] = await req.json();
 
-  console.log("request body", body);
-
   const items: LineItem[] = body.map((item: Item) => ({
     price_data: {
       currency: "eur",
@@ -53,7 +51,6 @@ export async function POST(req: NextRequest) {
     },
     quantity: item.quantity,
   }));
-  console.log("items", items);
 
   try {
     const session = await stripe.checkout.sessions.create({
@@ -76,11 +73,9 @@ export async function POST(req: NextRequest) {
         { shipping_rate: "shr_1QsBwyAZSYffeW1tDsbklX4C" },
       ],
       line_items: items,
-      success_url: `https://www.mikaelhertz.com/success`,
-      cancel_url: `https://www.mikaelhertz.com/cancel`,
+      success_url: `${process.env.NEXT_PUBLIC_URL}success`,
+      cancel_url: `${process.env.NEXT_PUBLIC_URL}cancel`,
     });
-
-    console.log("session", session);
 
     return Response.json(session);
   } catch (err) {
