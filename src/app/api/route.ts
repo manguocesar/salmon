@@ -76,8 +76,8 @@ export async function POST(req: NextRequest) {
         { shipping_rate: "shr_1QsBwyAZSYffeW1tDsbklX4C" },
       ],
       line_items: items,
-      success_url: `${process.env.NEXT_PUBLIC_URL}success`,
-      cancel_url: `${process.env.NEXT_PUBLIC_URL}cancel`,
+      success_url: `https://www.mikaelhertz.com/success`,
+      cancel_url: `https://www.mikaelhertz.com/cancel`,
     });
 
     console.log("session", session);
