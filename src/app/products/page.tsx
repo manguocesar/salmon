@@ -8,7 +8,7 @@ export default function Products() {
         <div>
             <h1 className="text-black text-3xl font-bold my-2 md:mb-8 text-center">Nos Produits Artisanaux</h1>
             <p className="text-center mb-2 md:mb-8 text-red-600 font-semibold">
-                Commandez avant le 1er Mai pour assurer la livraison pour les fêtes à venir !
+                Commandez avant le 15 Avril 2025 pour assurer la livraison pour les fêtes à venir !
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-8">
                 {products.map((product) => (

@@ -31,7 +31,7 @@ export default function Page() {
         <div className="max-w-4xl mx-auto px-4 py-8">
             <h1 className="text-black text-3xl font-bold mb-8 text-center">Nos Produits Artisanaux</h1>
             <p className="text-center mb-8 text-red-600 font-semibold">
-                Commandez avant le 1er Mai pour assurer la livraison pour les fêtes à venir !
+                Commandez avant le 15 Avril 2025 pour assurer la livraison pour les fêtes à venir !
             </p>
             <div className=" bg-gray-100 space-y-3 p-5 md:grid-cols-2 lg:grid-cols-2 gap-3 md:gap-8 shadow-lg rounded-md">
                 <Image
@@ -44,6 +44,8 @@ export default function Page() {
                 <div className="flex flex-col">
                     <h2 className="text-xl md:text-3xl text-black font-bold md:mb-4">{product.name}</h2>
                     <p className="text-lg md:text-2xl text-black font-semibold md:mb-4">{product.price} €</p>
+                    <p className="text-sm text-gray-500 mb-4">{product.description}</p>
+                    <p className="text-sm text-gray-500 mb-4">{product.consumption}</p>
                     <p className="text-sm text-gray-500 mb-4">{product.details}</p>
                 </div>
                 <Link href="/products" className="flex items-center text-black">
