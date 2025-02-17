@@ -8,6 +8,9 @@ import { Product } from "../../types/products"
 import { useParams } from "next/navigation"
 import Link from "next/link"
 import { CircleChevronLeft } from "lucide-react"
+import { ProductHeader } from "@/app/components/ProductHeader"
+
+
 
 export default function Page() {
     const { slug } = useParams()
@@ -29,10 +32,8 @@ export default function Page() {
 
     return (
         <div className="max-w-4xl mx-auto px-4 py-8">
-            <h1 className="text-black text-3xl font-bold mb-8 text-center">Nos Produits Artisanaux</h1>
-            <p className="text-center mb-8 text-red-600 font-semibold">
-                Commandez avant le 15 Avril 2025 pour assurer la livraison pour les fêtes à venir !
-            </p>
+            <ProductHeader />
+
             <div className=" bg-gray-100 space-y-3 p-5 md:grid-cols-2 lg:grid-cols-2 gap-3 md:gap-8 shadow-lg rounded-md">
                 <Image
                     src={`/products/${product.img}`}
