@@ -6,15 +6,16 @@ import { Product } from "../types/products";
 export const ProductSlider = ({ products }: { products: Product[] | string[] }) => {
     console.log("products", products);
 
-    const isProductArray = (arr: any[]): arr is Product[] => {
+    const isProductArray = (arr: (Product | string)[]) => {
         return arr.length > 0 && typeof arr[0] === 'object' && 'url' in arr[0];
     };
 
     const renderProducts = (products: (Product | string)[]) => {
+        const isProduct = isProductArray(products as (Product | string)[]);
         return products.concat(products).map((product, id) => {
-            const href = isProductArray(products) ? `/products/${(product as Product).url}` : `/products/${product}`;
-            const src = isProductArray(products) ? `/products/${(product as Product).img}` : `/products/${product}`;
-            const alt = isProductArray(products) ? (product as Product).name || 'fishProduct' : 'fishProduct';
+            const href = isProduct ? `/products/${(product as Product).url}` : `/products/${product}`;
+            const src = isProduct ? `/products/${(product as Product).img}` : `/products/${product}`;
+            const alt = isProduct ? (product as Product).name || 'fishProduct' : 'fishProduct';
 
             return (
                 <Link key={id} href={href} className="">

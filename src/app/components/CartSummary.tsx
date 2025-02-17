@@ -36,10 +36,9 @@ export function CartSummary() {
                     </li>
                 ))}
             </ul>
-            <div className="font-semibold flex justify-between">
-                <span>Total:</span>
-                <span>{getCartTotal().toFixed(2)} €</span>
-            </div>
+            <p className="font-semibold text-black flex justify-between">
+                Total: {getCartTotal().toFixed(2)} €
+            </p>
             <Link
                 href="/cart"
                 className="block text-center bg-orange-600 text-white px-4 py-2 rounded mt-4 hover:bg-orange-700 transition duration-300"
