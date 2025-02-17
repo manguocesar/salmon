@@ -5,31 +5,16 @@ import { Product } from "../types/products";
 
 export const ProductSlider = ({ products }: { products: Product[] | string[] }) => {
 
-    const isProductArray = (arr: any[]): arr is Product[] => {
+    const isProductArray = (arr: (Product | string)[]) => {
         return arr.length > 0 && typeof arr[0] === 'object' && 'url' in arr[0];
     };
 
-    const getProductDetails = (product: Product | string, isProduct: boolean) => {
-        if (isProduct) {
-            const prod = product as Product;
-            return {
-                href: `/products/${prod.url}`,
-                src: `/products/${prod.img}`,
-                alt: prod.name || 'fishProduct'
-            };
-        } else {
-            return {
-                href: `/products/${product}`,
-                src: `/products/${product}`,
-                alt: 'fishProduct'
-            };
-        }
-    };
-
     const renderProducts = (products: (Product | string)[]) => {
-        const isProduct = isProductArray(products);
+        const isProduct = isProductArray(products as (Product | string)[]);
         return products.concat(products).map((product, id) => {
-            const { href, src, alt } = getProductDetails(product, isProduct);
+            const href = isProduct ? `/products/${(product as Product).url}` : `/products/${product}`;
+            const src = isProduct ? `/products/${(product as Product).img}` : `/products/${product}`;
+            const alt = isProduct ? (product as Product).name || 'fishProduct' : 'fishProduct';
 
             return (
                 <Link key={id} href={href} className="">

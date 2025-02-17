@@ -63,7 +63,7 @@ export default function Cart() {
                                         Quantité
                                     </th>
                                     <th
-                                        className="px-6 py-Certainly, I'll continue the text stream from the cut-off point:tracking-wider"
+                                        className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
                                     >
                                         Prix
                                     </th>
@@ -85,7 +85,7 @@ export default function Cart() {
                                                 >
                                                     -
                                                 </button>
-                                                <span className="px-2 py-1 border-t border-b">{item.quantity}</span>
+                                                <span className="px-2 py-1 text-black border-t border-b">{item.quantity}</span>
                                                 <button
                                                     onClick={() => updateQuantity(item.id, item.quantity + 1)}
                                                     className="text-gray-500 hover:text-gray-700 px-2 py-1 rounded-r border"
@@ -94,7 +94,7 @@ export default function Cart() {
                                                 </button>
                                             </div>
                                         </td>
-                                        <td className="px-6 py-4 whitespace-nowrap">{(item.price * item.quantity).toFixed(2)} €</td>
+                                        <td className="text-black px-6 py-4 whitespace-nowrap">{(item.price * item.quantity).toFixed(2)} €</td>
                                         <td className="px-6 py-4 whitespace-nowrap">
                                             <button onClick={() => removeFromCart(item)} className="text-red-600 hover:text-red-900">
                                                 Supprimer

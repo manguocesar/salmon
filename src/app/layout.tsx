@@ -21,8 +21,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="fr">
       <body className={`${inter.className} bg-gray-50`}>
         <CartProvider>
-          <ToastProvider />
           <Header />
+          <ToastProvider />
           <main className="container mx-auto px-4 py-2 md:py-8">{children}</main>
           <CartSummary />
           <GDPRBanner />
