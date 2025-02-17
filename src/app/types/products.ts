@@ -15,6 +15,26 @@ export type CartItem = {
   quantity: number;
 };
 
+export type PriceData = {
+  currency: string;
+  unit_amount: number;
+  product_data: {
+    name: string;
+    images: string[];
+  };
+};
+
+export type AdjustableQuantity = {
+  enabled: boolean;
+  minimum: number;
+};
+
+export type LineItem = {
+  price_data: PriceData;
+  adjustable_quantity: AdjustableQuantity;
+  quantity: number;
+};
+
 export type CartContextType = {
   cart: CartItem[];
   addToCart: (item: CartItem) => void;

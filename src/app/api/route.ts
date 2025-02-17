@@ -6,35 +6,12 @@ if (!process.env.NEXT_PUBLIC_STRIPE_SECRET_KEY) {
 const stripe = new Stripe(process.env.NEXT_PUBLIC_STRIPE_SECRET_KEY);
 
 import { NextRequest } from "next/server";
+import { CartItem, LineItem } from "../types/products";
 
 export async function POST(req: NextRequest) {
-  type Item = {
-    price: number;
-    name: string;
-    quantity: number;
-  };
+  const body: CartItem[] = await req.json();
 
-  type PriceData = {
-    currency: string;
-    unit_amount: number;
-    product_data: {
-      name: string;
-      images: string[];
-    };
-  };
-
-  type LineItem = {
-    price_data: PriceData;
-    adjustable_quantity: {
-      enabled: boolean;
-      minimum: number;
-    };
-    quantity: number;
-  };
-
-  const body: Item[] = await req.json();
-
-  const items: LineItem[] = body.map((item: Item) => ({
+  const items: LineItem[] = body.map((item: CartItem) => ({
     price_data: {
       currency: "eur",
       unit_amount: item.price * 100,
