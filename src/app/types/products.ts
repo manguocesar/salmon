@@ -5,6 +5,7 @@ export type Product = {
   price: number;
   description: string;
   available: boolean;
+  url: string;
 };
 
 export type CartItem = {
