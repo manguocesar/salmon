@@ -87,7 +87,7 @@ export const products = [
     id: 7,
     url: "saumon-fume-chaud-poivre-entier",
     name: "G - Saumon fumé Chaud/mi cuit poivre.Filet entier env.1 kg",
-    img: "saumon-fume-chaud-poivre-entier-1.jpg",
+    img: "saumon-fume-chaud-poivre-entier-1.avif",
     price: 65,
     description:
       "Fumé à chaud pour conserver l'humidité, puis fini avec un enrobage de poivre noir concassé pour un coup de piquant.",
