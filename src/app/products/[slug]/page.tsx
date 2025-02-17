@@ -17,6 +17,7 @@ import { crevettesUrls } from "@/app/constants/crevettesUrls"
 import { coeurSaumonUrls } from "@/app/constants/coeurSaumonUrls"
 import { saumonFumePaveUrls } from "@/app/constants/saumonFumePaveUrls"
 import { saumonGravadEntierUrls } from "@/app/constants/saumonGravadEntierUrls"
+import { saumonGravadPretrancheUrls } from "@/app/constants/saumonGravadEntierUrls copy"
 
 export default function Page() {
     const { slug } = useParams()
@@ -46,6 +47,9 @@ export default function Page() {
             break;
         case 'saumon-gravad-entier':
             images = saumonGravadEntierUrls
+            break;
+        case 'saumon-gravad-pretranche':
+            images = saumonGravadPretrancheUrls
             break;
         case 'crevettes-groenland':
             images = crevettesUrls
