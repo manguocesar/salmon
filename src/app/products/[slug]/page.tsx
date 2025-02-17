@@ -13,6 +13,10 @@ import { ProductSlider } from "@/app/components/ProductSlider"
 import { fletanUrls } from "@/app/constants/fletanUrls"
 import { saumonFumeEntierUrls } from "@/app/constants/saumon-fume-entier-urls"
 import { saumonFumePretrancheUrls } from "@/app/constants/saumon-fume-pretranche-urls"
+import { crevettesUrls } from "@/app/constants/crevettesUrls"
+import { coeurSaumonUrls } from "@/app/constants/coeurSaumonUrls"
+import { saumonFumePaveUrls } from "@/app/constants/saumonFumePaveUrls"
+import { saumonGravadEntierUrls } from "@/app/constants/saumonGravadEntierUrls"
 
 export default function Page() {
     const { slug } = useParams()
@@ -28,14 +32,26 @@ export default function Page() {
 
     let images: string[]
     switch (slug) {
-        case 'fletan':
-            images = fletanUrls
-            break;
         case 'saumon-fume-entier':
             images = saumonFumeEntierUrls
             break;
         case 'saumon-fume-pretranche':
             images = saumonFumePretrancheUrls
+            break;
+        case 'coeur-saumon':
+            images = coeurSaumonUrls
+            break;
+        case 'saumon-fume-pave':
+            images = saumonFumePaveUrls
+            break;
+        case 'saumon-gravad-entier':
+            images = saumonGravadEntierUrls
+            break;
+        case 'crevettes-groenland':
+            images = crevettesUrls
+            break;
+        case 'fletan':
+            images = fletanUrls
             break;
         default:
             images = products.map((product) => product.img)
