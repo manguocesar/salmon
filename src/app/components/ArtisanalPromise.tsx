@@ -1,7 +1,7 @@
 export const ArtisanalPromise = () => {
     return (
         <div className="bg-gray-100 p-2 md:p-4 rounded-lg">
-            <h2 className="text-3xl mb-3">La Promesse Artisanale</h2>
+            <h2 className="text-3xl mb-3 text-orange-600">La Promesse Artisanale</h2>
             <ul className="list-disc pl-6 space-y-2">
                 <li>Poissons de qualité premium & traditionel</li>
                 <li>Techniques de fumage traditionnelles transmises de génération en génération</li>

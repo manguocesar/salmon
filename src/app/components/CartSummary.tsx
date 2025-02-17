@@ -42,7 +42,7 @@ export function CartSummary() {
             </div>
             <Link
                 href="/cart"
-                className="block text-center bg-blue-600 text-white px-4 py-2 rounded mt-4 hover:bg-blue-700 transition duration-300"
+                className="block text-center bg-orange-600 text-white px-4 py-2 rounded mt-4 hover:bg-orange-700 transition duration-300"
             >
                 Voir le panier
             </Link>

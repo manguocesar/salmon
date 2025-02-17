@@ -1,6 +1,6 @@
 'use client';
 import Image from "next/image";
-import { products } from "../constants/products"
+import { products } from "../constants/products";
 import Link from "next/link";
 
 export const ProductSlider = () => {
@@ -20,30 +20,18 @@ export const ProductSlider = () => {
                 }
             `}</style>
             <div className="flex flex-row space-x-4 w-[400vw] slide-left">
-                {products.map((product) => (
-                    <Link key={product.id} href={`/products/${product.url}`} className="w-1/2">
+                {products.concat(products).map((product, id) => (
+                    <Link key={id} href={`/products/${product.url}`} className="">
                         <Image
                             src={`/products/${product.img}`}
                             alt={product.name}
                             width={300}
-                            height={200}
-                            className="w-full h-48 mb-4 rounded hover:border-2 hover:border-blue-600"
+                            height={300}
+                            className="w-full h-64  rounded hover:border-2 hover:border-orange-600"
                         />
                     </Link>
                 ))}
-                {products.map((product) => (
-                    <Link key={product.id} href={`/products/${product.url}`} className="w-1/2">
-                        <Image
-                            src={`/products/${product.img}`}
-                            alt={product.name}
-                            width={300}
-                            height={200}
-                            className="w-full h-48 mb-4 rounded hover:border-2 hover:border-blue-600"
-                        />
-                    </Link>
-                ))}
-
             </div>
         </>
-    )
-}
+    );
+};

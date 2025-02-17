@@ -45,7 +45,7 @@ export default function Cart() {
                 <div className="h-[65vh]">
                     <p className="text-center">
                         Votre panier est vide.{" "}
-                        <Link href="/products" className="text-blue-600 hover:underline">
+                        <Link href="/products" className="text-orange-600 hover:underline">
                             Continuer vos achats
                         </Link>
                     </p>
@@ -76,7 +76,7 @@ export default function Cart() {
                             <tbody className="bg-white divide-y divide-gray-200">
                                 {cart.map((item) => (
                                     <tr key={item.id}>
-                                        <td className="px-6 py-4 whitespace-nowrap">{item.name}</td>
+                                        <td className="text-orange-600 px-6 py-4 whitespace-nowrap">{item.name}</td>
                                         <td className="px-6 py-4 whitespace-nowrap">
                                             <div className="flex items-center">
                                                 <button
@@ -112,7 +112,7 @@ export default function Cart() {
                         </p>
                     </div>
                     <div className="mt-8">
-                        <button type="button" className="bg-blue-600 text-white px-6 py-3 rounded-lg text-lg font-semibold hover:bg-blue-700 transition duration-300"
+                        <button type="button" className="bg-orange-600 text-white px-6 py-3 rounded-lg text-lg font-semibold hover:bg-orange-700 transition duration-300"
                             onClick={handleCheckout}>
                             Payer votre commande
                         </button>

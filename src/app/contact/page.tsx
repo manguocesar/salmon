@@ -1,7 +1,7 @@
 export default function Contact() {
     return (
         <div className="max-w-2xl text-black mx-auto">
-            <h1 className="text-3xl font-bold mb-8 text-center">Contactez-nous</h1>
+            <h1 className="text-orange-600 text-3xl font-bold mb-8 text-center">Contactez-nous</h1>
             <div className="bg-white p-8 rounded-lg shadow-md">
                 <p className="mb-6">Pour toute demande ou pour passer une commande, veuillez contacter directement Mikael Hertz :</p>
                 <ul className="space-y-2 mb-6">
@@ -18,6 +18,11 @@ export default function Contact() {
                         <strong>RC ROMANS 383 519 501 21 </strong> FR 96383519501
                     </li>
                 </ul>
+            </div>
+
+
+
+            <div className="bg-white p-8 rounded-lg shadow-md mt-8">
                 <p className="mb-6">
                     Nous livrons nos produits de poisson fumé et d'élevage de qualité supérieure dans la région lyonnaise avant Noël et Pâques.
                 </p>

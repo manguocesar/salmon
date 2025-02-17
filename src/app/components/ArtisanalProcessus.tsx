@@ -3,7 +3,7 @@
 export const ArtisanalProcessus = async () => {
     return (
         <div className="bg-gray-100 p-2 md:p-4 rounded-lg" >
-            <h2 className="text-3xl">Un Processus Artisanal:</h2>
+            <h2 className="text-3xl text-orange-600">Un Processus Artisanal:</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-8 mt-2 md:mt-3">
                 <div>
                     <h3 className="text-2xl">Techniques Traditionnelles</h3>

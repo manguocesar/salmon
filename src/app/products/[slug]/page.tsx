@@ -10,8 +10,6 @@ import Link from "next/link"
 import { CircleChevronLeft } from "lucide-react"
 import { ProductHeader } from "@/app/components/ProductHeader"
 
-
-
 export default function Page() {
     const { slug } = useParams()
     const { addToCart } = useCart()
@@ -43,8 +41,8 @@ export default function Page() {
                     height={500}
                 />
                 <div className="flex flex-col">
-                    <h2 className="text-xl md:text-3xl text-black font-bold md:mb-4">{product.name}</h2>
-                    <p className="text-lg md:text-2xl text-black font-semibold md:mb-4">{product.price} €</p>
+                    <h2 className="text-xl md:text-3xl text-orange-600 font-bold md:mb-4">{product.name}</h2>
+                    <p className="text-lg md:text-2xl text-orange-500 font-semibold md:mb-4">{product.price} €</p>
                     <p className="text-sm text-gray-500 mb-4">{product.description}</p>
                     <p className="text-sm text-gray-500 mb-4">{product.consumption}</p>
                     <p className="text-sm text-gray-500 mb-4">{product.details}</p>
@@ -54,12 +52,12 @@ export default function Page() {
                 </Link>
                 <button
                     onClick={() => handleAddToCart(product)}
-                    className="flex justify-center mx-auto w-8/12 bg-blue-600 text-white px-6 py-3 rounded-lg text-lg font-semibold hover:bg-blue-700 transition duration-300"
+                    className="flex justify-center mx-auto w-8/12 bg-orange-600 text-white px-6 py-3 rounded-lg text-lg font-semibold hover:bg-orange-700 transition duration-300"
                 >
                     Ajouter au Panier
                 </button>
                 <Link href="/cart" className="flex text-black">
-                    <button className="mx-auto w-8/12 bg-gray-600 text-white px-6 py-3 rounded-lg text-lg font-semibold hover:bg-blue-700 transition duration-300"
+                    <button className="mx-auto w-8/12 bg-gray-600 text-white px-6 py-3 rounded-lg text-lg font-semibold hover:bg-orange-700 transition duration-300"
                     >
                         Voir mon panier
                     </button>

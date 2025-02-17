@@ -24,7 +24,7 @@ const Success = () => {
             </a>
             <p>06 62 19 63 58</p>
             <Link href="/">
-                <button type="button" className="bg-blue-700 text-white p-3 rounded-lg hover:opacity-70 m-5 text-3xl">
+                <button type="button" className="bg-orange-700 text-white p-3 rounded-lg hover:opacity-70 m-5 text-3xl">
                     Retour à l'Accueil
                 </button>
             </Link>
