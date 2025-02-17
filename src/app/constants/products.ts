@@ -92,7 +92,7 @@ export const products = [
     description:
       "Notre saumon fumé à chaud classique, préparé pour laisser les saveurs naturelles du poisson s'exprimer pleinement.",
     available: true,
-    detils:
+    details:
       "Quatre paqués de 200grammes. 800 grammes. Saumon élevé en Norvège, fumé au Danmark. Son extrémité est caramélisée, avec un flan plus ou moins gras et une partie très charnue. Cette partie du poisson, fondante en bouche, est parfaite à manger seule ou à ajouter en salade",
   },
   {
@@ -104,7 +104,7 @@ export const products = [
     description:
       "Notre saumon fumé à chaud classique, préparé pour laisser les saveurs naturelles du poisson s'exprimer pleinement.",
     available: true,
-    detils:
+    details:
       "Quatre paqués de 200grammes. 800 grammes. Saumon élevé en Norvège, fumé au Danmark. Son extrémité est caramélisée, avec un flan plus ou moins gras et une partie très charnue. Cette partie du poisson, fondante en bouche, est parfaite à manger seule ou à ajouter en salade",
   },
   {

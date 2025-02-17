@@ -7,7 +7,7 @@ import { products } from "../../constants/products"
 import { Product } from "../../types/products"
 import { useParams } from "next/navigation"
 import Link from "next/link"
-import { CircleChevronLeft, CircleChevronRight } from "lucide-react"
+import { CircleChevronLeft } from "lucide-react"
 
 export default function Page() {
     const { slug } = useParams()
@@ -37,13 +37,13 @@ export default function Page() {
                 <Image
                     src={`/products/${product.img}`}
                     alt={product.name}
-                    className="w-full h-48 mb-4 rounded"
+                    className="w-full h-48 md:mb-4 rounded"
                     width={500}
                     height={500}
                 />
                 <div className="flex flex-col">
-                    <h2 className="text-3xl text-black font-bold mb-4">{product.name}</h2>
-                    <p className="text-2xl text-black font-semibold mb-4">{product.price} €</p>
+                    <h2 className="text-xl md:text-3xl text-black font-bold md:mb-4">{product.name}</h2>
+                    <p className="text-lg md:text-2xl text-black font-semibold md:mb-4">{product.price} €</p>
                     <p className="text-sm text-gray-500 mb-4">{product.details}</p>
                 </div>
                 <Link href="/products" className="flex items-center text-black">
