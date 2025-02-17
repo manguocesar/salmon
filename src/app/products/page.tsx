@@ -1,11 +1,5 @@
 "use client"
-
-import Image from "next/image"
-import { useCart } from "../contexts/CartContext"
-import toast from "react-hot-toast"
 import { products } from "../constants/products"
-import { Product } from "../types/products"
-import { cn } from "../utils/utils"
 import Link from "next/link"
 import { ProductCard } from "../components/ProductCard"
 
