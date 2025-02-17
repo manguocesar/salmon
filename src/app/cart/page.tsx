@@ -21,15 +21,14 @@ export default function Cart() {
             body: JSON.stringify(cart),
         });
 
-        const data = await response.json();
+        console.log("data", response);
 
-        console.log("data", data);
-
-        if (!data.ok) {
+        if (!response.ok) {
             toast.error('Something went wrong. Please try again.');
             return;
         }
 
+        const data = await response.json();
 
         if (response.status === 500) return;
         toast.loading('Redirection...');
