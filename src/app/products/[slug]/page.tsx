@@ -56,9 +56,7 @@ export default function Page() {
                     Ajouter au Panier
                 </button>
                 <Link href="/cart" className="flex text-black">
-                    <button
-                        onClick={() => handleAddToCart(product)}
-                        className="w-full bg-gray-600 text-white px-6 py-3 rounded-lg text-lg font-semibold hover:bg-blue-700 transition duration-300"
+                    <button className="w-full bg-gray-600 text-white px-6 py-3 rounded-lg text-lg font-semibold hover:bg-blue-700 transition duration-300"
                     >
                         Voir mon panier
                     </button>

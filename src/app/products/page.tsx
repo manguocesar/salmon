@@ -6,6 +6,7 @@ import toast from "react-hot-toast"
 import { products } from "../constants/products"
 import { Product } from "../types/products"
 import { cn } from "../utils/utils"
+import Link from "next/link"
 
 export default function Products() {
     const { addToCart } = useCart()
@@ -45,6 +46,12 @@ export default function Products() {
                         </button>
                     </div>
                 ))}
+                <Link href="/cart" className="md:hidden flex text-black">
+                    <button className="w-full bg-gray-600 text-white px-6 py-3 rounded-lg text-lg font-semibold hover:bg-blue-700 transition duration-300"
+                    >
+                        Voir mon panier
+                    </button>
+                </Link>
             </div>
         </div>
     )
