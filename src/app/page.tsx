@@ -5,6 +5,7 @@ import { ArtisanalPromise } from "./components/ArtisanalPromise"
 import { ArtisanalSelection } from "./components/ArtisanalSelection"
 import { ArtisanalProcessus } from "./components/ArtisanalProcessus"
 import { ProductSlider } from "./components/ProductSlider";
+import { products } from "./constants/products";
 
 export default async function Home() {
   return (
@@ -12,7 +13,7 @@ export default async function Home() {
       <DiscoverProducts />
       <ArtisanalProcessus />
       <ArtisanalSelection />
-      <ProductSlider />
+      <ProductSlider products={products} />
       <ArtisanalPromise />
     </div>
   )

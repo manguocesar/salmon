@@ -127,7 +127,7 @@ export const products = [
   },
   {
     id: 10,
-    url: "filet-fletan-fume",
+    url: "fletan",
     name: "J - Flétan fume Prétranché. 4 paquets de 250g",
     img: "fletan-1.jpg",
     price: 65,

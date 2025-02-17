@@ -9,6 +9,10 @@ import { useParams } from "next/navigation"
 import Link from "next/link"
 import { CircleChevronLeft } from "lucide-react"
 import { ProductHeader } from "@/app/components/ProductHeader"
+import { ProductSlider } from "@/app/components/ProductSlider"
+import { fletanUrls } from "@/app/constants/fletanUrls"
+import { saumonFumeEntierUrls } from "@/app/constants/saumon-fume-entier-urls"
+import { saumonFumePretrancheUrls } from "@/app/constants/saumon-fume-pretranche-urls"
 
 export default function Page() {
     const { slug } = useParams()
@@ -21,8 +25,24 @@ export default function Page() {
         }
     }
 
-    const product = products.find((product) => product.url === slug)
 
+    let images: string[]
+    switch (slug) {
+        case 'fletan':
+            images = fletanUrls
+            break;
+        case 'saumon-fume-entier':
+            images = saumonFumeEntierUrls
+            break;
+        case 'saumon-fume-pretranche':
+            images = saumonFumePretrancheUrls
+            break;
+        default:
+            images = products.map((product) => product.img)
+            break;
+    }
+
+    const product = products.find((product) => product.url === slug)
 
     if (!product) {
         return <div className="">Produit non trouvé</div>
@@ -63,6 +83,8 @@ export default function Page() {
                     </button>
                 </Link>
             </div>
+            <ProductSlider products={images} />
+
         </div>
     )
 }
