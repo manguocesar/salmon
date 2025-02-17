@@ -88,19 +88,21 @@ export default function Page() {
             <ProductHeader />
 
             <div className=" bg-gray-100 space-y-3 p-5 md:grid-cols-2 lg:grid-cols-2 gap-3 md:gap-8 shadow-lg rounded-md">
-                <Image
+                <ProductSlider products={images} />
+
+                {/* <Image
                     src={`/products/${product.img}`}
                     alt={product.name}
                     className="justify-center mx-auto cover md:mb-4 rounded"
                     width={500}
                     height={500}
-                />
+                /> */}
                 <div className="flex flex-col">
                     <h2 className="text-xl md:text-3xl text-orange-600 font-bold md:mb-4">{product.name}</h2>
                     <p className="text-lg md:text-2xl text-orange-500 font-semibold md:mb-4">{product.price} €</p>
-                    <p className="text-sm text-gray-500 mb-4">{product.description}</p>
-                    <p className="text-sm text-gray-500 mb-4">{product.consumption}</p>
-                    <p className="text-sm text-gray-500 mb-4">{product.details}</p>
+                    <p className="text-lg text-gray-500 mb-4">{product.description}</p>
+                    <p className="text-lg text-gray-500 mb-4">{product.consumption}</p>
+                    <p className="text-lg text-gray-500 mb-4">{product.details}</p>
                 </div>
                 <Link href="/products" className="flex items-center text-black">
                     <CircleChevronLeft /> <p className="text-xl ml-3">Retour à la liste des produits</p>
@@ -118,7 +120,6 @@ export default function Page() {
                     </button>
                 </Link>
             </div>
-            <ProductSlider products={images} />
 
         </div>
     )
