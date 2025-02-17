@@ -21,8 +21,6 @@ export default function Cart() {
             body: JSON.stringify(cart),
         });
 
-        console.log("data", response);
-
         if (!response.ok) {
             toast.error('Something went wrong. Please try again.');
             return;

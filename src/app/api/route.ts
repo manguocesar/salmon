@@ -8,29 +8,29 @@ const stripe = new Stripe(process.env.NEXT_PUBLIC_STRIPE_SECRET_KEY);
 import { NextRequest } from "next/server";
 
 export async function POST(req: NextRequest) {
-  interface Item {
+  type Item = {
     price: number;
     name: string;
     quantity: number;
-  }
+  };
 
-  interface PriceData {
+  type PriceData = {
     currency: string;
     unit_amount: number;
     product_data: {
       name: string;
       images: string[];
     };
-  }
+  };
 
-  interface LineItem {
+  type LineItem = {
     price_data: PriceData;
     adjustable_quantity: {
       enabled: boolean;
       minimum: number;
     };
     quantity: number;
-  }
+  };
 
   const body: Item[] = await req.json();
 
@@ -68,9 +68,9 @@ export async function POST(req: NextRequest) {
       locale: "fr",
       billing_address_collection: "required" as "auto" | "required",
       shipping_options: [
-        { shipping_rate: "shr_1LAZWeAZSYffeW1toZSqsS2W" },
+        { shipping_rate: "shr_1QtTI2AZSYffeW1tvIkJZMx4" },
         { shipping_rate: "shr_1LAZVmAZSYffeW1tdCdnyBh1" },
-        { shipping_rate: "shr_1QsBwyAZSYffeW1tDsbklX4C" },
+        { shipping_rate: "shr_1QtTFcAZSYffeW1tIhEhf9tx" },
       ],
       line_items: items,
       success_url: `${process.env.NEXT_PUBLIC_URL}success`,
