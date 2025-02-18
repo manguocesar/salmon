@@ -9,7 +9,7 @@ import { products } from "./constants/products";
 
 export default async function Home() {
   return (
-    <div className="space-y-6 md:space-y-8 text-black">
+    <div className="md:space-y-8 text-black">
       <DiscoverProducts />
       <ProductSlider products={products} />
       <ArtisanalProcessus />

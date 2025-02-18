@@ -22,7 +22,7 @@ export const ProductCard = ({ product }: { product: Product }) => {
                 alt={product.name}
                 width={300}
                 height={200}
-                className="w-full h-48 mb-4 rounded"
+                className="w-full md:h-48 mb-4 rounded-lg"
             />
             <h3 className="text-orange-500 text-xl font-semibold mb-2">{product.name}</h3>
             <p className="text-gray-600 mb-4">

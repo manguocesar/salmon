@@ -23,7 +23,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <CartProvider>
           <Header />
           <ToastProvider />
-          <main className="container mx-auto px-4 py-2 md:py-8">{children}</main>
+          <main className="container overflow-hidden mx-auto px-4 py-2 md:py-8">{children}</main>
           <CartSummary />
           <GDPRBanner />
           <Footer />

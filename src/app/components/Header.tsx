@@ -18,22 +18,22 @@ export const Header = () => {
                 </Link>
                 <ul className="flex space-x-2 ml-3 md:ml-0 md:space-x-4">
                     <li>
-                        <Link href="/" className={`text-lg md:text-2xl hover:text-gray-300 ${isActive('/') ? 'text-orange-500' : ''}`}>
+                        <Link href="/" className={`text-lg font-semibold md:text-2xl hover:text-gray-300 ${isActive('/') ? 'text-orange-500' : ''}`}>
                             Accueil
                         </Link>
                     </li>
                     <li>
-                        <Link href="/products" className={`text-lg md:text-2xl hover:text-gray-300 ${isActive('/products') ? 'text-orange-500' : ''}`}>
+                        <Link href="/products" className={`text-lg font-semibold md:text-2xl hover:text-gray-300 ${isActive('/products') ? 'text-orange-500' : ''}`}>
                             Produits
                         </Link>
                     </li>
                     <li>
-                        <Link href="/contact" className={`text-lg md:text-2xl hover:text-gray-300 ${isActive('/contact') ? 'text-orange-500' : ''}`}>
+                        <Link href="/contact" className={`text-lg font-semibold md:text-2xl hover:text-gray-300 ${isActive('/contact') ? 'text-orange-500' : ''}`}>
                             Contact
                         </Link>
                     </li>
                     <li>
-                        <Link href="/cart" className={`text-lg md:text-2xl hover:text-gray-300 ${isActive('/cart') ? 'text-orange-500' : ''}`}>
+                        <Link href="/cart" className={`text-lg font-semibold md:text-2xl hover:text-gray-300 ${isActive('/cart') ? 'text-orange-500' : ''}`}>
                             Panier
                         </Link>
                     </li>

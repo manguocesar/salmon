@@ -45,7 +45,7 @@ export const ProductSlider = ({ products }: { products: Product[] | string[] }) 
                     animation: slideLeft 30s linear infinite;
                 }
             `}</style>
-            <div className="flex flex-row space-x-4 w-[1200vw] md:w-[800vw] slide-left">
+            <div className="flex flex-row my-6 space-x-6 w-[1200vw] md:w-[800vw] slide-left">
                 {renderProducts(products)}
             </div>
         </>
