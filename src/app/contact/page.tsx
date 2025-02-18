@@ -1,9 +1,12 @@
+import { ProductSlider } from "../components/ProductSlider";
+import { detailsUrls } from "../constants/details";
+
 export default function Contact() {
     return (
         <div className="max-w-2xl text-black mx-auto">
-            <h1 className="text-orange-600 text-3xl font-bold mb-8 text-center">Contactez-nous</h1>
-            <div className="bg-white p-8 rounded-lg shadow-md">
-                <p className="mb-6">Pour toute demande ou pour passer une commande, veuillez contacter directement Mikael Hertz :</p>
+            <h1 className="text-orange-600 text-3xl font-bold my-4 text-center">Contactez moi</h1>
+            <div className="bg-white p-2 md:p-8 rounded-lg shadow-md">
+                <p className="mb-6">Pour toute question, recette ou dema,de, veuillez contacter directement <strong>Mikael Hertz</strong> :</p>
                 <ul className="space-y-2 mb-6">
                     <li>
                         <strong>Téléphone :</strong> 06 62 19 63 58
@@ -20,9 +23,10 @@ export default function Contact() {
                 </ul>
             </div>
 
+            <ProductSlider urlRoot="details" products={detailsUrls} />
 
 
-            <div className="bg-white p-8 rounded-lg shadow-md mt-8">
+            <div className="bg-white p-2 md:p-8 rounded-lg shadow-md md:mt-8">
                 <p className="mb-6">
                     Nous livrons nos produits de poisson fumé et d'élevage de qualité supérieure dans la région lyonnaise avant Noël et Pâques.
                 </p>
