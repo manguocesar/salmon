@@ -9,4 +9,7 @@ export const fletanUrls = [
   "fletan-8.jpg",
   "fletan-9.jpg",
   "fletan-10.jpg",
+  "fletan-11.jpg",
+  "fletan-12.jpg",
+  "fletan-13.jpg",
 ];

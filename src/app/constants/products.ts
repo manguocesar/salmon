@@ -118,7 +118,7 @@ export const products = [
     img: "saumon-fume-chaud-nature.jpg",
     price: 50,
     description:
-      "Notre saumon fumé à chaud classique, préparé pour laisser les saveurs naturelles du poisson s'exprimer pleinement.",
+      "Saumon fumé à chaud, la préparation laisse les saveurs naturelles du poisson s'exprimer pleinement.",
     available: true,
     details:
       "Quatre paqués de 200grammes. 800 grammes. Saumon élevé en Norvège, fumé au Danmark. Son extrémité est caramélisée, avec un flan plus ou moins gras et une partie très charnue. Cette partie du poisson, fondante en bouche, est parfaite à manger seule ou à ajouter en salade",
@@ -132,10 +132,10 @@ export const products = [
     img: "fletan-1.jpg",
     price: 65,
     description:
-      "Notre flétan est lentement fumé pour rehausser ses saveurs naturelles, résultant en un goût riche et beurré.  Coupé à la perfection, nos steaks de flétan témoignent de la compétence de nos maîtres poissonniers.",
+      "Flétan lentement fumé pour rehausser ses saveurs naturelles, résultant en un goût riche et beurré.",
     available: true,
     details:
-      "Le filet de flétan fumé a une chair de couleur blanche. Les arômes légers de notre fumage préservent la saveur iodée et la texture légère et fondant",
+      "Le filet de flétan fumé a une chair de couleur blanche. Les arômes légers de notre fumage préservent la saveur iodée et la texture légère et fondant. Coupé à la perfection, nos steaks de flétan témoignent de la compétence de nos maîtres poissonniers.",
     consumption:
       "Consommer dans les 10 jours après ouverture. Produit frais – peut être congelé. Conditionné sous vide pour une meilleure conservation.  Produit frais – peut être congelé. Conditionné sous vide pour une meilleure conservation. ",
   },
