@@ -44,14 +44,12 @@ export default function Cart() {
         <div className="max-w-4xl mx-auto">
             <h1 className="text-3xl font-bold mb-8 text-orange-600 text-center">Votre Panier</h1>
             {cart.length === 0 ? (
-                <div className="h-[65vh]">
-                    <p className="text-center">
-                        Votre panier est vide.{" "}
-                        <Link href="/products" className="text-orange-600 hover:underline">
-                            Continuer vos achats
-                        </Link>
-                    </p>
-                </div>
+                <p className="text-center text-lg text-black">
+                    Votre panier est vide.{" "}
+                    <Link href="/products" className="text-orange-600 underline cursor-pointer">
+                        Continuer vos achats
+                    </Link>
+                </p>
             ) : (
                 <>
                     <div className="bg-white shadow-md rounded-lg overflow-hidden">
