@@ -11,5 +11,4 @@ export const fletanUrls = [
   "fletan-10.jpg",
   "fletan-11.jpg",
   "fletan-12.jpg",
-  "fletan-13.jpg",
 ];
