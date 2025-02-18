@@ -20,6 +20,7 @@ import { saumonGravadPretrancheUrls } from "@/app/constants/saumonGravadPretranc
 import { saumonFumeChaudEntierPoivreUrls } from "@/app/constants/saumonFumeChaudEntierPoivreUrls"
 import { saumonFumeChaudPavePoivreUrls } from "@/app/constants/saumonFumeChaudPavePoivreUrls"
 import { truitesUrls } from "@/app/constants/truitesUrls"
+import { ProductSlider } from "@/app/components/ProductSlider"
 
 export default function Page() {
     const { slug } = useParams()
@@ -85,17 +86,18 @@ export default function Page() {
     }
 
     return (
-        <div className="max-w-4xl mx-auto px-4 py-8">
+        <div className="max-w-4xl mx-auto px-4 my-2 md:py-8">
             <ProductHeader />
-
-            <div className=" bg-gray-100 space-y-3 p-5 md:grid-cols-2 lg:grid-cols-2 gap-3 md:gap-8 shadow-lg rounded-md">
-                <Image
+            <div className=" bg-gray-100 space-y-3 p-2 md:grid-cols-2 lg:grid-cols-2 gap-3 md:gap-8 shadow-lg rounded-md">
+                {/* <Image
                     src={`/products/${product.img}`}
                     alt={product.name}
                     className="justify-center mx-auto cover md:mb-4 rounded"
                     width={500}
                     height={500}
-                />
+                /> */}
+                <ProductSlider products={images} />
+
                 <div className="flex flex-col">
                     <h2 className="text-xl md:text-3xl text-orange-600 font-bold md:mb-4">{product.name}</h2>
                     <p className="text-lg md:text-2xl text-orange-500 font-semibold md:mb-4">{product.price} €</p>
@@ -119,7 +121,7 @@ export default function Page() {
                     </button>
                 </Link>
             </div>
-            {/* <ProductSlider products={images} /> */}
+            <ProductSlider products={images} />
 
         </div>
     )

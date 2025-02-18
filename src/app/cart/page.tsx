@@ -56,18 +56,18 @@ export default function Cart() {
                         <table className="w-full">
                             <thead className="bg-gray-50">
                                 <tr>
-                                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    <th className="px-2 md:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                         Produit
                                     </th>
-                                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    <th className="px-2 md:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                         Quantité
                                     </th>
                                     <th
-                                        className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                                        className="px-2 md:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
                                     >
                                         Prix
                                     </th>
-                                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    <th className="px-2 md:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                         Action
                                     </th>
 
@@ -76,8 +76,9 @@ export default function Cart() {
                             <tbody className="bg-white divide-y divide-gray-200">
                                 {cart.map((item) => (
                                     <tr key={item.id}>
-                                        <td className="text-orange-600 font-semibold px-6 py-4 whitespace-nowrap">{item.name}</td>
-                                        <td className="px-6 py-4 whitespace-nowrap">
+                                        <td className="block md:hidden text-orange-600 font-semibold px-2  md:px-6 py-4 whitespace-pre-wrap truncate">{item.name[0]}</td>
+                                        <td className="hidden md:block text-orange-600 font-semibold px-2  md:px-6 py-4 whitespace-pre-wrap truncate">{item.name}</td>
+                                        <td className="md:px-6 md:py-4 whitespace-nowrap">
                                             <div className="flex items-center">
                                                 <button
                                                     onClick={() => updateQuantity(item.id, item.quantity - 1)}
@@ -94,8 +95,8 @@ export default function Cart() {
                                                 </button>
                                             </div>
                                         </td>
-                                        <td className="text-black px-6 py-4 whitespace-nowrap">{(item.price * item.quantity).toFixed(2)} €</td>
-                                        <td className="px-6 py-4 whitespace-nowrap">
+                                        <td className="text-black px-2 md:px-6 py-4 whitespace-nowrap">{(item.price * item.quantity).toFixed(2)} €</td>
+                                        <td className="px-2  md:px-6 py-4 whitespace-nowrap">
                                             <button onClick={() => removeFromCart(item)} className="text-red-600 hover:text-red-900">
                                                 Supprimer
                                             </button>
