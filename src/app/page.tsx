@@ -11,10 +11,10 @@ export default async function Home() {
   return (
     <div className="md:space-y-8 text-black">
       <DiscoverProducts />
-      <ProductSlider products={products} />
+      <ProductSlider urlRoot="products" products={products} />
       <ArtisanalProcessus />
       <ArtisanalSelection />
-      <ProductSlider products={products} />
+      <ProductSlider urlRoot="products" products={products} />
       <ArtisanalPromise />
     </div>
   )

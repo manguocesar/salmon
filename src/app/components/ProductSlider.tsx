@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Product } from "../types/products";
 
-export const ProductSlider = ({ products }: { products: Product[] | string[] }) => {
+export const ProductSlider = ({ products, urlRoot }: { products: Product[] | string[]; urlRoot: string }) => {
 
     const isProductArray = (arr: (Product | string)[]) => {
         return arr.length > 0 && typeof arr[0] === 'object' && 'url' in arr[0];
@@ -12,8 +12,8 @@ export const ProductSlider = ({ products }: { products: Product[] | string[] }) 
     const renderProducts = (products: (Product | string)[]) => {
         const isProduct = isProductArray(products as (Product | string)[]);
         return products.concat(products).map((product, id) => {
-            const href = isProduct ? `/products/${(product as Product).url}` : `/products/${product}`;
-            const src = isProduct ? `/products/${(product as Product).img}` : `/products/${product}`;
+            const href = isProduct ? `${urlRoot}/products/${(product as Product).url}` : `/${urlRoot}/${product}`;
+            const src = isProduct ? `/products/${(product as Product).img}` : `/${urlRoot}/${product}`;
             const alt = isProduct ? (product as Product).name || 'fishProduct' : 'fishProduct';
 
             return (
