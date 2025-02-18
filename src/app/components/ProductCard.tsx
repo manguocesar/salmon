@@ -24,12 +24,12 @@ export const ProductCard = ({ product }: { product: Product }) => {
                 height={200}
                 className="w-full h-48 mb-4 rounded"
             />
-            <h3 className="text-orange-600 text-xl font-semibold mb-2">{product.name}</h3>
+            <h3 className="text-orange-500 text-xl font-semibold mb-2">{product.name}</h3>
             <p className="text-gray-600 mb-4">
                 {product.description}
             </p>
             <button
-                className={cn(!product.available && "opacity-50 cursor-not-allowed", "bg-orange-600 text-white px-4 py-2 rounded hover:bg-orange-700 transition duration-300")}
+                className={cn(!product.available && "opacity-50 cursor-not-allowed", "bg-orange-600 text-white px-4 font-semibold py-2 rounded hover:bg-orange-700 transition duration-300")}
                 onClick={() => handleAddToCart(product)}
                 disabled={!product.available}
             >
