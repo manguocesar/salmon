@@ -4,6 +4,8 @@ import { useCart } from "../contexts/CartContext"
 import Link from "next/link"
 import getStripe from "../lib/getStripe"
 import toast from "react-hot-toast"
+import { ProductSlider } from "../components/ProductSlider"
+import { bgUrls } from "../constants/bgSaumonUrls"
 
 export default function Cart() {
     const { cart, removeFromCart, getCartTotal, updateQuantity } = useCart()
@@ -120,6 +122,8 @@ export default function Cart() {
                     </div>
                 </>
             )}
+            <ProductSlider urlRoot="bg" products={bgUrls} />
+
         </div>
     )
 }
