@@ -4,6 +4,8 @@ import Link from 'next/link';
 import { runFireworks } from '../lib/utils';
 import { useEffect } from 'react';
 import Image from 'next/image';
+import { ProductSlider } from '../components/ProductSlider';
+import { products } from '../constants/products';
 
 const Success = () => {
     useEffect(() => {
@@ -12,8 +14,8 @@ const Success = () => {
     }, []);
 
     return (
-        <div className="min-h-60 text-2xl text-black w-9/12 flex justify-center items-center flex-col mx-auto mt-20">
-            <Image className="m-4 rounded-xl" src="/logo.jpg" alt="Mikael Hertz Poissons Fumés Artisanaux" width={400} height={400} />
+        <div className="text-2xl text-center text-black w-9/12 flex justify-center items-center flex-col mx-auto">
+            <Image className="my-4 rounded-xl" src="/logo.jpg" alt="Mikael Hertz Poissons Fumés Artisanaux" width={400} height={400} />
             <h2>Merci pour votre commande!</h2>
             <p className="email-msg">Verifiez vos emails pour la commande.</p>
             <p className="description">
@@ -28,6 +30,7 @@ const Success = () => {
                     Retour à l'Accueil
                 </button>
             </Link>
+            <ProductSlider urlRoot="products" products={products} />
         </div>
     )
 }
