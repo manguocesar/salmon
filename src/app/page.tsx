@@ -9,8 +9,9 @@ import { products } from "./constants/products";
 
 export default async function Home() {
   return (
-    <div className="space-y-4 md:space-y-8 text-black">
+    <div className="space-y-6 md:space-y-8 text-black">
       <DiscoverProducts />
+      <ProductSlider products={products} />
       <ArtisanalProcessus />
       <ArtisanalSelection />
       <ProductSlider products={products} />

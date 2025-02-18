@@ -23,7 +23,7 @@ export const ProductSlider = ({ products }: { products: Product[] | string[] }) 
                         alt={alt}
                         width={300}
                         height={300}
-                        className="w-full h-64 rounded-lg hover:border-2 hover:border-orange-600"
+                        className="w-full h-40 md:h-64 rounded-lg hover:border-2 hover:border-orange-600"
                     />
                 </Link>
             );
