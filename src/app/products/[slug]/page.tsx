@@ -16,7 +16,7 @@ import { saumonFumePaveUrls } from "@/app/constants/saumonFumePaveUrls"
 import { saumonGravadEntierUrls } from "@/app/constants/saumonGravadEntierUrls"
 import { saumonGravadPretrancheUrls } from "@/app/constants/saumonGravadPretrancheUrls"
 import { saumonFumeChaudEntierPoivreUrls } from "@/app/constants/saumonFumeChaudEntierPoivreUrls"
-import { saumonFumeChaudPavePoivreUrls } from "@/app/constants/saumonFumeChaudPavePoivreUrls"
+import { saumonFumeChaudPoivrePaveUrls } from "@/app/constants/saumonFumeChaudPoivrePaveUrls"
 import { truitesUrls } from "@/app/constants/truitesUrls"
 import { ProductSlider } from "@/app/components/ProductSlider"
 
@@ -56,10 +56,10 @@ export default function Page() {
             images = saumonFumeChaudEntierPoivreUrls
             break;
         case 'saumon-fume-chaud-pave-entier':
-            images = saumonFumeChaudPavePoivreUrls
+            images = saumonFumeChaudPoivrePaveUrls
             break;
         case 'saumon-fume-chaud-pave-entier':
-            images = saumonFumeChaudPavePoivreUrls
+            images = saumonFumeChaudPoivrePaveUrls
             break;
         case 'crevettes-groenland':
             images = crevettesUrls

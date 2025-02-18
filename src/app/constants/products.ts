@@ -143,7 +143,7 @@ export const products = [
     id: 11,
     url: "truite-fumee",
     name: "K - Truites fumé. 4 paquets de 125g",
-    img: "truite-1.jpg",
+    img: "truite-1.jpeg",
     price: 25,
     description:
       "Truite fumée d'elvage est nettoyée et filetée à la main pour une saveur des plus fraîches.",
