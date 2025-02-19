@@ -85,11 +85,11 @@ export const products = [
   {
     id: 7,
     url: "saumon-fume-chaud-poivre-entier",
-    name: "G - Saumon Fumé Chaud Poivre",
+    name: "G - Saumon Mi-Cuit Poivre",
     img: "saumon-fume-chaud-poivre-entier-1.avif",
     price: 65,
     description:
-      "Mi-cuit pour conserver l'humidité, puis enrobé de poivre noir concassé.",
+      "Fumer à chaud pour conserver l'humidité, fillet enrobé de poivre noir concassé.",
     available: true,
     details:
       "Filet entier environ 1kg. Saumon élevé en Norvège, fumé au Danmark. Son extrémité est légerement caramélisée, avec un flan plus ou moins gras et une partie très charnue. Cette partie du poisson, fondante en bouche, est parfaite à manger seule ou à ajouter dans une salade ou des pâtes. Le saumon fumé à chaud au poivre entier est idéal pour les grandes tablées, les buffets, les brunchs, les fêtes de famille ou les réceptions. Il est aussi parfait pour les traiteurs, les restaurateurs et les hôtels. Il est prêt à être dégusté, il ne reste plus qu’à le sortir de son emballage et à le disposer sur un plateau.",
@@ -99,11 +99,10 @@ export const products = [
   {
     id: 8,
     url: "saumon-fume-chaud-poivre-pave",
-    name: "H - Saumon Fumé à Chaud Poivre Pavé",
+    name: "H - Saumon Mi-Cuit Poivre Pavé",
     img: "saumon-fume-chaud-poivre-pave-1.webp",
     price: 50,
-    description:
-      "Notre saumon fumé à chaud classique, préparé pour laisser les saveurs naturelles du poisson s'exprimer pleinement.",
+    description: "Fumé à chaud, saveurs fortes & relevées.",
     available: true,
     details:
       "Quatre paqués de 200grammes. 800 grammes. Saumon élevé en Norvège, fumé au Danmark. Son extrémité est caramélisée, avec un flan plus ou moins gras et une partie très charnue. Cette partie du poisson, fondante en bouche, est parfaite à manger seule ou à ajouter en salade",
@@ -113,11 +112,11 @@ export const products = [
   {
     id: 9,
     url: "saumon-fume-chaud-nature-pave",
-    name: "I - Saumon Fumé à Chaud Nature Pavé",
+    name: "I - Saumon Mi-Cuit Nature Pavé",
     img: "saumon-fume-chaud-nature.jpg",
     price: 50,
     description:
-      "Saumon fumé à chaud, la préparation laisse les saveurs naturelles du poisson s'exprimer pleinement.",
+      "Fumé à chaud Nature, laissant les saveurs naturelles du poisson s'exprimer pleinement.",
     available: true,
     details:
       "Quatre paqués de 200grammes. 800 grammes. Saumon élevé en Norvège, fumé au Danmark. Son extrémité est caramélisée, avec un flan plus ou moins gras et une partie très charnue. Cette partie du poisson, fondante en bouche, est parfaite à manger seule ou à ajouter en salade",
@@ -131,7 +130,7 @@ export const products = [
     img: "fletan-1.jpg",
     price: 65,
     description:
-      "Flétan lentement fumé pour rehausser ses saveurs naturelles pour un goût riche.",
+      "Lentement fumé rehaussant ses saveurs naturelles pour un goût riche.",
     available: true,
     details:
       "Le filet de flétan fumé a une chair de couleur blanche. Les arômes légers de notre fumage préservent la saveur iodée et la texture légère et fondant. Coupé à la perfection, nos steaks de flétan témoignent de la compétence de nos maîtres poissonniers.",
@@ -144,7 +143,7 @@ export const products = [
     name: "K - Truites Fumées",
     img: "truite-1.jpeg",
     price: 25,
-    description: "Truite fumée d'elvage nettoyée et filetée manuellement.",
+    description: "Truite fumée au bois d'hêtre puis filetée manuellement.",
     available: true,
     details:
       "Légère et savoureuse, la truite fumée peut se servir froide ou chaude. 4 paquets de 125g. Elle convient pour 2 personnes en petite entrée, ou pour une personne en plat ou entrée copieuse. Vous pouvez aussi présenter une entrée mixte, composée d’un filet de truite fumée et d’une tranche de saumon fumé.",
