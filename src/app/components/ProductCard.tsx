@@ -12,7 +12,7 @@ export const ProductCard = ({ product }: { product: Product }) => {
     const { addToCart } = useCart()
     const handleAddToCart = (product: Product) => {
         if (!product.available) return toast.error("Ce produit est actuellement en rupture de stock")
-        addToCart({ id: product.id, name: product.name, price: product.price, quantity: 1 })
+        addToCart({ id: product.id, name: product.name, shortName: product.shortName, price: product.price, quantity: 1 })
     }
 
     return (
@@ -25,7 +25,7 @@ export const ProductCard = ({ product }: { product: Product }) => {
                 className="w-full md:h-48 mb-2 md:mb-4 rounded-lg"
             />
             <h3 className="text-orange-500 text-xl font-semibold mb-2">{product.name}</h3>
-            <p className="text-gray-600 mb-4">
+            <p className="text-gray-600 mb-4 text-justify">
                 {product.description}
             </p>
             <button

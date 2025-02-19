@@ -1,5 +1,5 @@
 export const ProductHeader = () => {
     return (
-        <h1 className="text-3xl my-3 font-bold text-orange-600">Détails du produit:</h1>
+        <h1 className="text-3xl ml-2 md:my-3 font-bold text-orange-600">Détails:</h1>
     )
 }
