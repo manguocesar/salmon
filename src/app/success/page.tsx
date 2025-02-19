@@ -30,7 +30,7 @@ const Success = () => {
                     Retour à l'Accueil
                 </button>
             </Link>
-            <ProductSlider urlRoot="products" products={products} />
+            <ProductSlider isArrayMixed={false} urlRoot="products" products={products} />
         </div>
     )
 }

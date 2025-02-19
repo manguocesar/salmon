@@ -19,6 +19,9 @@ import { saumonFumeChaudEntierPoivreUrls } from "@/app/constants/saumonFumeChaud
 import { saumonFumeChaudPoivrePaveUrls } from "@/app/constants/saumonFumeChaudPoivrePaveUrls"
 import { truitesUrls } from "@/app/constants/truitesUrls"
 import { ProductSlider } from "@/app/components/ProductSlider"
+import { Video } from "@/app/components/Video"
+import { Suspense } from "react"
+import { saumonFumeChaudNaturePaveUrls } from "@/app/constants/saumonFumeChaudNaturePaveUrls"
 
 export default function Page() {
     const { slug } = useParams()
@@ -30,7 +33,6 @@ export default function Page() {
             toast.error("Ce produit est actuellement en rupture de stock")
         }
     }
-
 
     let images: string[]
     switch (slug) {
@@ -55,11 +57,11 @@ export default function Page() {
         case 'saumon-fume-chaud-poivre-entier':
             images = saumonFumeChaudEntierPoivreUrls
             break;
-        case 'saumon-fume-chaud-pave-entier':
+        case 'saumon-fume-chaud-poivre-pave':
             images = saumonFumeChaudPoivrePaveUrls
             break;
-        case 'saumon-fume-chaud-pave-entier':
-            images = saumonFumeChaudPoivrePaveUrls
+        case 'saumon-fume-chaud-nature-pave':
+            images = saumonFumeChaudNaturePaveUrls
             break;
         case 'crevettes-groenland':
             images = crevettesUrls
@@ -88,12 +90,15 @@ export default function Page() {
         <div className="max-w-4xl mx-auto px-4 my-2 md:py-8">
             <ProductHeader />
             <div className=" bg-gray-100 space-y-3 p-2 md:grid-cols-2 lg:grid-cols-2 gap-3 md:gap-8 shadow-lg rounded-md">
-                <ProductSlider urlRoot="products" products={images} />
+                <ProductSlider isArrayMixed urlRoot="products" products={images} />
                 <div className="flex flex-col">
                     <h2 className="text-xl md:text-3xl text-orange-600 font-bold md:mb-4">{product.name}</h2>
                     <p className="text-lg md:text-2xl text-orange-500 font-semibold md:mb-4">{product.price} €</p>
                     <p className="text-lg text-gray-500 mb-4">{product.description}</p>
                     <p className="text-lg text-gray-500 mb-4">{product.consumption}</p>
+                    <Suspense fallback={<p>Loading video...</p>}>
+                        <Video source={product.video} />
+                    </Suspense>
                     <p className="text-lg text-gray-500 mb-4">{product.details}</p>
                 </div>
                 <Link href="/products" className="flex items-center text-black">
@@ -112,7 +117,7 @@ export default function Page() {
                     </button>
                 </Link>
             </div>
-            <ProductSlider urlRoot="products" products={images} />
+            <ProductSlider isArrayMixed urlRoot="products" products={images} />
         </div>
     )
 }

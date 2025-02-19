@@ -22,7 +22,7 @@ export default function Products() {
                     </button>
                 </Link>
             </div>
-            <ProductSlider urlRoot="process" products={processUrls} />
+            <ProductSlider urlRoot="process" products={processUrls} isArrayMixed={false} />
         </div>
     )
 }

@@ -22,8 +22,7 @@ export default function Contact() {
                 </ul>
             </div>
 
-            <ProductSlider urlRoot="process" products={processUrls} />
-
+            <ProductSlider isArrayMixed={false} urlRoot="process" products={processUrls} />
 
             <div className="bg-white m-1 p-2 md:p-8 rounded-lg shadow-md md:mt-8">
                 <p className="mb-6">
@@ -47,7 +46,7 @@ export default function Contact() {
                     N'hésitez pas à nous contacter pour toute question sur nos produits ou pour passer votre commande. Nous sommes là pour vous fournir du poisson de la meilleure qualité pour vos délices culinaires !
                 </p>
             </div>
-            <ProductSlider urlRoot="products" products={products} />
+            <ProductSlider isArrayMixed={false} urlRoot="products" products={products} />
 
         </div>
     )

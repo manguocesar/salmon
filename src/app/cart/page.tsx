@@ -123,8 +123,7 @@ export default function Cart() {
                     </div>
                 </>
             )}
-            <ProductSlider urlRoot="bg" products={bgUrls} />
-
+            <ProductSlider isArrayMixed={false} urlRoot="bg" products={bgUrls} />
         </div>
     )
 }

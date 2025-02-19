@@ -12,10 +12,10 @@ export default async function Home() {
   return (
     <div className="md:space-y-8 text-black">
       <DiscoverProducts />
-      <ProductSlider urlRoot="process" products={processUrls} />
+      <ProductSlider urlRoot="process" isArrayMixed={false} products={processUrls} />
       <ArtisanalProcessus />
       <ArtisanalSelection />
-      <ProductSlider urlRoot="products" products={products} />
+      <ProductSlider urlRoot="products" isArrayMixed={false} products={products} />
       <ArtisanalPromise />
     </div>
   )
