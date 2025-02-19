@@ -12,20 +12,18 @@ export const ProductSlider = ({ products, urlRoot }: { products: Product[] | str
     const renderProducts = (products: (Product | string)[]) => {
         const isProduct = isProductArray(products as (Product | string)[]);
         return products.concat(products).map((product, id) => {
-            const href = isProduct ? `${urlRoot}/products/${(product as Product).url}` : `/${urlRoot}/${product}`;
             const src = isProduct ? `/products/${(product as Product).img}` : `/${urlRoot}/${product}`;
             const alt = isProduct ? (product as Product).name || 'fishProduct' : 'fishProduct';
 
             return (
-                <Link key={id} href={href} className="">
-                    <Image
-                        src={src}
-                        alt={alt}
-                        width={300}
-                        height={300}
-                        className="w-full h-40 md:h-64 rounded-lg hover:border-2 hover:border-orange-600"
-                    />
-                </Link>
+                <Image
+                    key={id}
+                    src={src}
+                    alt={alt}
+                    width={300}
+                    height={300}
+                    className="h-40 md:h-64 rounded-lg hover:border-2 hover:border-orange-600"
+                />
             );
         });
     };
@@ -45,7 +43,7 @@ export const ProductSlider = ({ products, urlRoot }: { products: Product[] | str
                     animation: slideLeft 50s linear infinite;
                 }
             `}</style>
-            <div className="flex flex-row my-6 space-x-6 w-[1400vw] md:w-[2000vw] slide-left">
+            <div className="flex flex-row space-x-2 my-6 md:space-x-6 w-[1400vw] md:w-[2000vw] slide-left">
                 {renderProducts(products)}
             </div>
         </>
