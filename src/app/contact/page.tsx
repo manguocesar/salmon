@@ -1,5 +1,4 @@
 import { ProductSlider } from "../components/ProductSlider";
-import { detailsUrls } from "../constants/details";
 import { processUrls } from "../constants/processUrls";
 import { products } from "../constants/products";
 

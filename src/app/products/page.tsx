@@ -4,7 +4,6 @@ import Link from "next/link"
 import { ProductCard } from "../components/ProductCard"
 import { ProductHeader } from "../components/ProductHeader"
 import { ProductSlider } from "../components/ProductSlider"
-import { detailsUrls } from "../constants/details"
 import { processUrls } from "../constants/processUrls"
 
 export default function Products() {
