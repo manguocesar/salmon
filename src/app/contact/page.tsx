@@ -1,12 +1,15 @@
 import { ProductSlider } from "../components/ProductSlider";
 import { detailsUrls } from "../constants/details";
+import { processUrls } from "../constants/processUrls";
+import { products } from "../constants/products";
 
 export default function Contact() {
     return (
         <div className="max-w-2xl text-black mx-auto">
             <h1 className="text-orange-600 text-3xl font-bold my-4 text-center">Contactez moi</h1>
-            <div className="bg-white p-2 md:p-8 rounded-lg shadow-md">
-                <p className="mb-6">Pour toute question, recette ou dema,de, veuillez contacter directement <strong>Mikael Hertz</strong> :</p>
+            <div className="bg-white p-2 md:p-6 rounded-lg shadow-md">
+                <p>Pour toute question, recette ou demande, veuillez contacter directement</p>
+                <p className="mb-6"><strong>Mikael Hertz</strong> :</p>
                 <ul className="space-y-2 mb-6">
                     <li>
                         <strong>Téléphone :</strong> 06 62 19 63 58
@@ -17,13 +20,10 @@ export default function Contact() {
                     <li>
                         <strong>Adresse :</strong> 21 ROUTE DE CREST, 26400 SAOU
                     </li>
-                    <li>
-                        <strong>RC ROMANS 383 519 501 21 </strong> FR 96383519501
-                    </li>
                 </ul>
             </div>
 
-            <ProductSlider urlRoot="details" products={detailsUrls} />
+            <ProductSlider urlRoot="process" products={processUrls} />
 
 
             <div className="bg-white p-2 md:p-8 rounded-lg shadow-md md:mt-8">
@@ -48,6 +48,8 @@ export default function Contact() {
                     N'hésitez pas à nous contacter pour toute question sur nos produits ou pour passer votre commande. Nous sommes là pour vous fournir du poisson de la meilleure qualité pour vos délices culinaires !
                 </p>
             </div>
+            <ProductSlider urlRoot="products" products={products} />
+
         </div>
     )
 }
