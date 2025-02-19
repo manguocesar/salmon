@@ -1,6 +1,5 @@
 'use client';
 import Image from "next/image";
-import Link from "next/link";
 import { Product } from "../types/products";
 
 export const ProductSlider = ({ products, urlRoot }: { products: Product[] | string[]; urlRoot: string }) => {
@@ -43,7 +42,7 @@ export const ProductSlider = ({ products, urlRoot }: { products: Product[] | str
                     animation: slideLeft 50s linear infinite;
                 }
             `}</style>
-            <div className="flex flex-row space-x-2 my-6 md:space-x-6 w-[1400vw] md:w-[2000vw] slide-left">
+            <div className="flex flex-row space-x-2 my-2 md:my-6 md:space-x-6 w-[1400vw] md:w-[2000vw] slide-left">
                 {renderProducts(products)}
             </div>
         </>

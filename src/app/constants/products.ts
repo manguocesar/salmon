@@ -3,6 +3,7 @@ export const products = [
     id: 1,
     url: "saumon-fume-entier",
     name: "A - Saumon Fumé Entier",
+    shortName: "Fumé Entier",
     img: "saumon-fume-entier-1.jpg",
     price: 65,
     description:
@@ -17,6 +18,7 @@ export const products = [
     id: 2,
     url: "saumon-fume-pretranche",
     name: "B - Saumon Fumé Prétranché",
+    shortName: "Fumé Tranché",
     img: "saumon-fume-pretranche-1.jpg",
     price: 65,
     description: "Fines tranches, doucement fumées à la perfection.",
@@ -30,6 +32,7 @@ export const products = [
     id: 3,
     url: "coeur-saumon",
     name: "C - Cœur de Saumon",
+    shortName: "Cœur de Saumon",
     img: "coeur-saumon-1.png",
     price: 19,
     description:
@@ -44,6 +47,7 @@ export const products = [
     id: 4,
     url: "saumon-fume-pave",
     name: "D - Saumon Fumé Pavé",
+    shortName: "Saumon Fumé pavé",
     img: "saumon-fume-pave-1.webp",
     price: 50,
     description:
@@ -58,6 +62,7 @@ export const products = [
     id: 5,
     url: "saumon-gravad-entier",
     name: "E - Saumon Mariné (gravad)",
+    shortName: "Mariné Entier",
     img: "saumon-gravad-entier-2.jpg",
     price: 65,
     description:
@@ -72,6 +77,7 @@ export const products = [
     id: 6,
     url: "saumon-gravad-pretranche",
     name: "F - Saumon Mariné (gravad) Prétranché",
+    shortName: "Mariné Tranché",
     img: "saumon-gravad-pretranche-1.jpg",
     price: 65,
     description:
@@ -86,6 +92,7 @@ export const products = [
     id: 7,
     url: "saumon-fume-chaud-poivre-entier",
     name: "G - Saumon Mi-Cuit Poivre",
+    shortName: "Mi-Cuit Poivre Entier",
     img: "saumon-fume-chaud-poivre-entier-1.avif",
     price: 65,
     description:
@@ -100,6 +107,7 @@ export const products = [
     id: 8,
     url: "saumon-fume-chaud-poivre-pave",
     name: "H - Saumon Mi-Cuit Poivre Pavé",
+    shortName: "Mi-Cuit Poivre Pavé",
     img: "saumon-fume-chaud-poivre-pave-1.webp",
     price: 50,
     description: "Fumé à chaud, saveurs fortes & relevées.",
@@ -113,6 +121,7 @@ export const products = [
     id: 9,
     url: "saumon-fume-chaud-nature-pave",
     name: "I - Saumon Mi-Cuit Nature Pavé",
+    shortName: "Mi-Cuit Nature",
     img: "saumon-fume-chaud-nature.jpg",
     price: 50,
     description:
@@ -127,6 +136,7 @@ export const products = [
     id: 10,
     url: "fletan",
     name: "J - Flétan Fumé Prétranché",
+    shortName: "Flétan",
     img: "fletan-1.jpg",
     price: 65,
     description:
@@ -141,6 +151,7 @@ export const products = [
     id: 11,
     url: "truite-fumee",
     name: "K - Truites Fumées",
+    shortName: "Truites",
     img: "truite-1.jpeg",
     price: 25,
     description: "Truite fumée au bois d'hêtre puis filetée manuellement.",
@@ -154,6 +165,7 @@ export const products = [
     id: 12,
     url: "crevettes-groenland",
     name: "L - Crevettes Décortiquées",
+    shortName: "Crevettes",
     img: "crevettes-1.jpg",
     price: 15,
     description:
@@ -168,6 +180,7 @@ export const products = [
     id: 13,
     url: "couteau-saumon",
     name: "M - Couteau Saumon",
+    shortName: "Couteau",
     img: "couteau.png",
     price: 5,
     description:
