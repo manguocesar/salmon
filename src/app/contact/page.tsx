@@ -7,7 +7,7 @@ export default function Contact() {
     return (
         <div className="max-w-2xl text-black mx-auto">
             <h1 className="text-orange-600 text-3xl font-bold my-2 md:my-4 text-center">Contactez moi</h1>
-            <div className="bg-white p-2 md:p-6 rounded-lg shadow-md">
+            <div className="bg-white p-1 m-2 md:p-6 rounded-lg shadow-md">
                 <p>Pour toute question, recette ou demande, veuillez contacter directement</p>
                 <p className=" mb-3 md:mb-6"><strong>Mikael Hertz</strong> :</p>
                 <ul className="md:space-y-2 mb-3 md:mb-6">
@@ -26,7 +26,7 @@ export default function Contact() {
             <ProductSlider urlRoot="process" products={processUrls} />
 
 
-            <div className="bg-white p-2 md:p-8 rounded-lg shadow-md md:mt-8">
+            <div className="bg-white m-1 p-2 md:p-8 rounded-lg shadow-md md:mt-8">
                 <p className="mb-6">
                     Nous livrons nos produits de poisson fumé et d'élevage de qualité supérieure dans la région lyonnaise avant Noël et Pâques.
                 </p>

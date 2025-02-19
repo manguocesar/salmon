@@ -25,7 +25,7 @@ export default function Page() {
     const { addToCart } = useCart()
     const handleAddToCart = (product: Product) => {
         if (product.available) {
-            addToCart({ id: product.id, name: product.name, price: product.price, quantity: 1 })
+            addToCart({ id: product.id, name: product.name, shortName: product.shortName, price: product.price, quantity: 1 })
         } else {
             toast.error("Ce produit est actuellement en rupture de stock")
         }
@@ -70,12 +70,13 @@ export default function Page() {
         case 'truite-fumee':
             images = truitesUrls
             break;
+        case 'couteau':
+            images = products.map((product) => product.img)
+            break;
         default:
             images = products.map((product) => product.img)
             break;
     }
-    console.log(images);
-
 
     const product = products.find((product) => product.url === slug)
 
@@ -88,7 +89,6 @@ export default function Page() {
             <ProductHeader />
             <div className=" bg-gray-100 space-y-3 p-2 md:grid-cols-2 lg:grid-cols-2 gap-3 md:gap-8 shadow-lg rounded-md">
                 <ProductSlider urlRoot="products" products={images} />
-
                 <div className="flex flex-col">
                     <h2 className="text-xl md:text-3xl text-orange-600 font-bold md:mb-4">{product.name}</h2>
                     <p className="text-lg md:text-2xl text-orange-500 font-semibold md:mb-4">{product.price} €</p>
@@ -106,14 +106,13 @@ export default function Page() {
                     Ajouter au Panier
                 </button>
                 <Link href="/cart" className="flex text-black">
-                    <button className="mx-auto w-8/12 bg-gray-600 text-white px-6 py-3 rounded-lg text-lg font-semibold hover:bg-orange-700 transition duration-300"
+                    <button className="mx-auto w-8/12 bg-gray-500 text-white px-6 py-3 rounded-lg text-lg font-semibold hover:bg-orange-700 transition duration-300"
                     >
                         Voir mon panier
                     </button>
                 </Link>
             </div>
             <ProductSlider urlRoot="products" products={images} />
-
         </div>
     )
 }

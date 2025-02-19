@@ -13,7 +13,7 @@ export const Header = () => {
     return (
         <header className="text-white py-2 md:p-4 bg-cover bg-center bg-[url('/bg/bg-salmon-6.avif')] ">
             <nav>
-                <ul className="flex md:container mx-auto justify-around items-center md:ml-0 md:space-x-4">
+                <ul className="flex md:container mx-3 justify-around items-center md:ml-0 md:space-x-4">
                     <Link href="/" className={cn(`flex items-center`)}>
                         <Image className="rounded-xl md:w-36" src="/logo.jpg" alt="Mikael Hertz Poissons Fumés Artisanaux" width={70} height={30} />
                     </Link>
