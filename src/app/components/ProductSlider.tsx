@@ -38,14 +38,14 @@ export const ProductSlider = ({ products, urlRoot }: { products: Product[] | str
                         transform: translateX(0);
                     }
                     to {
-                        transform: translateX(-150vw);
+                        transform: translateX(-350vw);
                     }
                 }
                 .slide-left {
-                    animation: slideLeft 30s linear infinite;
+                    animation: slideLeft 50s linear infinite;
                 }
             `}</style>
-            <div className="flex flex-row my-6 space-x-6 w-[1200vw] md:w-[800vw] slide-left">
+            <div className="flex flex-row my-6 space-x-6 w-[1400vw] md:w-[2000vw] slide-left">
                 {renderProducts(products)}
             </div>
         </>

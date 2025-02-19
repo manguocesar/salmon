@@ -19,22 +19,22 @@ export const Header = () => {
                 </Link>
                 <ul className="flex space-x-2 ml-3 md:ml-0 md:space-x-4">
                     <li>
-                        <Link href="/" className={`text-xl font-semibold md:text-2xl hover:text-black ${isActive('/') ? 'text-black' : ''}`}>
+                        <Link href="/" className={`text-xl font-semibold md:text-3xl hover:text-black ${isActive('/') ? 'text-black' : ''}`}>
                             Accueil
                         </Link>
                     </li>
                     <li>
-                        <Link href="/products" className={`text-xl font-semibold md:text-2xl hover:text-black ${isActive('/products') ? 'text-black' : ''}`}>
+                        <Link href="/products" className={`text-xl font-semibold md:text-3xl hover:text-black ${isActive('/products') ? 'text-black' : ''}`}>
                             Produits
                         </Link>
                     </li>
                     <li>
-                        <Link href="/contact" className={`text-xl font-semibold md:text-2xl hover:text-black ${isActive('/contact') ? 'text-black' : ''}`}>
+                        <Link href="/contact" className={`text-xl font-semibold md:text-3xl hover:text-black ${isActive('/contact') ? 'text-black' : ''}`}>
                             Contact
                         </Link>
                     </li>
                     <li>
-                        <Link href="/cart" className={`text-xl font-semibold md:text-2xl hover:text-black ${isActive('/cart') ? 'text-black' : ''}`}>
+                        <Link href="/cart" className={`text-xl font-semibold md:text-3xl hover:text-black ${isActive('/cart') ? 'text-black' : ''}`}>
                             Panier
                         </Link>
                     </li>
