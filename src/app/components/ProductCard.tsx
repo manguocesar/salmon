@@ -24,8 +24,8 @@ export const ProductCard = ({ product }: { product: Product }) => {
                 height={200}
                 className="w-full md:h-48 mb-2 md:mb-4 rounded-lg"
             />
-            <h3 className="text-orange-500 text-xl font-semibold mb-2">{product.name}</h3>
-            <p className="text-gray-600 mb-4 text-justify">
+            <h3 className="text-orange-500 text-xl font-semibold mb-1 md:mb-2">{product.name}</h3>
+            <p className="text-gray-600 mb-2 md:mb-4 text-justify">
                 {product.description}
             </p>
             <button

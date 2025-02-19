@@ -78,7 +78,7 @@ export default function Cart() {
                             </thead>
                             <tbody className="bg-white divide-y divide-gray-200">
                                 {cart.map((item) => (
-                                    <tr key={item.id}>
+                                    <tr className="" key={item.id}>
                                         <td className="block md:hidden text-orange-600 font-semibold px-1 md:px-6 py-4 whitespace-pre-wrap">{item.shortName}</td>
                                         <td className="hidden md:block text-orange-600 font-semibold px-2  md:px-6 py-4 whitespace-pre-wrap">{item.name}</td>
                                         <td className="md:px-6 md:py-4 whitespace-nowrap">
@@ -109,7 +109,7 @@ export default function Cart() {
                         </table>
                     </div>
                     <div className="flex flex-col items-center m-4 md:mt-8">
-                        <p className="text-xl text-black font-semibold">Total : {getCartTotal().toFixed(2)} €</p>
+                        <p className="text-xl text-black font-semibold">Total TTC : {getCartTotal().toFixed(2)} €</p>
                         <p className="text-sm text-gray-600 mt-2">
                             Date de livraison estimée : 16 Avril 2025
                         </p>

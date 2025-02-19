@@ -6,11 +6,11 @@ import { products } from "../constants/products";
 export default function Contact() {
     return (
         <div className="max-w-2xl text-black mx-auto">
-            <h1 className="text-orange-600 text-3xl font-bold my-4 text-center">Contactez moi</h1>
+            <h1 className="text-orange-600 text-3xl font-bold my-2 md:my-4 text-center">Contactez moi</h1>
             <div className="bg-white p-2 md:p-6 rounded-lg shadow-md">
                 <p>Pour toute question, recette ou demande, veuillez contacter directement</p>
-                <p className="mb-6"><strong>Mikael Hertz</strong> :</p>
-                <ul className="space-y-2 mb-6">
+                <p className=" mb-3 md:mb-6"><strong>Mikael Hertz</strong> :</p>
+                <ul className="md:space-y-2 mb-3 md:mb-6">
                     <li>
                         <strong>Téléphone :</strong> 06 62 19 63 58
                     </li>
