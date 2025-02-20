@@ -4,7 +4,7 @@ export const products = [
     url: "saumonFumeEntier",
     name: "A - Saumon Fumé Entier",
     shortName: "Fumé Entier",
-    img: "saumon-fume-entier-1.jpg",
+    img: "saumonFumeEntier1.jpg",
     price: 65,
     description:
       "Délicatement fumé au bois de hetre traditionnel, un saumon témoin de savoir-faire artisanal.",
