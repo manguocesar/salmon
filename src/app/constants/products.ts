@@ -1,10 +1,10 @@
 export const products = [
   {
     id: 1,
-    url: "saumon-fume-entier",
+    url: "saumonFumeEntier",
     name: "A - Saumon Fumé Entier",
     shortName: "Fumé Entier",
-    img: "saumon-fume-entier-1.jpg",
+    img: "saumonFumeEntier1.jpg",
     price: 65,
     description:
       "Délicatement fumé au bois de hetre traditionnel, un saumon témoin de savoir-faire artisanal.",
@@ -16,10 +16,10 @@ export const products = [
   },
   {
     id: 2,
-    url: "saumon-fume-pretranche",
+    url: "saumonFumePretranche",
     name: "B - Saumon Fumé Prétranché",
     shortName: "Fumé Tranché",
-    img: "saumon-fume-pretranche-1.jpg",
+    img: "saumonFumePretranche1.jpg",
     price: 65,
     description: "Doucement fumées à la perfection en fines tranches.",
     available: true,
@@ -30,10 +30,10 @@ export const products = [
   },
   {
     id: 3,
-    url: "coeur-saumon",
+    url: "coeurSaumon",
     name: "C - Cœur de Saumon",
     shortName: "Cœur de Saumon",
-    img: "coeur-saumon-1.png",
+    img: "coeurSaumon1.png",
     price: 19,
     description:
       "Moelleux, tendre et fondant. A couper en lamelles ou en cubes puis déguster sans modération !",
@@ -45,10 +45,10 @@ export const products = [
   },
   {
     id: 4,
-    url: "saumon-fume-pave",
+    url: "saumonFumePave",
     name: "D - Saumon Fumé Pavé",
     shortName: "Saumon Fumé pavé",
-    img: "saumon-fume-pave-1.webp",
+    img: "saumonFumePave1.webp",
     price: 50,
     description:
       "Saumon fumé coupé dans la largeure du filet préparé artisanalement.",
@@ -60,10 +60,10 @@ export const products = [
   },
   {
     id: 5,
-    url: "saumon-gravad-entier",
+    url: "saumonGravadEntier",
     name: "E - Saumon Mariné (gravad lax)",
     shortName: "Mariné Entier",
-    img: "saumon-gravad-entier-2.jpg",
+    img: "saumonGravadEntier2.jpg",
     price: 65,
     description:
       "Recette traditionnelle scandinave, un équilibre délicat de saveurs.",
@@ -75,10 +75,10 @@ export const products = [
   },
   {
     id: 6,
-    url: "saumon-gravad-pretranche",
+    url: "saumonGravadPretranche",
     name: "F - Saumon Mariné (gravad lax) Prétranché",
     shortName: "Mariné Tranché",
-    img: "saumon-gravad-pretranche-1.jpg",
+    img: "saumonGravadPretranche1.jpg",
     price: 65,
     description:
       "Sel, poivres, sucre et aneth en accord parfait sur fines tranches.",
@@ -90,11 +90,11 @@ export const products = [
   },
   {
     id: 7,
-    url: "saumon-fume-chaud-poivre-entier",
+    url: "saumonFumeChaudPoivreEntier",
     name: "G - Saumon Mi-Cuit Poivre",
     shortName: "Mi-Cuit Poivre Entier",
-    img: "saumon-fume-chaud-poivre-entier-1.avif",
-    video: "/saumon-fume-chaud-poivre-pave/fumeChaud.mp4",
+    img: "saumonFumeChaudPoivreEntier1.avif",
+    video: "/saumonFumeChaudPoivrePave/fumeChaud.mp4",
     price: 65,
     description:
       "Fumer à chaud pour conserver l'humidité, fillet enrobé de poivre noir concassé.",
@@ -106,11 +106,11 @@ export const products = [
   },
   {
     id: 8,
-    url: "saumon-fume-chaud-poivre-pave",
+    url: "saumonFumeChaudPoivrePave",
     name: "H - Saumon Mi-Cuit Poivre Pavé",
     shortName: "Mi-Cuit Poivre Pavé",
-    img: "saumon-fume-chaud-poivre-pave-1.webp",
-    video: "/saumon-fume-chaud-poivre-pave/fumeChaud.mp4",
+    img: "saumonFumeChaudPoivrePave1.webp",
+    video: "/saumonFumeChaudPoivrePave/fumeChaud.mp4",
     price: 50,
     description: "Fumé à chaud, saveurs fortes & relevées.",
     available: true,
@@ -121,10 +121,10 @@ export const products = [
   },
   {
     id: 9,
-    url: "saumon-fume-chaud-nature-pave",
+    url: "saumonFumeChaudNaturePave",
     name: "I - Saumon Mi-Cuit Nature Pavé",
     shortName: "Mi-Cuit Nature",
-    img: "saumon-fume-chaud-nature.jpg",
+    img: "saumonFumeChaudNature.jpg",
     price: 50,
     description:
       "Fumé à chaud Nature, laissant les saveurs naturelles du poisson s'exprimer pleinement.",
@@ -139,7 +139,7 @@ export const products = [
     url: "fletan",
     name: "J - Flétan Fumé Prétranché",
     shortName: "Flétan",
-    img: "fletan-1.jpg",
+    img: "fletan1.jpg",
     price: 65,
     description:
       "Lentement fumé rehaussant ses saveurs naturelles pour un goût riche.",
@@ -154,7 +154,7 @@ export const products = [
     url: "truite",
     name: "K - Truites Fumées",
     shortName: "Truites",
-    img: "truite-1.jpeg",
+    img: "truite1.jpeg",
     price: 25,
     description: "Truite fumée au bois d'hêtre puis filetée manuellement.",
     available: true,
@@ -168,7 +168,7 @@ export const products = [
     url: "crevettes",
     name: "L - Crevettes Décortiquées",
     shortName: "Crevettes",
-    img: "crevettes-1.jpg",
+    img: "crevettes1.jpg",
     video: "/crevettes/crevettes.mp4",
     price: 15,
     description:
@@ -181,7 +181,7 @@ export const products = [
   },
   {
     id: 13,
-    url: "couteau-saumon",
+    url: "couteau",
     name: "M - Couteau Saumon",
     shortName: "Couteau",
     img: "couteau.png",

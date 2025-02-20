@@ -36,31 +36,31 @@ export default function Page() {
 
     let images: string[]
     switch (slug) {
-        case 'saumon-fume-entier':
+        case 'saumonFumeEntier':
             images = saumonFumeEntierUrls
             break;
-        case 'saumon-fume-pretranche':
+        case 'saumonFumePretranche':
             images = saumonFumePretrancheUrls
             break;
-        case 'coeur-saumon':
+        case 'coeurSaumon':
             images = coeurSaumonUrls
             break;
-        case 'saumon-fume-pave':
+        case 'saumonFumePave':
             images = saumonFumePaveUrls
             break;
-        case 'saumon-gravad-entier':
+        case 'saumonGravadEntier':
             images = saumonGravadEntierUrls
             break;
-        case 'saumon-gravad-pretranche':
+        case 'saumonGravadPretranche':
             images = saumonGravadPretrancheUrls
             break;
-        case 'saumon-fume-chaud-poivre-entier':
+        case 'saumonFumeChaudPoivreEntier':
             images = saumonFumeChaudPoivreEntierPUrls
             break;
-        case 'saumon-fume-chaud-poivre-pave':
+        case 'saumonFumeChaudPoivrePave':
             images = saumonFumeChaudPoivrePaveUrls
             break;
-        case 'saumon-fume-chaud-nature-pave':
+        case 'saumonFumeChaudNaturePave':
             images = saumonFumeChaudNaturePaveUrls
             break;
         case 'crevettes':
