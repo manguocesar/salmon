@@ -51,7 +51,7 @@ export const ProductSlider = ({ products, urlRoot, isArrayMixed }: { products: P
             <style jsx>{`
                 @keyframes slideLeft {
                     from {
-                        transform: translateX(0);
+                        transform: translateX(-10vw);
                     }
                     to {
                         transform: translateX(-350vw);
