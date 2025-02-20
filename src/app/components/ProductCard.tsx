@@ -18,7 +18,7 @@ export const ProductCard = ({ product }: { product: Product }) => {
     return (
         <div key={product.id} className="bg-white mx-2 p-2 md:p-6 rounded-lg shadow-md">
             <Image
-                src={`/products/${product.img}`}
+                src={`/${product.url}/${product.img}`}
                 alt={product.name}
                 width={300}
                 height={200}

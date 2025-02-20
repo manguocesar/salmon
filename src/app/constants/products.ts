@@ -109,7 +109,7 @@ export const products = [
     url: "saumonFumeChaudPoivrePave",
     name: "H - Saumon Mi-Cuit Poivre Pavé",
     shortName: "Mi-Cuit Poivre Pavé",
-    img: "saumon-fume-chaud-poivre-pave-1.webp",
+    img: "saumonFumeChaudPoivrePave1.jpeg",
     video: "/saumonFumeChaudPoivrePave/fumeChaud.mp4",
     price: 50,
     description: "Fumé à chaud, saveurs fortes & relevées.",
