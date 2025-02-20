@@ -16,7 +16,7 @@ export async function POST(req: NextRequest) {
     .map((item) => item.price * item.quantity)
     .reduce((a, b) => a + b, 0);
 
-  let options =
+  const options =
     totalValue < freeDelivreryThreshold
       ? [
           { shipping_rate: "shr_1QuerSAZSYffeW1tgi7xnZid" }, //Mercredi 16 Avril de 12 & 18 heure collecte gratuite à Saint Cyr
