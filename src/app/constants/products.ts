@@ -94,7 +94,7 @@ export const products = [
     name: "G - Saumon Mi-Cuit Poivre",
     shortName: "Mi-Cuit Poivre Entier",
     img: "saumon-fume-chaud-poivre-entier-1.avif",
-    video: "/fume-chaud-pave/fumeChaud.MOV",
+    video: "/fume-chaud-poivre-pave/fumeChaud.mp4",
     price: 65,
     description:
       "Fumer à chaud pour conserver l'humidité, fillet enrobé de poivre noir concassé.",
@@ -110,7 +110,7 @@ export const products = [
     name: "H - Saumon Mi-Cuit Poivre Pavé",
     shortName: "Mi-Cuit Poivre Pavé",
     img: "saumon-fume-chaud-poivre-pave-1.webp",
-    video: "/fume-chaud-pave/fumeChaud.MOV",
+    video: "/fume-chaud-poivre-pave/fumeChaud.mp4",
     price: 50,
     description: "Fumé à chaud, saveurs fortes & relevées.",
     available: true,
@@ -169,6 +169,7 @@ export const products = [
     name: "L - Crevettes Décortiquées",
     shortName: "Crevettes",
     img: "crevettes-1.jpg",
+    video: "crevettes.mp4",
     price: 15,
     description:
       "Soigneusement sélectionnées et préparées, délicieuses crevettes témoins de qualité.",

@@ -9,13 +9,17 @@ import { products } from "./constants/products";
 import { processUrls } from "./constants/processUrls";
 
 export default async function Home() {
+
+  const images = products.map((product) => product.img);
+
+
   return (
     <div className="md:space-y-8 text-black">
       <DiscoverProducts />
       <ProductSlider urlRoot="process" isArrayMixed={false} products={processUrls} />
       <ArtisanalProcessus />
       <ArtisanalSelection />
-      <ProductSlider urlRoot="products" isArrayMixed={false} products={products} />
+      <ProductSlider urlRoot="products" isArrayMixed={false} products={images} />
       <ArtisanalPromise />
     </div>
   )

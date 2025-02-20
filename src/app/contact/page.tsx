@@ -3,6 +3,10 @@ import { processUrls } from "../constants/processUrls";
 import { products } from "../constants/products";
 
 export default function Contact() {
+
+    const images = products.map((product) => product.img);
+
+
     return (
         <div className="max-w-2xl text-black mx-auto">
             <h1 className="text-orange-600 text-3xl font-bold my-2 md:my-4 text-center">Contactez moi</h1>
@@ -46,7 +50,7 @@ export default function Contact() {
                     N'hésitez pas à nous contacter pour toute question sur nos produits ou pour passer votre commande. Nous sommes là pour vous fournir du poisson de la meilleure qualité pour vos délices culinaires !
                 </p>
             </div>
-            <ProductSlider isArrayMixed={false} urlRoot="products" products={products} />
+            <ProductSlider isArrayMixed={false} urlRoot="products" products={images} />
 
         </div>
     )

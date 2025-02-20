@@ -4,6 +4,9 @@ import { ProductSlider } from './components/ProductSlider';
 import { products } from './constants/products';
 
 export default async function NotFound() {
+
+    const images = products.map((product) => product.img);
+
     return (
         <main className="flex h-full flex-col items-center justify-center gap-2">
             <h2 className="text-3xl text-black font-semibold">Page inaccessible</h2>
@@ -13,7 +16,7 @@ export default async function NotFound() {
             >
                 Retour à la page d'accueil
             </Link>
-            <ProductSlider isArrayMixed={false} urlRoot="products" products={products} />
+            <ProductSlider isArrayMixed={false} urlRoot="products" products={images} />
         </main>
     );
 }

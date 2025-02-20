@@ -13,6 +13,9 @@ const Success = () => {
         runFireworks();
     }, []);
 
+    const images = products.map((product) => product.img);
+
+
     return (
         <div className="text-2xl text-center text-black w-9/12 flex justify-center items-center flex-col mx-auto">
             <Image className="my-4 rounded-xl" src="/logo.jpg" alt="Mikael Hertz Poissons Fumés Artisanaux" width={400} height={400} />
@@ -30,7 +33,7 @@ const Success = () => {
                     Retour à l'Accueil
                 </button>
             </Link>
-            <ProductSlider isArrayMixed={false} urlRoot="products" products={products} />
+            <ProductSlider isArrayMixed={false} urlRoot="products" products={images} />
         </div>
     )
 }

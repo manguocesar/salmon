@@ -13,22 +13,19 @@ const shuffleArray = (array: string[], randomNum: number) => {
 
 
 
-const renderProducts = (products: (Product | string)[], urlRoot: string) => {
+const renderProducts = (urls: (string)[], urlRoot: string) => {
 
-    const isProductArray = (arr: (Product | string)[]) => {
-        return arr.length > 0 && typeof arr[0] === 'object' && 'url' in arr[0];
-    };
+    console.log("saumon-fume-chaud-poivre-pave", urlRoot);
 
-    const isProduct = isProductArray(products as (Product | string)[]);
-    return products.concat(products).map((product, id) => {
-        const src = isProduct ? `/products/${(product as Product).img}` : `/${urlRoot}/${product}`;
-        const alt = isProduct ? (product as Product).name || 'fishProduct' : 'fishProduct';
+    return urls.map((url, id) => {
+        const src = `/${urlRoot}/${url}`;
+        console.log("src", src);
 
         return (
             <Image
                 key={id}
                 src={src}
-                alt={alt}
+                alt={url + id}
                 width={300}
                 height={300}
                 className="h-40 md:h-64 rounded-lg hover:border-2 hover:border-orange-600"
@@ -37,7 +34,7 @@ const renderProducts = (products: (Product | string)[], urlRoot: string) => {
     });
 };
 
-export const ProductSlider = ({ products, urlRoot, isArrayMixed }: { products: Product[] | string[]; urlRoot: string, isArrayMixed: boolean }) => {
+export const ProductSlider = ({ products, urlRoot, isArrayMixed }: { products: string[]; urlRoot: string, isArrayMixed: boolean }) => {
 
     const [randomNum, setRandomNum] = useState(0.5);
 

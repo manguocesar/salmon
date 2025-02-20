@@ -117,7 +117,7 @@ export default function Page() {
                     </button>
                 </Link>
             </div>
-            <ProductSlider isArrayMixed urlRoot="products" products={images} />
+            <ProductSlider isArrayMixed urlRoot="saumon-fume-chaud-poivre-pave" products={images} />
         </div>
     )
 }
