@@ -1,8 +1,5 @@
 'use client';
 import Image from "next/image";
-import { Product } from "../types/products";
-import { useEffect, useState } from "react";
-
 
 const renderProducts = (urls: (string)[], urlRoot: string) => {
 
