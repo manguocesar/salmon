@@ -101,7 +101,7 @@ export default function Cart() {
                                         <td className="hidden md:block text-black px-2 md:px-6 py-4 whitespace-nowrap">{(item.price * item.quantity).toFixed(2)} €</td>
                                         <td className="block md:hidden text-black pr-1 md:px-6 py-4 whitespace-nowrap">{(item.price * item.quantity)}€</td>
                                         <td className="md:px-6 py-4 whitespace-nowrap">
-                                            <Delete onClick={() => removeFromCart(item)} className="ml-3 text-red-700 hover:text-red-900" />
+                                            <Delete onClick={() => removeFromCart(item)} className="ml-3 text-red-700 cursor-pointer hover:text-red-900" />
                                         </td>
                                     </tr>
                                 ))}
