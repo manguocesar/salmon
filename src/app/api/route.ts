@@ -7,9 +7,25 @@ const stripe = new Stripe(process.env.NEXT_PUBLIC_STRIPE_SECRET_KEY);
 
 import { NextRequest } from "next/server";
 import { CartItem, LineItem } from "../types/products";
+import { freeDelivreryThreshold } from "../constants/enums";
 
 export async function POST(req: NextRequest) {
   const body: CartItem[] = await req.json();
+
+  const totalValue = body
+    .map((item) => item.price * item.quantity)
+    .reduce((a, b) => a + b, 0);
+
+  let options =
+    totalValue < freeDelivreryThreshold
+      ? [
+          { shipping_rate: "shr_1QuerSAZSYffeW1tgi7xnZid" }, //Mercredi 16 Avril de 12 & 18 heure collecte gratuite à Saint Cyr
+          { shipping_rate: "shr_1Qufi0AZSYffeW1tF3iU2018" }, //Commande inférieure à 250€ - livraison Jeudi 17 Avril 2025
+        ]
+      : [
+          { shipping_rate: "shr_1QuerSAZSYffeW1tgi7xnZid" }, //Mercredi 16 Avril de 12 & 18 heure collecte gratuite à Saint Cyr
+          { shipping_rate: "shr_1QufiQAZSYffeW1txqW3r6nz" }, //Commande supérieur à 250€ - livraison gratuite Jeudi 17 Avril 2025
+        ];
 
   const items: LineItem[] = body.map((item: CartItem) => ({
     price_data: {
@@ -44,11 +60,7 @@ export async function POST(req: NextRequest) {
       },
       locale: "fr",
       billing_address_collection: "required" as "auto" | "required",
-      shipping_options: [
-        { shipping_rate: "shr_1QtTI2AZSYffeW1tvIkJZMx4" },
-        { shipping_rate: "shr_1LAZVmAZSYffeW1tdCdnyBh1" },
-        { shipping_rate: "shr_1QtTFcAZSYffeW1tIhEhf9tx" },
-      ],
+      shipping_options: options,
       line_items: items,
       success_url: `${process.env.NEXT_PUBLIC_URL}success`,
       cancel_url: `${process.env.NEXT_PUBLIC_URL}cancel`,
