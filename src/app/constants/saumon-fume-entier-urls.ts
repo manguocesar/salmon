@@ -1,5 +1,5 @@
 export const saumonFumeEntierUrls = [
-  "saumonFumeEntier1.jpg",
+  "saumon-fume-entier-1.jpg",
   "saumon-fume-entier-2.jpg",
   "saumon-fume-entier-3.jpg",
   "saumon-fume-entier-4.avif",
