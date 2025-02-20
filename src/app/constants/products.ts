@@ -8,7 +8,7 @@ export const products = [
     imgUrl: "saumonFumeEntier/saumon-fume-entier-1.jpg",
     price: 60,
     description:
-      "Délicatement fumé au bois de hetre traditionnel, un saumon témoin de savoir-faire artisanal.",
+      "Fumage traditionnel au bois de hêtre, un saumon témoin de savoir-faire artisanal.",
     available: true,
     details:
       "Filet de saumon fumé entier. Saumon élevé en Norvège, fumé au Danmark.. Poids : env 1kg. Salmo salar. Fumé au bois de hêtre à l'atelier au Danmark. Le saumon fumé entier est idéal pour les grandes tablées, les buffets, les brunchs, les fêtes de famille ou les réceptions. Il est aussi parfait pour les traiteurs, les restaurateurs et les hôtels. Le fumage à froid (entre 22 et 24°c) au bois de hêtre de façon traditionnelle. Cette technique permet d'étirer les fibres du poisson, ce qui lui procure une texture plus sèche et un goût de fumage plus prononcé. Cette technique permet également d'éliminer une partie plus importante des graisses (3 à 4%) par rapport à un fumage classique. Il est tranché à la main afin de mieux respecter sa chair si caractéristique.",
@@ -23,7 +23,7 @@ export const products = [
     img: "saumon-fume-pretranche-1.jpg",
     imgUrl: "saumonFumePretranche/saumon-fume-pretranche-1.jpg",
     price: 65,
-    description: "Doucement fumées à la perfection en fines tranches.",
+    description: "Fumé minutieusement puis coupé en fines tranches.",
     available: true,
     details:
       "Saumon fumé Prétranché. 4 paquets de 250g. Saumon élevé en Norvège, fumé au Danmark.. Poids : 1kg (4*250g). Salmo salar. Fumé au bois de hêtre à l'atelier au Danmark. Sans peau. Le saumon fumé prétranché est idéal pour les petites tablées, les buffets, les brunchs, les fêtes de famille ou les réceptions. Il est aussi parfait pour les traiteurs, les restaurateurs et les hôtels. Il est prêt à être dégusté, il ne reste plus qu’à le sortir de son emballage et à le disposer sur un plateau. Le fumage à froid (entre 22 et 24°c) au bois de hêtre de façon traditionnelle. Cette technique permet d'étirer les fibres du poisson, ce qui lui procure une texture plus sèche et un goût de fumage plus prononcé. Cette technique permet également d'éliminer une partie plus importante des graisses (3 à 4%) par rapport à un fumage classique. Il est tranché à la main afin de mieux respecter sa chair si caractéristique.",
@@ -39,7 +39,7 @@ export const products = [
     imgUrl: "coeurSaumon/coeur-saumon-1.png",
     price: 19,
     description:
-      "Moelleux, tendre et fondant. A couper en lamelles ou en cubes puis déguster sans modération !",
+      "Moelleuse, tendre et fondante: partie centrale du filet de saumon.",
     available: true,
     details:
       "Pavé de 200g. Le Cœur de saumon est issu de la partie la plus charnue : le meilleur du saumon. Saumon élevé en Norvège, fumé au Danmark. Conditions d'utilisation : Ouvrir le sachet 20 mn avant de consommer, à consommer sous 5 jours après ouverture en conservant au froid. Le cœur de saumon est idéal pour les petites tablées, les buffets, les brunchs, les fêtes de famille ou les réceptions. Il est prêt à être dégusté, il ne reste plus qu’à le sortir de son emballage et à le disposer sur un plateau. ",
@@ -55,7 +55,7 @@ export const products = [
     imgUrl: "saumonFumePave/saumon-fume-pave-1.webp",
     price: 48,
     description:
-      "Saumon fumé coupé dans la largeure du filet préparé artisanalement.",
+      "Saumon fumé coupé dans la largeure du filet, de la dorsale aux côtes.",
     available: true,
     details:
       "Quatre pavés de 200 grammes chaqun. Saumon élevé en Norvège, fumé au Danmark. Poids : 800g (4*200g). Salmo salar. Fumé au bois de hêtre. Produit frais – peut être congelé. DLC : 10 jours après ouverture ou sortie du congelateur (même si on sait qu’il sera engloutit bien avant. Conditionné sous vide pour une meilleure conservation. Le saumon fumé pavé est idéal pour les petites tablées, les buffets, les brunchs, les fêtes de famille ou les réceptions. Il est aussi parfait pour les traiteurs, les restaurateurs et les hôtels. Il est prêt à être dégusté, il ne reste plus qu’à le sortir de son emballage et à le disposer sur un plateau. Le fumage à froid (entre 22 et 24°c) au bois de hêtre de façon traditionnelle. Cette technique permet d'étirer les fibres du poisson, ce qui lui procure une texture plus sèche et un goût de fumage plus",
@@ -71,10 +71,10 @@ export const products = [
     imgUrl: "saumonGravadEntier/saumon-gravad-entier-2.jpg",
     price: 65,
     description:
-      "Recette traditionnelle scandinave, un équilibre délicat de saveurs.",
+      "Recette traditionnelle scandinave, un filet délicatement équilibré.",
     available: true,
     details:
-      "Le gravlax filet entier vous invite à découvrir le saumon autrement. Filet entier env. 1 kg. Saumon élevé en Norvège, fumé au Danmark. Recette d'origine scandinave : poisson frais légèrement salé et sucré, puis mariné à l'huile d'olive avec des baies roses et de l'aneth. Rajoutez un savoir-faire artisanal acquis depuis plus de 40 ans, un saumon de haute qualité... et vous obtenez une vraie gourmandise pour les amoureux du saumon et de son fondant! Le gravlax est idéal pour les grandes tablées, les buffets, les brunchs, les fêtes de famille ou les réceptions. Il est aussi parfait pour les traiteurs, les restaurateurs et les hôtels. Il est prêt à être dégusté, il ne reste plus qu’à le sortir de son emballage et à le disposer sur un plateau.",
+      "Le gravlax filet entier vous invite à découvrir le saumon autrement. Gravlax (saumon enterré) est issu du mot scandinave gräva/grave « creuser » et lax/laks, « saumon ». Filet entier env. 1 kg. Saumon élevé en Norvège, fumé au Danmark. Recette d'origine scandinave : poisson frais légèrement salé et sucré, puis mariné à l'huile d'olive avec des baies roses et de l'aneth. Rajoutez un savoir-faire artisanal acquis depuis plus de 40 ans, un saumon de haute qualité... et vous obtenez une vraie gourmandise pour les amoureux du saumon et de son fondant! Le gravlax est idéal pour les grandes tablées, les buffets, les brunchs, les fêtes de famille ou les réceptions. Il est aussi parfait pour les traiteurs, les restaurateurs et les hôtels. Il est prêt à être dégusté, il ne reste plus qu’à le sortir de son emballage et à le disposer sur un plateau.",
     consumption:
       "Consommer dans les 10 jours après ouverture. Produit frais – peut être congelé. Conditionné sous vide pour une meilleure conservation.  Produit frais – peut être congelé. Conditionné sous vide pour une meilleure conservation. ",
   },
@@ -90,7 +90,7 @@ export const products = [
       "Sel, poivres, sucre et aneth en accord parfait sur fines tranches.",
     available: true,
     details:
-      "Le gravlax prétranché vous invite à découvrir le saumon autrement. Saumon élevé en Norvège, fumé au Danmark. 4 paquets pretranchés de 250gr. Recette d'origine scandinave : poisson frais légèrement salé et sucré, puis mariné à l'huile d'olive avec des baies roses et de l'aneth. Rajoutez un savoir-faire artisanal acquis depuis plus de 40 ans, un saumon de haute qualité... et vous obtenez une vraie gourmandise pour les amoureux du saumon et de son fondant !",
+      "Le gravlax prétranché vous invite à découvrir le saumon autrement. Gravlax (saumon enterré) est issu du mot scandinave gräva/grave « creuser » et lax/laks, « saumon ». Saumon élevé en Norvège, fumé au Danmark. 4 paquets pretranchés de 250gr. Recette d'origine scandinave : poisson frais légèrement salé et sucré, puis mariné à l'huile d'olive avec des baies roses et de l'aneth. Rajoutez un savoir-faire artisanal acquis depuis plus de 40 ans, un saumon de haute qualité... et vous obtenez une vraie gourmandise pour les amoureux du saumon et de son fondant !",
     consumption:
       "Consommer dans les 10 jours après ouverture. Produit frais – peut être congelé. Conditionné sous vide pour une meilleure conservation.  Produit frais – peut être congelé. Conditionné sous vide pour une meilleure conservation. ",
   },
@@ -105,10 +105,10 @@ export const products = [
     video: "/saumonFumeChaudPoivrePave/fumeChaud.mp4",
     price: 60,
     description:
-      "Fumer à chaud pour conserver l'humidité, fillet enrobé de poivre noir concassé.",
+      "Fumer à plus de 50° pour un goût marqué puis enrobé de poivre noir concassé.",
     available: true,
     details:
-      "Filet entier environ 1kg. Saumon élevé en Norvège, fumé au Danmark. Son extrémité est légerement caramélisée, avec un flan plus ou moins gras et une partie très charnue. Cette partie du poisson, fondante en bouche, est parfaite à manger seule ou à ajouter dans une salade ou des pâtes. Le saumon fumé à chaud au poivre entier est idéal pour les grandes tablées, les buffets, les brunchs, les fêtes de famille ou les réceptions. Il est aussi parfait pour les traiteurs, les restaurateurs et les hôtels. Il est prêt à être dégusté, il ne reste plus qu’à le sortir de son emballage et à le disposer sur un plateau.",
+      "Plus feuilleté et a une couleur plus claire que le saumon fumé à froid. Filet entier environ 1kg. Saumon élevé en Norvège, fumé au Danmark. Son extrémité est légerement caramélisée, avec un flan plus ou moins gras et une partie très charnue. Cette partie du poisson, fondante en bouche, est parfaite à manger seule ou à ajouter dans une salade ou des pâtes. Le saumon fumé à chaud au poivre entier est idéal pour les grandes tablées, les buffets, les brunchs, les fêtes de famille ou les réceptions. Il est aussi parfait pour les traiteurs, les restaurateurs et les hôtels. Il est prêt à être dégusté, il ne reste plus qu’à le sortir de son emballage et à le disposer sur un plateau.",
     consumption:
       "Consommer dans les 10 jours après ouverture. Produit frais – peut être congelé. Conditionné sous vide pour une meilleure conservation.  Produit frais – peut être congelé. Conditionné sous vide pour une meilleure conservation. ",
   },
@@ -121,10 +121,11 @@ export const products = [
     imgUrl: "saumonFumeChaudPoivrePave/saumon-fume-chaud-poivre-pave-1.jpeg",
     video: "/saumonFumeChaudPoivrePave/fumeChaud.mp4",
     price: 48,
-    description: "Fumé à chaud, saveurs fortes & relevées.",
+    description:
+      "Fumé à chaud, poivré puis coupé en pavé: saveurs fortes & relevées.",
     available: true,
     details:
-      "Quatre paqués de 200grammes. 800 grammes. Saumon élevé en Norvège, fumé au Danmark. Son extrémité est caramélisée, avec un flan plus ou moins gras et une partie très charnue. Cette partie du poisson, fondante en bouche, est parfaite à manger seule ou à ajouter en salade",
+      "Plus feuilleté et a une couleur plus claire que le saumon fumé à froid. Quatre paqués de 200grammes. 800 grammes. Saumon élevé en Norvège, fumé au Danmark. Son extrémité est caramélisée, avec un flan plus ou moins gras et une partie très charnue. Cette partie du poisson, fondante en bouche, est parfaite à manger seule ou à ajouter en salade",
     consumption:
       "Consommer dans les 10 jours après ouverture. Produit frais – peut être congelé. Conditionné sous vide pour une meilleure conservation.  Produit frais – peut être congelé. Conditionné sous vide pour une meilleure conservation. ",
   },
@@ -171,9 +172,9 @@ export const products = [
     description: "Truite fumée au bois d'hêtre puis filetée manuellement.",
     available: true,
     details:
-      "Légère et savoureuse, la truite fumée peut se servir froide ou chaude. 4 paquets de 125g. Elle convient pour 2 personnes en petite entrée, ou pour une personne en plat ou entrée copieuse. Vous pouvez aussi présenter une entrée mixte, composée d’un filet de truite fumée et d’une tranche de saumon fumé.",
+      "Légère et savoureuse, la truite fumée peut se servir froide ou chaude. 4 paquets de 125g. Elle convient pour 2 personnes en petite entrée, ou pour une personne en plat ou entrée copieuse. Vous pouvez aussi présenter une entrée mixte, composée d’un filet de truite fumée et d’une tranche de saumon fumé. Nom latin: Oncorhynchus mykiss. Fermes certifiées ASC soucieuses de l'environnement et du bien-être animal Anciennes méthodes de fumage sur copeaux de bois de hêtre. Aucune utilisation d’additifs – uniquement du sel",
     consumption:
-      "Consommer dans les 10 jours après ouverture. Produit frais – peut être congelé. Conditionné sous vide pour une meilleure conservation.  Produit frais – peut être congelé. Conditionné sous vide pour une meilleure conservation. ",
+      "Consommer dans les 10 jours après ouverture. Produit frais – peut être congelé. Conditionné sous vide pour une meilleure conservation.  Produit frais – peut être congelé. Conditionné sous vide pour une meilleure conservation. Prêt à manger et pratique pour un déjeuner rapide ou un repas chaud. Peut être dégusté froid ou chaud. Excellente source de protéines",
   },
   {
     id: 12,

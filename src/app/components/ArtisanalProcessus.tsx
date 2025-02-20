@@ -15,7 +15,7 @@ export const ArtisanalProcessus = async () => {
                 Fumage perfectionné au fil des générations, utilisant des méthodes traditionnelles faisant ressortir les meilleures saveurs de chaque poisson.
             </Section>
             <Section title="Excellence Artisanale:">
-                Préparé à la main, haute qualité & attention aux détails pour chaque filet.
+                Préparé à la main, haute qualité & détails minutieux pour chaque filet.
             </Section>
         </div>
     );
