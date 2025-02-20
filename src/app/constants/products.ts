@@ -6,7 +6,7 @@ export const products = [
     shortName: "Fumé Entier",
     img: "saumon-fume-entier-1.jpg",
     imgUrl: "saumonFumeEntier/saumon-fume-entier-1.jpg",
-    price: 65,
+    price: 60,
     description:
       "Délicatement fumé au bois de hetre traditionnel, un saumon témoin de savoir-faire artisanal.",
     available: true,
@@ -53,7 +53,7 @@ export const products = [
     shortName: "Saumon Fumé pavé",
     img: "saumon-fume-pave-1.webp",
     imgUrl: "saumonFumePave/saumon-fume-pave-1.webp",
-    price: 50,
+    price: 48,
     description:
       "Saumon fumé coupé dans la largeure du filet préparé artisanalement.",
     available: true,
@@ -103,7 +103,7 @@ export const products = [
     imgUrl:
       "saumonFumeChaudPoivreEntier/saumon-fume-chaud-poivre-entier-1.avif",
     video: "/saumonFumeChaudPoivrePave/fumeChaud.mp4",
-    price: 65,
+    price: 60,
     description:
       "Fumer à chaud pour conserver l'humidité, fillet enrobé de poivre noir concassé.",
     available: true,
@@ -120,7 +120,7 @@ export const products = [
     img: "saumon-fume-chaud-poivre-pave-1.jpeg",
     imgUrl: "saumonFumeChaudPoivrePave/saumon-fume-chaud-poivre-pave-1.jpeg",
     video: "/saumonFumeChaudPoivrePave/fumeChaud.mp4",
-    price: 50,
+    price: 48,
     description: "Fumé à chaud, saveurs fortes & relevées.",
     available: true,
     details:
@@ -135,7 +135,7 @@ export const products = [
     shortName: "Mi-Cuit Nature",
     img: "saumon-fume-chaud-nature.jpg",
     imgUrl: "saumonFumeChaudNaturePave/saumon-fume-chaud-nature.jpg",
-    price: 50,
+    price: 48,
     description:
       "Fumé à chaud Nature, laissant les saveurs naturelles du poisson s'exprimer pleinement.",
     available: true,
@@ -167,7 +167,7 @@ export const products = [
     shortName: "Truites",
     img: "truite-1.jpeg",
     imgUrl: "truite/truite-1.jpeg",
-    price: 25,
+    price: 24,
     description: "Truite fumée au bois d'hêtre puis filetée manuellement.",
     available: true,
     details:
@@ -183,7 +183,7 @@ export const products = [
     img: "crevettes-1.jpg",
     imgUrl: "crevettes/crevettes-1.jpg",
     video: "/crevettes/crevettes.mp4",
-    price: 15,
+    price: 18,
     description:
       "Soigneusement sélectionnées et préparées, délicieuses crevettes témoins de qualité.",
     available: true,
