@@ -9,9 +9,7 @@ import { products } from "./constants/products";
 import { processUrls } from "./constants/processUrls";
 
 export default async function Home() {
-
-  const images = products.map((product) => { return product.img });
-
+  const images = products.map((product) => product.imgUrl);
   return (
     <div className="md:space-y-8 text-black">
       <DiscoverProducts />

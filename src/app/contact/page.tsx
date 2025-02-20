@@ -3,9 +3,7 @@ import { processUrls } from "../constants/processUrls";
 import { products } from "../constants/products";
 
 export default function Contact() {
-
-    const images = products.map((product) => product.img);
-
+    const images = products.map((product) => product.imgUrl);
     return (
         <div className="max-w-2xl text-black mx-auto">
             <h1 className="text-orange-600 text-3xl font-bold my-2 md:my-4 text-center">Contactez moi</h1>

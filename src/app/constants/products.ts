@@ -4,7 +4,8 @@ export const products = [
     url: "saumonFumeEntier",
     name: "A - Saumon Fumé Entier",
     shortName: "Fumé Entier",
-    img: "saumonFumeEntier1.jpg",
+    img: "saumon-fume-entier-1.jpg",
+    imgUrl: "saumonFumeEntier/saumon-fume-entier-1.jpg",
     price: 65,
     description:
       "Délicatement fumé au bois de hetre traditionnel, un saumon témoin de savoir-faire artisanal.",
@@ -20,6 +21,7 @@ export const products = [
     name: "B - Saumon Fumé Prétranché",
     shortName: "Fumé Tranché",
     img: "saumon-fume-pretranche-1.jpg",
+    imgUrl: "saumonFumePretranche/saumon-fume-pretranche-1.jpg",
     price: 65,
     description: "Doucement fumées à la perfection en fines tranches.",
     available: true,
@@ -34,6 +36,7 @@ export const products = [
     name: "C - Cœur de Saumon",
     shortName: "Cœur de Saumon",
     img: "coeur-saumon-1.png",
+    imgUrl: "coeurSaumon/coeur-saumon-1.png",
     price: 19,
     description:
       "Moelleux, tendre et fondant. A couper en lamelles ou en cubes puis déguster sans modération !",
@@ -49,6 +52,7 @@ export const products = [
     name: "D - Saumon Fumé Pavé",
     shortName: "Saumon Fumé pavé",
     img: "saumon-fume-pave-1.webp",
+    imgUrl: "saumonFumePave/saumon-fume-pave-1.webp",
     price: 50,
     description:
       "Saumon fumé coupé dans la largeure du filet préparé artisanalement.",
@@ -64,6 +68,7 @@ export const products = [
     name: "E - Saumon Mariné (gravad lax)",
     shortName: "Mariné Entier",
     img: "saumon-gravad-entier-2.jpg",
+    imgUrl: "saumonGravadEntier/saumon-gravad-entier-2.jpg",
     price: 65,
     description:
       "Recette traditionnelle scandinave, un équilibre délicat de saveurs.",
@@ -79,6 +84,7 @@ export const products = [
     name: "F - Saumon Mariné (gravad lax) Prétranché",
     shortName: "Mariné Tranché",
     img: "saumon-gravad-pretranche-1.jpg",
+    imgUrl: "saumonGravadPretranche/saumon-gravad-pretranche-1.jpg",
     price: 65,
     description:
       "Sel, poivres, sucre et aneth en accord parfait sur fines tranches.",
@@ -94,6 +100,8 @@ export const products = [
     name: "G - Saumon Mi-Cuit Poivre",
     shortName: "Mi-Cuit Poivre Entier",
     img: "saumon-fume-chaud-poivre-entier-1.avif",
+    imgUrl:
+      "saumonFumeChaudPoivreEntier/saumon-fume-chaud-poivre-entier-1.avif",
     video: "/saumonFumeChaudPoivrePave/fumeChaud.mp4",
     price: 65,
     description:
@@ -109,7 +117,8 @@ export const products = [
     url: "saumonFumeChaudPoivrePave",
     name: "H - Saumon Mi-Cuit Poivre Pavé",
     shortName: "Mi-Cuit Poivre Pavé",
-    img: "saumonFumeChaudPoivrePave1.jpeg",
+    img: "saumon-fume-chaud-poivre-pave-1.jpeg",
+    imgUrl: "saumonFumeChaudPoivrePave/saumon-fume-chaud-poivre-pave-1.jpeg",
     video: "/saumonFumeChaudPoivrePave/fumeChaud.mp4",
     price: 50,
     description: "Fumé à chaud, saveurs fortes & relevées.",
@@ -125,6 +134,7 @@ export const products = [
     name: "I - Saumon Mi-Cuit Nature Pavé",
     shortName: "Mi-Cuit Nature",
     img: "saumon-fume-chaud-nature.jpg",
+    imgUrl: "saumonFumeChaudNaturePave/saumon-fume-chaud-nature.jpg",
     price: 50,
     description:
       "Fumé à chaud Nature, laissant les saveurs naturelles du poisson s'exprimer pleinement.",
@@ -140,6 +150,7 @@ export const products = [
     name: "J - Flétan Fumé Prétranché",
     shortName: "Flétan",
     img: "fletan-1.jpg",
+    imgUrl: "fletan/fletan-1.jpg",
     price: 65,
     description:
       "Lentement fumé rehaussant ses saveurs naturelles pour un goût riche.",
@@ -155,6 +166,7 @@ export const products = [
     name: "K - Truites Fumées",
     shortName: "Truites",
     img: "truite-1.jpeg",
+    imgUrl: "truite/truite-1.jpeg",
     price: 25,
     description: "Truite fumée au bois d'hêtre puis filetée manuellement.",
     available: true,
@@ -169,6 +181,7 @@ export const products = [
     name: "L - Crevettes Décortiquées",
     shortName: "Crevettes",
     img: "crevettes-1.jpg",
+    imgUrl: "crevettes/crevettes-1.jpg",
     video: "/crevettes/crevettes.mp4",
     price: 15,
     description:
@@ -185,6 +198,7 @@ export const products = [
     name: "M - Couteau Saumon",
     shortName: "Couteau",
     img: "couteau.png",
+    imgUrl: "couteau/couteau.png",
     price: 5,
     description:
       "Couteau à saumon. Lame arrondie pour une coupe nette et précise.",

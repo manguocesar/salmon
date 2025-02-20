@@ -4,7 +4,7 @@ import Image from "next/image";
 const renderProducts = (urls: (string)[], urlRoot: string) => {
 
     return urls.map((url, id) => {
-        const src = `/${urlRoot}/${url}`;
+        const src = urlRoot === "products" ? `/${url}` : `/${urlRoot}/${url}`;
         return (
             <Image
                 key={id}
@@ -34,7 +34,7 @@ export const ProductSlider = ({ products, urlRoot }: { products: string[]; urlRo
                     }
                 }
                 .slide-left {
-                    animation: slideLeft 80s linear infinite;
+                    animation: slideLeft 70s linear infinite;
                 }
             `}</style>
             <div className="flex flex-row space-x-2 my-2 md:my-6 md:space-x-6 w-[200vw] slide-left">
