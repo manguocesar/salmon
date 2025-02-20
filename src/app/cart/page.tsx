@@ -10,9 +10,6 @@ import { Delete } from "lucide-react"
 
 export default function Cart() {
     const { cart, removeFromCart, getCartTotal, updateQuantity } = useCart()
-    const deliveryDate = new Date()
-    deliveryDate.setDate(deliveryDate.getDate() + 3) // Supposons un délai de livraison de 3 jours
-
     const handleCheckout = async () => {
         const stripe = await getStripe();
 
@@ -39,7 +36,6 @@ export default function Cart() {
             toast.error('Payment initialization failed.');
         }
     }
-
 
     return (
         <div className="max-w-4xl mx-1 md:mx-auto">
@@ -111,7 +107,7 @@ export default function Cart() {
                     <div className="flex flex-col items-center m-4 md:mt-8">
                         <p className="text-xl text-black font-semibold">Total TTC : {getCartTotal().toFixed(2)} €</p>
                         <p className="text-sm text-gray-600 mt-2">
-                            Date de livraison estimée : 16 Avril 2025
+                            Date de livraison : Jeudi 17 Avril 2025
                         </p>
                         <div className="md:mt-8">
                             <button type="button" className="bg-orange-600 text-white px-6 py-3 rounded-lg text-lg font-semibold hover:bg-orange-700 transition duration-300"

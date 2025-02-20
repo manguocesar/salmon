@@ -21,7 +21,7 @@ export const products = [
     shortName: "Fumé Tranché",
     img: "saumon-fume-pretranche-1.jpg",
     price: 65,
-    description: "Fines tranches, doucement fumées à la perfection.",
+    description: "Doucement fumées à la perfection en fines tranches.",
     available: true,
     details:
       "Saumon fumé Prétranché. 4 paquets de 250g. Saumon élevé en Norvège, fumé au Danmark.. Poids : 1kg (4*250g). Salmo salar. Fumé au bois de hêtre à l'atelier au Danmark. Sans peau. Le saumon fumé prétranché est idéal pour les petites tablées, les buffets, les brunchs, les fêtes de famille ou les réceptions. Il est aussi parfait pour les traiteurs, les restaurateurs et les hôtels. Il est prêt à être dégusté, il ne reste plus qu’à le sortir de son emballage et à le disposer sur un plateau. Le fumage à froid (entre 22 et 24°c) au bois de hêtre de façon traditionnelle. Cette technique permet d'étirer les fibres du poisson, ce qui lui procure une texture plus sèche et un goût de fumage plus prononcé. Cette technique permet également d'éliminer une partie plus importante des graisses (3 à 4%) par rapport à un fumage classique. Il est tranché à la main afin de mieux respecter sa chair si caractéristique.",
@@ -61,7 +61,7 @@ export const products = [
   {
     id: 5,
     url: "saumon-gravad-entier",
-    name: "E - Saumon Mariné (gravad)",
+    name: "E - Saumon Mariné (gravad lax)",
     shortName: "Mariné Entier",
     img: "saumon-gravad-entier-2.jpg",
     price: 65,
@@ -76,7 +76,7 @@ export const products = [
   {
     id: 6,
     url: "saumon-gravad-pretranche",
-    name: "F - Saumon Mariné (gravad) Prétranché",
+    name: "F - Saumon Mariné (gravad lax) Prétranché",
     shortName: "Mariné Tranché",
     img: "saumon-gravad-pretranche-1.jpg",
     price: 65,

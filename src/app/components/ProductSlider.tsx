@@ -21,7 +21,7 @@ const renderProducts = (urls: (string)[], urlRoot: string) => {
 
 export const ProductSlider = ({ products, urlRoot }: { products: string[]; urlRoot: string, }) => {
 
-    if (products.length < 15) products = [...products, ...products, ...products, ...products];
+    if (products.length < 20) products = [...products, ...products, ...products, ...products];
 
     return (
         <>
