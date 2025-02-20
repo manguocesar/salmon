@@ -16,7 +16,7 @@ export default async function NotFound() {
             >
                 Retour à la page d'accueil
             </Link>
-            <ProductSlider isArrayMixed={false} urlRoot="products" products={images} />
+            <ProductSlider urlRoot="products" products={images} />
         </main>
     );
 }

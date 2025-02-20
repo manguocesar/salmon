@@ -15,13 +15,13 @@ import { coeurSaumonUrls } from "@/app/constants/coeurSaumonUrls"
 import { saumonFumePaveUrls } from "@/app/constants/saumonFumePaveUrls"
 import { saumonGravadEntierUrls } from "@/app/constants/saumonGravadEntierUrls"
 import { saumonGravadPretrancheUrls } from "@/app/constants/saumonGravadPretrancheUrls"
-import { saumonFumeChaudEntierPoivreUrls } from "@/app/constants/saumonFumeChaudEntierPoivreUrls"
 import { saumonFumeChaudPoivrePaveUrls } from "@/app/constants/saumonFumeChaudPoivrePaveUrls"
 import { truitesUrls } from "@/app/constants/truitesUrls"
 import { ProductSlider } from "@/app/components/ProductSlider"
 import { Video } from "@/app/components/Video"
 import { Suspense } from "react"
 import { saumonFumeChaudNaturePaveUrls } from "@/app/constants/saumonFumeChaudNaturePaveUrls"
+import { saumonFumeChaudPoivreEntierPUrls } from "@/app/constants/saumonFumeChaudPoivreEntierUrls"
 
 export default function Page() {
     const { slug } = useParams()
@@ -55,7 +55,7 @@ export default function Page() {
             images = saumonGravadPretrancheUrls
             break;
         case 'saumon-fume-chaud-poivre-entier':
-            images = saumonFumeChaudEntierPoivreUrls
+            images = saumonFumeChaudPoivreEntierPUrls
             break;
         case 'saumon-fume-chaud-poivre-pave':
             images = saumonFumeChaudPoivrePaveUrls
@@ -63,13 +63,13 @@ export default function Page() {
         case 'saumon-fume-chaud-nature-pave':
             images = saumonFumeChaudNaturePaveUrls
             break;
-        case 'crevettes-groenland':
+        case 'crevettes':
             images = crevettesUrls
             break;
         case 'fletan':
             images = fletanUrls
             break;
-        case 'truite-fumee':
+        case 'truite':
             images = truitesUrls
             break;
         case 'couteau':
@@ -90,7 +90,7 @@ export default function Page() {
         <div className="max-w-4xl mx-auto px-4 my-2 md:py-8">
             <ProductHeader />
             <div className=" bg-gray-100 space-y-3 p-2 md:grid-cols-2 lg:grid-cols-2 gap-3 md:gap-8 shadow-lg rounded-md">
-                <ProductSlider isArrayMixed urlRoot="products" products={images} />
+                {typeof slug === 'string' && <ProductSlider urlRoot={slug} products={images} />}
                 <div className="flex flex-col">
                     <h2 className="text-xl md:text-3xl text-orange-600 font-bold md:mb-4">{product.name}</h2>
                     <p className="text-lg md:text-2xl text-orange-500 font-semibold md:mb-4">{product.price} €</p>
@@ -117,7 +117,7 @@ export default function Page() {
                     </button>
                 </Link>
             </div>
-            <ProductSlider isArrayMixed urlRoot="saumon-fume-chaud-poivre-pave" products={images} />
+            {typeof slug === 'string' && <ProductSlider urlRoot={slug} products={images} />}
         </div>
     )
 }

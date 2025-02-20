@@ -12,14 +12,13 @@ export default async function Home() {
 
   const images = products.map((product) => product.img);
 
-
   return (
     <div className="md:space-y-8 text-black">
       <DiscoverProducts />
-      <ProductSlider urlRoot="process" isArrayMixed={false} products={processUrls} />
+      <ProductSlider urlRoot="process" products={processUrls} />
       <ArtisanalProcessus />
       <ArtisanalSelection />
-      <ProductSlider urlRoot="products" isArrayMixed={false} products={images} />
+      <ProductSlider urlRoot="products" products={images} />
       <ArtisanalPromise />
     </div>
   )

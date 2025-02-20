@@ -17,13 +17,13 @@ export const Header = () => {
                     <Link href="/" className={cn(`flex items-center`)}>
                         <Image className="rounded-xl md:w-36" src="/logo.jpg" alt="Mikael Hertz Poissons Fumés Artisanaux" width={70} height={30} />
                     </Link>
-                    <Link href="/products" className={`text-xl font-bold md:text-4xl ${isActive('/products') && 'underline-offset-8 underline'}`}>
+                    <Link href="/products" className={`text-2xl font-bold md:text-4xl ${isActive('/products') && 'underline-offset-8 underline'}`}>
                         Produits
                     </Link>
-                    <Link href="/contact" className={`text-xl font-bold md:text-4xl ${isActive('/contact') && 'underline-offset-8 underline'}`}>
+                    <Link href="/contact" className={`text-2xl font-bold md:text-4xl ${isActive('/contact') && 'underline-offset-8 underline'}`}>
                         Contact
                     </Link>
-                    <Link href="/cart" className={`text-xl font-bold md:text-4xl ${isActive('/cart') && 'underline-offset-8 underline'}`}>
+                    <Link href="/cart" className={`text-2xl font-bold md:text-4xl ${isActive('/cart') && 'underline-offset-8 underline'}`}>
                         Panier
                     </Link>
                 </ul>
