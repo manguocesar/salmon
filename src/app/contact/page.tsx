@@ -27,19 +27,13 @@ export default function Contact() {
 
             <div className="bg-white m-1 p-2 md:p-8 rounded-lg shadow-md md:mt-8">
                 <p className="mb-6">
-                    Fournisseur de saumon depuis <strong>30 ans</strong> dans la région lyonnaise avant <strong>pour Noël et Pâques</strong>.
+                    Fournisseur de saumon depuis <strong>30 ans</strong> dans la région lyonnaise <strong>pour Noël et Pâques</strong>.
                 </p>
                 <p className="">
                     Nos origines danoises nous amènent à vous proposer les saumons & produits scandinaves au meilleur goût
                 </p>
                 <p className="mb-6">
-                    Des années d'expérience et de tradition, associées à un traitement sans compromis de la matière première, le poisson est fumé sur des copeaux de hêtre entre <strong>10 et 36 heures</strong>.
-                </p>
-                <p className="mb-6">
-                    La météo du jour, ainsi que les connaissances et l'expérience du fumage détermineront quand le poisson aura atteint l'arôme de fumée délicat et légèrement épicé.
-                </p>
-                <p className="mb-6">
-                    Nous fournissons des produits fumés à froid et à chaud en aglomération lyonnaise - du saumon entier ou tranché salé à la main au flétan du Groenland le plus délicat dans des variétés spéciales coupées verticalement.
+                    Evenement d'entreprises, réceptions, événements familiaux, mariages, anniversaires ..., nous assurons des produits frais livrés et servis au plus près de vos évenements.
                 </p>
                 <p className="mb-6">
                     Le saumon norvégien fumé à chaud (Salmo salar). Du saumon norvégien : Forfaits de vente au détail - Taille des forfaits de restauration - Côtés entiers Portions Saumon effiloché   </p>
@@ -61,13 +55,8 @@ export default function Contact() {
                 <p className="mb-6">
                     La météo du jour, ainsi que les connaissances et l'expérience du fumage détermineront quand le poisson aura atteint l'arôme de fumée délicat et légèrement épicé.
                 </p>
-                <p className="mb-6">
-                    Nous fournissons des produits fumés à froid et à chaud en aglomération lyonnaise - du saumon entier ou tranché salé à la main au flétan du Groenland le plus délicat dans des variétés spéciales coupées verticalement.
-                </p>
-                <p className="mb-6">
-                    Le saumon norvégien fumé à chaud (Salmo salar). Du saumon norvégien : Forfaits de vente au détail - Taille des forfaits de restauration - Côtés entiers Portions Saumon effiloché   </p>
                 <p>
-                    N'hésitez pas à nous contacter pour toute question sur nos produits ou pour passer votre commande. Nous sommes là pour vous fournir du poisson de la meilleure qualité pour vos délices culinaires !
+                    Nous fournissons des produits fumés à froid et à chaud en aglomération lyonnaise - du saumon entier ou tranché salé à la main au flétan du Groenland le plus délicat dans des variétés spéciales coupées verticalement.
                 </p>
             </div>
         </div>
