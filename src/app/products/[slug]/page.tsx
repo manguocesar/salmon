@@ -89,8 +89,8 @@ export default function Page() {
     return (
         <div className="max-w-4xl mx-auto px-4 my-2 md:py-8">
             <ProductHeader />
+            {typeof slug === 'string' && <ProductSlider urlRoot={slug} products={images} />}
             <div className=" bg-gray-100 space-y-3 p-2 md:grid-cols-2 lg:grid-cols-2 gap-3 md:gap-8 shadow-lg rounded-md">
-                {typeof slug === 'string' && <ProductSlider urlRoot={slug} products={images} />}
                 <div className="flex flex-col">
                     <h2 className="text-xl md:text-3xl text-orange-600 font-bold md:mb-4">{product.name}</h2>
                     <p className="text-lg md:text-2xl text-orange-500 font-semibold md:mb-4">{product.price} €</p>
