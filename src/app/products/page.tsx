@@ -8,7 +8,7 @@ import { processUrls } from "../constants/processUrls"
 
 export default function Products() {
     return (
-        <div>
+        <div className="container mx-auto">
             <ProductHeader />
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-8">
                 {products.map((product) => (

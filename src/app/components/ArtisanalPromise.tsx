@@ -1,6 +1,6 @@
 export const ArtisanalPromise = () => {
     return (
-        <div className="bg-gray-100 p-2 md:p-4 rounded-lg">
+        <div className="container mx-auto bg-gray-100 p-2 md:p-4 rounded-lg">
             <h2 className="text-3xl mb-1 md:mb-3 text-orange-600">Promesses:</h2>
             <ul className="list-disc pl-6 md:space-y-2">
                 <li>Premium & artisanale</li>
