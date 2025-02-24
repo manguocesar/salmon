@@ -1,4 +1,4 @@
-'use client';
+'use server';
 import { products } from '../constants/products';
 import Link from 'next/link';
 import { ProductCard } from '../components/ProductCard';
@@ -6,7 +6,7 @@ import { ProductHeader } from '../components/ProductHeader';
 import { ProductSlider } from '../components/ProductSlider';
 import { processUrls } from '../constants/processUrls';
 
-export default function Products() {
+export default async function Products() {
   return (
     <div className="container mx-auto">
       <ProductHeader />
