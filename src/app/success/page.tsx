@@ -13,7 +13,7 @@ const Success = () => {
         runFireworks();
     }, []);
 
-    const images = products.map((product) => product.img);
+    const images = products.map((product) => product.imgUrl);
 
     return (
         <div className="text-2xl text-center text-black w-9/12 flex justify-center items-center flex-col mx-auto">

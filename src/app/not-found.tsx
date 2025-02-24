@@ -4,7 +4,7 @@ import { ProductSlider } from './components/ProductSlider';
 import { products } from './constants/products';
 
 export default async function NotFound() {
-    const images = products.map((product) => product.img);
+    const images = products.map((product) => product.imgUrl);
     return (
         <main className="flex h-full flex-col items-center justify-center gap-2">
             <h2 className="text-3xl text-black font-semibold">Page inaccessible</h2>
