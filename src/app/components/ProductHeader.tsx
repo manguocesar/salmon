@@ -1,5 +1,7 @@
 export const ProductHeader = () => {
-    return (
-        <h1 className="text-3xl ml-2 md:my-3 underline font-bold text-orange-600">Détails:</h1>
-    )
-}
+  return (
+    <h1 className="ml-2 text-3xl font-bold text-orange-600 underline md:my-3">
+      Détails:
+    </h1>
+  );
+};
