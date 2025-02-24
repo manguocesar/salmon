@@ -1,4 +1,4 @@
-import confetti from 'canvas-confetti';
+import confetti from "canvas-confetti";
 
 export const runFireworks = () => {
   const duration = 5 * 1000;
@@ -32,3 +32,10 @@ export const runFireworks = () => {
     );
   }, 250);
 };
+
+import { clsx, type ClassValue } from "clsx";
+import { twMerge } from "tailwind-merge";
+
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs));
+}

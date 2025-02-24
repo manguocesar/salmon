@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { Product } from '../types/products';
 import Image from 'next/image';
-import { cn } from '../utils/utils';
+import { cn } from '../lib/utils';
 import toast from 'react-hot-toast';
 import { useCart } from '../contexts/CartContext';
 
