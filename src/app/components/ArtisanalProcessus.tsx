@@ -1,18 +1,6 @@
 'use server';
 import React from 'react';
-
-const Section = ({
-  title,
-  children,
-}: {
-  title: string;
-  children: React.ReactNode;
-}) => (
-  <div>
-    <h3 className="text-2xl text-orange-500">{title}</h3>
-    <p className="text-gray-700 md:mb-4">{children}</p>
-  </div>
-);
+import { Section } from './Section';
 
 export const ArtisanalProcessus = async () => {
   return (

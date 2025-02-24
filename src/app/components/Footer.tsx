@@ -1,4 +1,5 @@
-export const Footer = () => (
+'use server';
+export const Footer = async () => (
   <footer className="bg-gray-900 bg-[url('/bg/bg-orange.jpg')] p-2 text-white md:mt-8 md:p-4">
     <div className="container mx-auto text-center">
       <p>
