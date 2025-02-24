@@ -1,16 +1,16 @@
 
 import { useCart } from '../contexts/CartContext';
 import toast from 'react-hot-toast';
-import { Product } from '../types/products';
+import { DetailsProduct } from '../types/products';
 import Link from 'next/link';
 import { CircleChevronLeft } from 'lucide-react';
 import { Suspense } from 'react';
 import { Video } from './Video';
 
-export const ProductDetails = ({ product }: { product: Product }) => {
+export const ProductDetails = ({ product }: { product: DetailsProduct }) => {
     const { addToCart } = useCart();
 
-    const handleAddToCart = (product: Product) => {
+    const handleAddToCart = (product: DetailsProduct) => {
         if (product.available) {
             addToCart({
                 id: product.id,
@@ -19,6 +19,7 @@ export const ProductDetails = ({ product }: { product: Product }) => {
                 price: product.price,
                 quantity: 1,
             });
+            toast.success('Produit ajouté au panier avec succès');
         } else {
             toast.error('Ce produit est actuellement en rupture de stock');
         }

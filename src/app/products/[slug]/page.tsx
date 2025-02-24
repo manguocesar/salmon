@@ -1,12 +1,11 @@
 'use client';
 
 import { useParams } from 'next/navigation';
-import { products } from '../../constants/products';
 import { ProductHeader } from '@/app/components/ProductHeader';
 import { ProductSlider } from '@/app/components/ProductSlider';
 import { ProductDetails } from '@/app/components/ProductDetails';
 import {
-  coeurSaumonUrls,
+  coeurSaumonUrls, products,
   saumonFumePaveUrls,
   saumonFumeChaudPoivreEntierPUrls,
   saumonFumeChaudNaturePaveUrls,
@@ -33,31 +32,27 @@ const productsUrls: { [key: string]: string[] } = {
   crevettes: crevettesUrls,
   fletan: fletanUrls,
   truite: truitesUrls,
-  couteau: products.map(product => product.img),
+  couteau: [],
 };
 
 export default function Page() {
   const { slug } = useParams();
+  if (typeof slug !== 'string') return <div className="">Produit non trouvé</div>;
 
-  const images = typeof slug === 'string' ? productsUrls[slug] || products.map(product => product.img) : products.map(product => product.img);
-
+  const images = productsUrls[slug];
 
   const product = products.find(product => product.url === slug);
 
   if (!product) {
-    return <div className="">Produit non trouvé</div>;
+    return <div className=" text-center">Produit non trouvé</div>;
   }
 
   return (
     <div className="mx-auto my-2 max-w-4xl px-4 md:py-8">
       <ProductHeader />
-      {typeof slug === 'string' && (
-        <ProductSlider urlRoot={slug} products={images} />
-      )}
+      <ProductSlider urlRoot={slug} products={images} />
       <ProductDetails product={product} />
-      {typeof slug === 'string' && (
-        <ProductSlider urlRoot={slug} products={images} />
-      )}
+      <ProductSlider urlRoot={slug} products={images} />
     </div>
   );
 }

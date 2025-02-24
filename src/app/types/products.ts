@@ -7,9 +7,12 @@ export type Product = {
   description: string;
   available: boolean;
   url: string;
-  video?: string;
-  consumption?: string;
   details: string;
+};
+
+export type DetailsProduct = Product & {
+  video: string;
+  consumption: string;
 };
 
 export type CartItem = {
