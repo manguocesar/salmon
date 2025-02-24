@@ -6,4 +6,7 @@ export const truitesUrls = [
   "truite-4.jpg",
   "truite-5.jpg",
   "truite-6.jpg",
+  "truite-7.jpg",
+  "truite-8.jpg",
+  "truite-9.jpg",
 ];
