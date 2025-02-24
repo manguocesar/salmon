@@ -43,9 +43,7 @@ export default function Page() {
 
   const product = products.find(product => product.url === slug);
 
-  if (!product) {
-    return <div className=" text-center">Produit non trouvé</div>;
-  }
+  if (!product) return <div className="">Produit non trouvé</div>;
 
   return (
     <div className="mx-auto my-2 max-w-4xl px-4 md:py-8">

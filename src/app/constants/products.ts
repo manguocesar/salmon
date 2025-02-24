@@ -6,6 +6,7 @@ export const products = [
     shortName: 'Fumé Entier',
     img: 'saumon-fume-entier-1.jpg',
     imgUrl: 'saumonFumeEntier/saumon-fume-entier-1.jpg',
+    video: '',
     price: 60,
     description:
       'Fumage traditionnel au bois de hêtre, un saumon témoin de savoir-faire artisanal.',
@@ -22,6 +23,7 @@ export const products = [
     shortName: 'Fumé Tranché',
     img: 'saumon-fume-pretranche-1.jpg',
     imgUrl: 'saumonFumePretranche/saumon-fume-pretranche-1.jpg',
+    video: '',
     price: 65,
     description: 'Fumé minutieusement puis coupé en fines tranches.',
     available: true,
@@ -37,6 +39,7 @@ export const products = [
     shortName: 'Cœur de Saumon',
     img: 'coeur-saumon-1.png',
     imgUrl: 'coeurSaumon/coeur-saumon-1.png',
+    video: '',
     price: 19,
     description:
       'Moelleuse, tendre et fondante: partie centrale du filet de saumon.',
@@ -53,6 +56,7 @@ export const products = [
     shortName: 'Saumon Fumé pavé',
     img: 'saumon-fume-pave-1.webp',
     imgUrl: 'saumonFumePave/saumon-fume-pave-1.webp',
+    video: '',
     price: 48,
     description:
       'Saumon fumé coupé dans la largeure du filet, de la dorsale aux côtes.',
@@ -69,6 +73,7 @@ export const products = [
     shortName: 'Mariné Entier',
     img: 'saumon-gravad-entier-2.jpg',
     imgUrl: 'saumonGravadEntier/saumon-gravad-entier-2.jpg',
+    video: '',
     price: 65,
     description:
       'Recette traditionnelle scandinave, un filet délicatement équilibré.',
@@ -85,6 +90,7 @@ export const products = [
     shortName: 'Mariné Tranché',
     img: 'saumon-gravad-pretranche-1.jpg',
     imgUrl: 'saumonGravadPretranche/saumon-gravad-pretranche-1.jpg',
+    video: '',
     price: 65,
     description:
       'Sel, poivres, sucre et aneth en accord parfait sur fines tranches.',
@@ -136,6 +142,7 @@ export const products = [
     shortName: 'Mi-Cuit Nature',
     img: 'saumon-fume-chaud-nature.jpg',
     imgUrl: 'saumonFumeChaudNaturePave/saumon-fume-chaud-nature.jpg',
+    video: '',
     price: 48,
     description:
       "Fumé à chaud Nature, laissant les saveurs naturelles du poisson s'exprimer pleinement.",
@@ -152,6 +159,7 @@ export const products = [
     shortName: 'Flétan',
     img: 'fletan-1.jpg',
     imgUrl: 'fletan/fletan-1.jpg',
+    video: '',
     price: 65,
     description:
       'Lentement fumé rehaussant ses saveurs naturelles pour un goût riche.',
@@ -168,6 +176,7 @@ export const products = [
     shortName: 'Truites',
     img: 'truite-1.jpeg',
     imgUrl: 'truite/truite-1.jpeg',
+    video: '',
     price: 24,
     description: "Truite fumée au bois d'hêtre puis filetée manuellement.",
     available: true,
@@ -200,11 +209,13 @@ export const products = [
     shortName: 'Couteau',
     img: 'couteau.png',
     imgUrl: 'couteau/couteau.png',
+    video: '',
     price: 5,
     description:
       'Couteau à saumon. Lame arrondie pour une coupe nette et précise.',
     available: true,
     details:
       'Couteau à saumon. Lame arrondie pour une coupe nette et précise. Longueure 30cm.',
+    consumption: '',
   },
 ];
