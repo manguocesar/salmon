@@ -53,7 +53,7 @@ export const ProductCard = ({ product }: { product: Product }) => {
         href={`/products/${product.url}`}
         className="font-bold text-gray-600 hover:underline"
       >
-        <p className="m-2">En Savoir Plus</p>
+        <p className="m-2 underline underline-offset-4 md:no-underline">En Savoir Plus</p>
       </Link>
     </div>
   );
