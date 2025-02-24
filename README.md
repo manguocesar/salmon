@@ -41,22 +41,22 @@ Create a new file named `.env` in the root of your project and add the following
 content:
 
 ```env
-#Clerk
-NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=
-CLERK_SECRET_KEY=
-NEXT_PUBLIC_CLERK_SIGN_IN_URL=/sign-in
-NEXT_PUBLIC_CLERK_SIGN_UP_URL=/sign-up
+#Stripe payment
+NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=
+NEXT_PUBLIC_STRIPE_SECRET_KEY=
 
-#Liveblocks
-NEXT_PUBLIC_LIVEBLOCKS_PUBLIC_KEY=
-LIVEBLOCKS_SECRET_KEY=
+#Payment redirection
+NEXT_PUBLIC_URL=
+
+#Configure Sentry Locally
+SENTRY_AUTH_TOKEN=
 ```
 
 ## <a name=upcoming-features">⚙️ Upcoming features</a>
 
-0. headless cms to manage content
-1. loading skeleton
-2. i18next for english
-3. vitestest testing
-4. 3D assets
-5. email & sms notification about deliveries
+1. email & sms notification about deliveries
+2. headless cms with strapi to manage content
+3. loading skeleton
+4. i18next for english
+5. vitestest testing
+6. 3D assets
