@@ -12,6 +12,8 @@ export const ProductSlider = ({
   // lengthening the array to make the animation last longer
   products = [...products, ...products, ...products, ...products];
 
+
+
   return (
     <>
       <style jsx>{slideLeft}</style>
