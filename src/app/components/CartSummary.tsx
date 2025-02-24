@@ -40,17 +40,17 @@ export function CartSummary() {
               {item.name} x{item.quantity}
             </span>
             <span className="sm:hidden">
-              {(item.price * item.quantity).toFixed(2)} €
+              {(item.price * item.quantity)}€
             </span>
           </li>
         ))}
       </ul>
       <p className="flex justify-between font-semibold text-black">
-        Total: {getCartTotal().toFixed(2)} €
+        Total: {getCartTotal()}€
       </p>
       <Link
         href="/cart"
-        className="mt-4 block rounded bg-orange-600 px-4 py-2 text-center text-white transition duration-300 hover:bg-orange-700"
+        className="mt-4 font-semibold block rounded bg-orange-600 px-4 py-2 text-center text-white transition duration-300 hover:bg-orange-700"
       >
         Voir le panier
       </Link>
