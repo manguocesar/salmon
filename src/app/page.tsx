@@ -1,5 +1,4 @@
 'use server';
-
 import { DiscoverProducts } from './components/DiscoverProducts';
 import { ArtisanalPromise } from './components/ArtisanalPromise';
 import { ArtisanalSelection } from './components/ArtisanalSelection';
@@ -8,7 +7,7 @@ import { ProductSlider } from './components/ProductSlider';
 import { products } from './constants/products';
 import { processUrls } from './constants/processUrls';
 
-export default async function Home() {
+async function Home() {
   const images = products.map(product => product.imgUrl);
   return (
     <div className="text-black md:space-y-8">
@@ -21,3 +20,5 @@ export default async function Home() {
     </div>
   );
 }
+
+export default Home;

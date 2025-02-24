@@ -12,12 +12,12 @@ import { Footer } from './components/Footer';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Mikael Hertz Poissons Fumés Artisanaux',
+  title: "Mikael Hertz Saumons Fumés à l'ancienne",
   description:
     'Les meilleurs saumons, truites et flétans fumés et élevés artisanalement à Lyon, France',
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
