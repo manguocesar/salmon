@@ -7,3 +7,15 @@ export const transitionRight = {
   x: { type: 'spring', stiffness: 50 },
   opacity: { duration: 0.5 },
 };
+
+export const customToast = {
+  style: {
+    border: '1px solid #dd6b20',
+    padding: '16px',
+    color: '#dd6b20',
+  },
+  iconTheme: {
+    primary: '#dd6b20',
+    secondary: '#FFFAEE',
+  },
+};

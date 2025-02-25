@@ -10,20 +10,9 @@ import {
 } from 'react';
 import toast from 'react-hot-toast';
 import { CartContextType, CartItem } from '../types/products';
+import { customToast } from '../constants/animation';
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
-
-const customToast = {
-  style: {
-    border: '1px solid #dd6b20',
-    padding: '16px',
-    color: '#dd6b20',
-  },
-  iconTheme: {
-    primary: '#dd6b20',
-    secondary: '#FFFAEE',
-  },
-}
 
 export const CartProvider: React.FC<{ children: React.ReactNode }> = ({
   children,
@@ -42,7 +31,7 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({
   }, [cart]);
 
   const addToCart = (item: CartItem) => {
-    toast.success(`Produit ${item.name} ajouté au panier`);
+    toast.success(`Produit ${item.name} ajouté au panier`, customToast);
 
     setCart(prevCart => {
       const existingItem = prevCart.find(cartItem => cartItem.id === item.id);
