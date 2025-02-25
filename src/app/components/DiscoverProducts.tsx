@@ -13,8 +13,7 @@ export const DiscoverProducts = async () => {
         </p>
       </Link>
       <p className="mt-3 text-xl text-red-600">
-        Passez commande avant le Mardi 25 Mars 2025 pour livraison le Jeudi 17
-        Avril
+        Passez commande avant le Mardi 25 Mars 2025 pour livraison à domicile pour Pâques !
       </p>
     </div>
   );
