@@ -1,15 +1,25 @@
+'use client';
+
 import { ProductSlider } from '../components/ProductSlider';
+import { animateRight, initialRight, transitionRight } from '../constants/animation';
 import { processUrls } from '../constants/processUrls';
 import { products } from '../constants/products';
+import { motion } from 'framer-motion';
 
 export default function Contact() {
   const images = products.map(product => product.imgUrl);
+
+
   return (
     <div className="mx-auto max-w-2xl text-black">
       <h1 className="my-2 text-center text-3xl font-bold text-orange-600 md:my-4">
         Contactez moi
       </h1>
-      <div className="m-2 rounded-lg bg-white p-1 shadow-md md:p-6">
+      <motion.div
+        initial={initialRight}
+        transition={transitionRight}
+        whileInView={animateRight}
+        className="m-2 rounded-lg bg-white p-1 shadow-md md:p-6">
         <p>
           Pour toute question, recette ou demande, veuillez contacter
           directement
@@ -28,11 +38,16 @@ export default function Contact() {
             <strong>Adresse :</strong> 21 ROUTE DE CREST, 26400 SAOU
           </li>
         </ul>
-      </div>
+      </motion.div>
 
       <ProductSlider urlRoot="process" products={processUrls} />
 
-      <div className="m-1 rounded-lg bg-white p-2 shadow-md md:mt-8 md:p-8">
+      <motion.div
+        initial={initialRight}
+        transition={transitionRight}
+        whileInView={animateRight}
+
+        className="m-1 rounded-lg bg-white p-2 shadow-md md:mt-8 md:p-8">
         <p className="mb-6">
           Fournisseur de saumon depuis <strong>30 ans</strong> dans la région
           lyonnaise <strong>pour Noël et Pâques</strong>.
@@ -46,11 +61,15 @@ export default function Contact() {
             anniversaires</strong>  ..., nous assurons des produits frais livrés et servis
           au plus près de vos évenements.
         </p>
-      </div>
+      </motion.div>
 
       <ProductSlider urlRoot="products" products={images} />
 
-      <div className="m-1 rounded-lg bg-white p-2 shadow-md md:mt-8 md:p-8">
+      <motion.div
+        initial={initialRight}
+        transition={transitionRight}
+        whileInView={animateRight}
+        className="m-1 rounded-lg bg-white p-2 shadow-md md:mt-8 md:p-8">
         <p className="mb-6">
           Poisson <strong>fumé et d'élevage</strong> de qualité supérieure.
           <strong>
@@ -66,7 +85,7 @@ export default function Contact() {
             pour passer votre commande</strong>. Nous sommes là pour vous fournir du
           poisson de la meilleure qualité !
         </p>
-      </div>
-    </div>
+      </motion.div>
+    </div >
   );
 }

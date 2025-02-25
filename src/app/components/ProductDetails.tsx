@@ -46,7 +46,7 @@ export const ProductDetails = ({ product }: { product: DetailsProduct }) => {
             </Link>
             <button
                 onClick={() => handleAddToCart(product)}
-                className="mx-auto flex w-8/12 justify-center rounded-lg bg-orange-600 px-6 py-3 text-lg font-semibold text-white transition duration-300 hover:bg-orange-700"
+                className="active:scale-105 mx-auto flex w-8/12 justify-center rounded-lg bg-orange-600 px-6 py-3 text-lg font-semibold text-white transition duration-300 hover:bg-orange-700"
             >
                 Ajouter au Panier
             </button>
