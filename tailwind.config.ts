@@ -15,7 +15,7 @@ export default {
       },
       keyframes: {
         wiggle: {
-          '0%, 100%': { opacity: '0.4' },
+          '0%, 100%': { opacity: '0.6' },
           '5%, 95%': { opacity: '1' },
         },
         right: {

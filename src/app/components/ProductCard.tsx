@@ -42,7 +42,7 @@ export const ProductCard = ({ product }: { product: Product }) => {
       <button
         className={cn(
           !product.available && 'cursor-not-allowed opacity-50',
-          'rounded bg-orange-600 px-4 py-2 font-semibold text-white transition duration-300 hover:bg-orange-700',
+          'active:scale-105 rounded bg-orange-600 px-4 py-2 font-semibold text-white transition duration-300 hover:bg-orange-700',
         )}
         onClick={() => handleAddToCart(product)}
         disabled={!product.available}

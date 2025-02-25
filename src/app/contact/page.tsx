@@ -46,11 +46,6 @@ export default function Contact() {
             anniversaires</strong>  ..., nous assurons des produits frais livrés et servis
           au plus près de vos évenements.
         </p>
-        <p>
-          N'hésitez pas à nous contacter pour toute question sur nos produits ou
-          pour passer votre commande. Nous sommes là pour vous fournir du
-          poisson de la meilleure qualité pour vos délices culinaires !
-        </p>
       </div>
 
       <ProductSlider urlRoot="products" products={images} />
@@ -66,14 +61,10 @@ export default function Contact() {
           Des années d'expérience et de tradition, le poisson est fumé sur des
           copeaux de hêtre entre <strong>10 et 36 heures</strong>.
         </p>
-        <p className="mb-6">
-          La météo du jour, ainsi que les connaissances et l'expérience du
-          fumage détermineront quand le poisson aura atteint l'arôme de fumée souhaité.
-        </p>
         <p>
-          N'hésitez pas à nous contacter pour toute question sur nos produits ou
-          pour passer votre commande. Nous sommes là pour vous fournir du
-          poisson de la meilleure qualité pour vos délices culinaires !
+          N'hésitez pas à nous contacter pour toute <strong>question sur nos produits ou
+            pour passer votre commande</strong>. Nous sommes là pour vous fournir du
+          poisson de la meilleure qualité !
         </p>
       </div>
     </div>

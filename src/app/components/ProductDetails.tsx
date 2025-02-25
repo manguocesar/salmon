@@ -42,7 +42,7 @@ export const ProductDetails = ({ product }: { product: DetailsProduct }) => {
             </div>
             <Link href="/products" className="flex items-center text-black">
                 <CircleChevronLeft />{' '}
-                <p className="ml-3 text-xl">Retour à la liste des produits</p>
+                <p className="ml-3 text-xl animate-right duration-10000">Retour à la liste des produits</p>
             </Link>
             <button
                 onClick={() => handleAddToCart(product)}
