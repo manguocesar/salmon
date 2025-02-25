@@ -9,7 +9,7 @@ export const products = [
     video: '',
     price: 60,
     description:
-      'Fumage traditionnel au bois de hêtre, un saumon témoin de savoir-faire artisanal.',
+      "Fumage à l'ancienne au bois d'hêtre, sel sec & savoir faire artisanale.",
     available: true,
     details:
       "Filet de saumon fumé entier. Saumon élevé en Norvège, fumé au Danmark.. Poids : env 1kg. Salmo salar. Fumé au bois de hêtre à l'atelier au Danmark. Le saumon fumé entier est idéal pour les grandes tablées, les buffets, les brunchs, les fêtes de famille ou les réceptions. Il est aussi parfait pour les traiteurs, les restaurateurs et les hôtels. Le fumage à froid (entre 22 et 24°c) au bois de hêtre de façon traditionnelle. Cette technique permet d'étirer les fibres du poisson, ce qui lui procure une texture plus sèche et un goût de fumage plus prononcé. Cette technique permet également d'éliminer une partie plus importante des graisses (3 à 4%) par rapport à un fumage classique. Il est tranché à la main afin de mieux respecter sa chair si caractéristique.",
@@ -30,7 +30,7 @@ export const products = [
     details:
       "Saumon fumé Prétranché. 4 paquets de 250g. Saumon élevé en Norvège, fumé au Danmark.. Poids : 1kg (4*250g). Salmo salar. Fumé au bois de hêtre à l'atelier au Danmark. Sans peau. Le saumon fumé prétranché est idéal pour les petites tablées, les buffets, les brunchs, les fêtes de famille ou les réceptions. Il est aussi parfait pour les traiteurs, les restaurateurs et les hôtels. Il est prêt à être dégusté, il ne reste plus qu’à le sortir de son emballage et à le disposer sur un plateau. Le fumage à froid (entre 22 et 24°c) au bois de hêtre de façon traditionnelle. Cette technique permet d'étirer les fibres du poisson, ce qui lui procure une texture plus sèche et un goût de fumage plus prononcé. Cette technique permet également d'éliminer une partie plus importante des graisses (3 à 4%) par rapport à un fumage classique. Il est tranché à la main afin de mieux respecter sa chair si caractéristique.",
     consumption:
-      "Consommer dans les 10 jours après ouverture. Produit frais – peut être congelé. 4 paquets sous vide de 5 tranches d'environ 50g. Conditionné sous vide pour une meilleure conservation.  Produit frais – peut être congelé DLC : 10 jours après ouverture ou sortie du congelateur.",
+      "4 paquets sous vide de 5 à 7 tranches d'environ 50g. Consommer dans les 10 jours après ouverture. Produit frais – peut être congelé. Conditionné sous vide pour une meilleure conservation.  Produit frais – peut être congelé DLC : 10 jours après ouverture ou sortie du congelateur.",
   },
   {
     id: 3,
