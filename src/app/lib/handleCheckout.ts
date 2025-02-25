@@ -1,8 +1,9 @@
 import toast from 'react-hot-toast';
 import getStripe from './getStripe';
+import { CartItem } from '../types/products';
 
 export async function handleCheckout(
-  cart: any,
+  cart: CartItem[],
   setLoading: (loading: boolean) => void,
 ) {
   setLoading(true);

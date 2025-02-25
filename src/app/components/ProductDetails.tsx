@@ -6,7 +6,6 @@ import Link from 'next/link';
 import { CircleChevronLeft } from 'lucide-react';
 import { Suspense } from 'react';
 import { Video } from './Video';
-import { customToast } from '../constants/animation';
 
 export const ProductDetails = ({ product }: { product: DetailsProduct }) => {
     const { addToCart } = useCart();
