@@ -38,11 +38,9 @@ const productsUrls: { [key: string]: string[] } = {
 export default function Page() {
   const { slug } = useParams();
   if (typeof slug !== 'string') return <div className="">Produit non trouvé</div>;
-
   const images = productsUrls[slug];
 
   const product = products.find(product => product.url === slug);
-
   if (!product) return <div className="">Produit non trouvé</div>;
 
   return (

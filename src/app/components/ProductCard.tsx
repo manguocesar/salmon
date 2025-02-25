@@ -31,7 +31,7 @@ export const ProductCard = ({ product }: { product: Product }) => {
         alt={product.name}
         width={300}
         height={200}
-        className="mb-2 w-full rounded-lg sm:h-40 md:mb-4 md:h-56 lg:h-72"
+        className="animate-wiggle duration-15000 mb-2 w-full rounded-lg sm:h-40 md:mb-4 md:h-56 lg:h-72"
       />
       <h3 className="mb-1 text-xl font-semibold text-orange-600 md:mb-2">
         {product.name} <span className='md:hidden text-black text-lg italic'>-- {product.price}€</span>
