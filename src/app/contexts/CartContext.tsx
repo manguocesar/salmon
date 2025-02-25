@@ -13,6 +13,18 @@ import { CartContextType, CartItem } from '../types/products';
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
 
+const customToast = {
+  style: {
+    border: '1px solid #dd6b20',
+    padding: '16px',
+    color: '#dd6b20',
+  },
+  iconTheme: {
+    primary: '#dd6b20',
+    secondary: '#FFFAEE',
+  },
+}
+
 export const CartProvider: React.FC<{ children: React.ReactNode }> = ({
   children,
 }) => {
@@ -47,7 +59,7 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({
   };
 
   const removeFromCart = useCallback((item: CartItem) => {
-    toast.success(`Produit ${item.name} retiré de votre panier`);
+    toast.success(`Produit ${item.name} retiré de votre panier`, customToast);
     setCart(prevCart => {
       return prevCart.filter(cartItem => cartItem.id !== item.id);
     });
