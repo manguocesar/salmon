@@ -3,53 +3,17 @@
 import { useCallback, useState } from 'react';
 import { useCart } from '../contexts/CartContext';
 import Link from 'next/link';
-import getStripe from '../lib/getStripe';
-import toast from 'react-hot-toast';
 import { ProductSlider } from '../components/ProductSlider';
 import { bgUrls } from '../constants/bgSaumonUrls';
 import { TableHeader } from '../components/TableHeader';
 import { TableRow } from '../components/TableRow';
+import { handleCheckout } from '../lib/handleCheckout';
 
 export default function Cart() {
   const { cart, removeFromCart, getCartTotal, updateQuantity } = useCart();
   const [loading, setLoading] = useState(false);
 
-  const handleCheckout = useCallback(async () => {
-    setLoading(true);
-    try {
-      const stripe = await getStripe();
-
-      const response = await fetch('/api', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(cart),
-      });
-
-      if (!response.ok) {
-        throw new Error('Something went wrong. Please try again.');
-      }
-
-      const data = await response.json();
-
-      if (response.status === 500) return;
-      toast.loading('Redirection...');
-      if (stripe) {
-        stripe.redirectToCheckout({ sessionId: data.id });
-      } else {
-        toast.error('Payment initialization failed.');
-      }
-    } catch (error) {
-      if (error instanceof Error) {
-        toast.error(error.message);
-      } else {
-        toast.error('An unknown error occurred.');
-      }
-    } finally {
-      setLoading(false);
-    }
-  }, [cart]);
+  const handleCheckoutCallback = useCallback(() => handleCheckout(cart, setLoading), [cart]);
 
   return (
     <div className="mx-1 max-w-4xl md:mx-auto">
@@ -96,7 +60,7 @@ export default function Cart() {
               <button
                 type="button"
                 className="rounded-lg bg-orange-600 px-6 py-3 text-lg font-semibold text-white transition duration-300 hover:bg-orange-700"
-                onClick={handleCheckout}
+                onClick={handleCheckoutCallback}
                 disabled={loading}
               >
                 {loading ? 'Processing...' : 'Payer votre commande'}
