@@ -10,10 +10,19 @@ export default {
   theme: {
     extend: {
       animation: {
+        shake: 'shake ease-in-out infinite',
         wiggle: 'wiggle ease-in-out infinite',
         right: 'right ease-in-out infinite',
       },
       keyframes: {
+        shake: {
+          '0%, 45%': { transform: 'rotate(0deg)' },
+          '45%, 47%': { transform: 'rotate(-2deg)' },
+          '47%, 49%': { transform: 'rotate(2deg)' },
+          '49%, 51%': { transform: 'rotate(-2deg)' },
+          '51%, 53%': { transform: 'rotate(2deg)' },
+          '53%, 100%': { transform: 'rotate(0deg)' },
+        },
         wiggle: {
           '0%, 100%': { opacity: '0.6' },
           '5%, 95%': { opacity: '1' },
@@ -25,6 +34,7 @@ export default {
       },
       transitionDuration: {
         10000: '10000ms',
+        12000: '12000ms',
         15000: '15000ms',
       },
       colors: {
