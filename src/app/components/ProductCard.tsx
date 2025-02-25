@@ -10,7 +10,7 @@ import { motion } from 'framer-motion';
 import { animateRight, initialRight, transitionRight } from '../constants/animation';
 
 export const ProductCard = ({ product }: { product: Product }) => {
-  const { addToCart } = useCart();
+  const { addToCart, cart } = useCart();
   const handleAddToCart = (product: Product) => {
     if (!product.available)
       return toast.error('Ce produit est actuellement en rupture de stock');
@@ -23,6 +23,9 @@ export const ProductCard = ({ product }: { product: Product }) => {
       imgUrl: product.imgUrl,
     });
   };
+
+  const cartProduct = cart.find((item) => item.id === product.id);
+
 
   return (
     <div
@@ -46,18 +49,21 @@ export const ProductCard = ({ product }: { product: Product }) => {
         <p className="mb-2 text-justify text-gray-600 md:mb-4">
           {product.description}
         </p>
-        <button
-          className={cn(
-            !product.available && 'cursor-not-allowed opacity-50',
-            'animate-shake duration-10000 active:scale-105 rounded bg-orange-600 px-4 py-2 font-semibold text-white transition  hover:bg-orange-700',
-          )}
-          onClick={() => handleAddToCart(product)}
-          disabled={!product.available}
-        >
+        <div className='flex justify-between items-center md:block'>
+          <button
+            className={cn(
+              !product.available && 'cursor-not-allowed opacity-50',
+              'animate-shake duration-10000 active:scale-105 rounded bg-orange-600 px-4 py-2 font-semibold text-white transition  hover:bg-orange-700',
+            )}
+            onClick={() => handleAddToCart(product)}
+            disabled={!product.available}
+          >
 
-          {product.available ? 'Ajouter au Panier' : 'Rupture de Stock'}
+            {product.available ? 'Ajouter au Panier' : 'Rupture de Stock'}
 
-        </button>
+          </button>
+          {cartProduct?.quantity ? <p className='text-xl'>x {cartProduct?.quantity}</p> : null}
+        </div>
         <Link
           href={`/products/${product.url}`}
           className=" font-bold text-gray-600 hover:underline"
