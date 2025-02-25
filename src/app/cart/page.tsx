@@ -60,16 +60,16 @@ export default function Cart() {
             <table className="w-full">
               <thead className="bg-gray-50">
                 <tr>
-                  <th className="px-2 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500 md:px-6">
+                  <th className="px-2 py-3 text-left text-sm font-semibold uppercase tracking-wider text-black md:px-6">
                     Produit
                   </th>
-                  <th className="py-3 pr-1 text-left text-xs font-medium uppercase tracking-wider text-gray-500 md:px-6">
+                  <th className="py-3 pr-1 text-left text-sm font-semibold uppercase tracking-wider text-black md:px-6">
                     Quantité
                   </th>
-                  <th className="py-3 pr-1 text-left text-xs font-medium uppercase tracking-wider text-gray-500 md:px-6">
+                  <th className="py-3 pr-1 text-left text-sm font-semibold uppercase tracking-wider text-black md:px-6">
                     Prix
                   </th>
-                  <th className="py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500 md:px-6">
+                  <th className="py-3 text-left text-sm font-semibold uppercase tracking-wider text-black md:px-6">
                     Action
                   </th>
                 </tr>
@@ -127,7 +127,7 @@ export default function Cart() {
             <p className="text-xl font-semibold text-black">
               Total TTC : {getCartTotal().toFixed(2)} €
             </p>
-            <p className="mt-2 text-sm text-gray-600">
+            <p className="m-2 text-base text-gray-600">
               Date de livraison : Jeudi 17 Avril 2025
             </p>
             <div className="md:mt-8">
