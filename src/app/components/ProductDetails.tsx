@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { CircleChevronLeft } from 'lucide-react';
 import { Suspense } from 'react';
 import { Video } from './Video';
+import { customToast } from '../constants/animation';
 
 export const ProductDetails = ({ product }: { product: DetailsProduct }) => {
     const { addToCart } = useCart();
@@ -18,8 +19,9 @@ export const ProductDetails = ({ product }: { product: DetailsProduct }) => {
                 shortName: product.shortName,
                 price: product.price,
                 quantity: 1,
+                imgUrl: product.imgUrl,
             });
-            toast.success('Produit ajouté au panier avec succès');
+            toast.success('Produit ajouté au panier avec succès', customToast);
         } else {
             toast.error('Ce produit est actuellement en rupture de stock');
         }

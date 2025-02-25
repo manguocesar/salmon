@@ -3,6 +3,7 @@ export type Product = {
   name: string;
   shortName: string;
   img: string;
+  imgUrl: string;
   price: number;
   description: string;
   available: boolean;
@@ -19,6 +20,7 @@ export type CartItem = {
   id: number;
   name: string;
   shortName: string;
+  imgUrl: string;
   price: number;
   quantity: number;
 };

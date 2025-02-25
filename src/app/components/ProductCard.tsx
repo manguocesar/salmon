@@ -20,6 +20,7 @@ export const ProductCard = ({ product }: { product: Product }) => {
       shortName: product.shortName,
       price: product.price,
       quantity: 1,
+      imgUrl: product.imgUrl,
     });
   };
 

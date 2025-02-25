@@ -33,9 +33,7 @@ export async function POST(req: NextRequest) {
       unit_amount: item.price * 100,
       product_data: {
         name: item.name,
-        images: [
-          'https://cdn.sanity.io/images/4s5h2pxp/production/fc3ef6580411ef013a7f5783e3712a0d3be2de62-1510x1278.jpg',
-        ],
+        images: [`https://www.mikaelhertz.com/${item.imgUrl}`],
       },
     },
     adjustable_quantity: {
