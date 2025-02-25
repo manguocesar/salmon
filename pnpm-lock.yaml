@@ -44,9 +44,6 @@ importers:
       react-hot-toast:
         specifier: ^2.5.1
         version: 2.5.2(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      require-in-the-middle:
-        specifier: ^7.5.2
-        version: 7.5.2
       stripe:
         specifier: ^17.6.0
         version: 17.6.0
