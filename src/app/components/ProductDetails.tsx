@@ -21,7 +21,6 @@ export const ProductDetails = ({ product }: { product: DetailsProduct }) => {
                 quantity: 1,
                 imgUrl: product.imgUrl,
             });
-            toast.success('Produit ajouté au panier avec succès', customToast);
         } else {
             toast.error('Ce produit est actuellement en rupture de stock');
         }
