@@ -11,14 +11,20 @@ export default {
     extend: {
       animation: {
         wiggle: 'wiggle ease-in-out infinite',
+        right: 'right ease-in-out infinite',
       },
       keyframes: {
         wiggle: {
           '0%, 100%': { opacity: '0.4' },
           '5%, 95%': { opacity: '1' },
         },
+        right: {
+          '0%, 100%': { transform: 'translateX(20px)' },
+          '10%, 90%': { transform: 'translateX(0px)' },
+        },
       },
       transitionDuration: {
+        10000: '10000ms',
         15000: '15000ms',
       },
       colors: {

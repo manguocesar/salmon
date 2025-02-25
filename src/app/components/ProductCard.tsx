@@ -47,13 +47,15 @@ export const ProductCard = ({ product }: { product: Product }) => {
         onClick={() => handleAddToCart(product)}
         disabled={!product.available}
       >
+
         {product.available ? 'Ajouter au Panier' : 'Rupture de Stock'}
+
       </button>
       <Link
         href={`/products/${product.url}`}
-        className="font-bold text-gray-600 hover:underline"
+        className=" font-bold text-gray-600 hover:underline"
       >
-        <p className="m-2 underline underline-offset-4 md:no-underline">En Savoir Plus</p>
+        <p className="animate-right duration-10000 m-2 underline underline-offset-4 md:no-underline">En Savoir Plus</p>
       </Link>
     </div>
   );
