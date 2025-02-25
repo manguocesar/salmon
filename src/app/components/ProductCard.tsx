@@ -62,7 +62,7 @@ export const ProductCard = ({ product }: { product: Product }) => {
             {product.available ? 'Ajouter au Panier' : 'Rupture de Stock'}
 
           </button>
-          {cartProduct?.quantity ? <p className='text-xl'>x {cartProduct?.quantity}</p> : null}
+          {cartProduct?.quantity ? <p className='text-xl text-orange-500'>x {cartProduct?.quantity}</p> : null}
         </div>
         <Link
           href={`/products/${product.url}`}
