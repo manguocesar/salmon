@@ -16,7 +16,7 @@ const Success = () => {
   const images = products.map(product => product.imgUrl);
 
   return (
-    <div className="mx-auto flex w-9/12 flex-col items-center justify-center text-center text-2xl text-black">
+    <div className="mx-auto flex w-11/12 flex-col items-center justify-center text-center text-2xl text-black">
       <Image
         className="my-4 rounded-xl"
         src="/logo.jpg"
@@ -25,14 +25,15 @@ const Success = () => {
         height={400}
       />
       <h2>Merci pour votre commande!</h2>
-      <p className="email-msg">Verifiez vos emails pour la commande.</p>
-      <p className="description">
+      <p className="m-3 ">Verifiez vos emails pour le détail de la commande.</p>
+      <p className="m-3 ">
         Si vous avez des questions, n'hésitez pas à me contacter:
       </p>
-      <a className="m-3 font-bold" href="mailto:mikaelhertz@me.com">
+      <a className="font-bold" href="mailto:mikaelhertz@me.com">
         mikaelhertz@me.com
       </a>
-      <p>06 62 19 63 58</p>
+      <p className='m-3 '>06 62 19 63 58</p>
+      <p>A bientôt</p>
       <Link href="/">
         <button
           type="button"

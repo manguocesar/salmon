@@ -10,11 +10,13 @@ const Cancel = () => {
       <h2 className="m-3 text-2xl">
         L'achat n'a pas eu lieu, veuillez réessayer
       </h2>
-      <Link
-        href="/"
-        className="my-5 text-3xl font-bold text-orange-600 hover:underline"
-      >
-        Retour à la page d'accueil
+      <Link href="/">
+        <button
+          type="button"
+          className="m-5 rounded-lg bg-orange-700 p-3 text-3xl text-white hover:opacity-70"
+        >
+          Retour à l'Accueil
+        </button>
       </Link>
       <ProductSlider urlRoot="products" products={images} />
     </div>
