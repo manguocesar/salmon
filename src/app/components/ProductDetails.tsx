@@ -42,9 +42,9 @@ export const ProductDetails = ({ product }: { product: DetailsProduct }) => {
                 <h3 className="text-2xl text-orange-600 font-semibold">Détails:</h3>
                 <p className="mb-4 text-lg text-gray-500">{product.details}</p>
             </div>
-            <Link href="/products" className="flex items-center text-black">
-                <CircleChevronLeft />{' '}
-                <p className="ml-3 text-xl animate-right duration-10000">Retour à la liste des produits</p>
+            <Link href="/products" className="animate-right duration-10000 border-2 border-black w-full md:w-5/12 rounded-xl p-2 flex items-center bg-slate-50 text-gray-600">
+                <CircleChevronLeft />
+                <p className="ml-3 text-xl ">Retour à la liste des produits</p>
             </Link>
             <button
                 onClick={() => handleAddToCart(product)}
