@@ -2,14 +2,15 @@
 import { products } from '../constants/products';
 import Link from 'next/link';
 import { ProductCard } from '../components/ProductCard';
-import { ProductHeader } from '../components/ProductHeader';
 import { ProductSlider } from '../components/ProductSlider';
 import { processUrls } from '../constants/processUrls';
 
 export default async function Products() {
   return (
     <div className="container mx-auto">
-      <ProductHeader />
+      <h1 className="ml-2 text-3xl font-bold text-orange-600 underline md:my-3">
+        Détails :
+      </h1>
       <div className="grid grid-cols-1 gap-3 md:grid-cols-2 md:gap-8 lg:grid-cols-3">
         {products.map(product => (
           <ProductCard key={product.id} product={product} />

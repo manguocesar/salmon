@@ -1,7 +1,6 @@
 'use client';
 
 import { useParams } from 'next/navigation';
-import { ProductHeader } from '@/app/components/ProductHeader';
 import { ProductSlider } from '@/app/components/ProductSlider';
 import { ProductDetails } from '@/app/components/ProductDetails';
 import {
@@ -45,7 +44,9 @@ export default function Page() {
 
   return (
     <div className="mx-auto my-2 max-w-4xl px-4 md:py-8">
-      <ProductHeader />
+      <h1 className="ml-2 text-3xl font-bold text-orange-600 underline md:my-3">
+        En Savoir Plus:
+      </h1>
       <ProductSlider urlRoot={slug} products={images} />
       <ProductDetails product={product} />
       <ProductSlider urlRoot={slug} products={images} />

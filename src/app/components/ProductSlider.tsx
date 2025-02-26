@@ -26,8 +26,8 @@ export const ProductSlider = ({
               src={src}
               alt={urlRoot + id}
               width={300}
-              height={300}
-              className="h-40 rounded-lg hover:border-2 hover:border-orange-600 md:h-64"
+              height={200}
+              className="rounded-lg hover:border-2 hover:border-orange-600 "
             />
           );
         })}
