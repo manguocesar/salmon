@@ -1,4 +1,4 @@
-
+'use client';
 import { useCart } from '../contexts/CartContext';
 import toast from 'react-hot-toast';
 import { DetailsProduct } from '../types/products';

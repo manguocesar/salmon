@@ -1,6 +1,4 @@
-'use client';
-
-import { useParams } from 'next/navigation';
+'use server';
 import { ProductSlider } from '@/app/components/ProductSlider';
 import { ProductDetails } from '@/app/components/ProductDetails';
 import {
@@ -18,6 +16,7 @@ import {
   saumonGravadEntierUrls,
 } from '@/app/constants';
 
+// move to next API route
 const productsUrls: { [key: string]: string[] } = {
   saumonFumeEntier: saumonFumeEntierUrls,
   saumonFumePretranche: saumonFumePretrancheUrls,
@@ -34,13 +33,12 @@ const productsUrls: { [key: string]: string[] } = {
   couteau: [],
 };
 
-export default function Page() {
-  const { slug } = useParams();
-  if (typeof slug !== 'string') return <div className="">Produit non trouvé</div>;
+export default async function Page({ params }: { params: { slug: string } }) {
+  const { slug } = params;
   const images = productsUrls[slug];
 
   const product = products.find(product => product.url === slug);
-  if (!product) return <div className="">Produit non trouvé</div>;
+  if (!product) return <div className="text-center :text-xl text-black">Produit non trouvé</div>;
 
   return (
     <div className="mx-auto my-2 max-w-4xl px-4 md:py-8">
