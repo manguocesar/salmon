@@ -17,7 +17,7 @@ export const ProductSlider = ({
   return (
     <>
       <style jsx>{slideLeft}</style>
-      <div className="slide-left my-2 flex w-[200vw] flex-row space-x-2 md:my-6 md:space-x-6">
+      <div className="slide-left my-2 flex w-[200vw] flex-row space-x-2 md:my-6 md:space-x-4">
         {products.map((url, id) => {
           const src = urlRoot === 'products' ? `/${url}` : `/${urlRoot}/${url}`;
           return (
@@ -25,7 +25,7 @@ export const ProductSlider = ({
               key={id}
               src={src}
               alt={urlRoot + id}
-              width={220}
+              width={250}
               height={200}
               className="rounded-lg hover:border-2 hover:border-orange-600 "
             />
