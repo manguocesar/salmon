@@ -25,7 +25,7 @@ export const ProductSlider = ({
               key={id}
               src={src}
               alt={urlRoot + id}
-              width={300}
+              width={220}
               height={200}
               className="rounded-lg hover:border-2 hover:border-orange-600 "
             />

@@ -15,6 +15,8 @@ import {
   saumonFumeChaudPoivrePaveUrls,
   saumonGravadEntierUrls,
 } from '@/app/constants';
+import { CircleChevronLeft } from 'lucide-react';
+import Link from 'next/link';
 
 // move to next API route
 const productsUrls: { [key: string]: string[] } = {
@@ -42,9 +44,14 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
 
   return (
     <div className="mx-auto my-2 max-w-4xl px-4 md:py-8">
-      <h1 className="ml-2 text-3xl font-bold text-orange-600 underline md:my-3">
-        En Savoir Plus:
-      </h1>
+      <div className='flex flex-row items-center text-orange-600'>
+        <Link href="/products">
+          <CircleChevronLeft />
+        </Link>
+        <h1 className="ml-2 text-3xl font-bold text-orange-600 underline md:my-3">
+          En Savoir Plus:
+        </h1>
+      </div>
       <ProductSlider urlRoot={slug} products={images} />
       <ProductDetails product={product} />
       <ProductSlider urlRoot={slug} products={images} />
