@@ -2,7 +2,11 @@ import { withSentryConfig } from '@sentry/nextjs';
 import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  serverExternalPackages: ['require-in-the-middle'],
+  // If you were using other experimental features, keep them here
+  experimental: {
+    // other experimental options...
+  },
 };
 
 export default withSentryConfig(nextConfig, {
