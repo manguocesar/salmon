@@ -33,8 +33,8 @@ const productsUrls: { [key: string]: string[] } = {
   couteau: [],
 };
 
-export default async function Page({ params }: { params: { slug: string } }) {
-  const { slug } = params;
+export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
   const images = productsUrls[slug];
 
   const product = products.find(product => product.url === slug);
