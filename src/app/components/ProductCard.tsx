@@ -37,7 +37,7 @@ export const ProductCard = ({ product }: { product: Product }) => {
         alt={product.name}
         width={300}
         height={200}
-        className="animate-wiggle duration-15000 mb-2 w-full rounded-lg"
+        className="animate-wiggle duration-15000 mb-2 rounded-lg w-full"
       />
       <motion.div
         initial={initialRight}
@@ -49,7 +49,7 @@ export const ProductCard = ({ product }: { product: Product }) => {
         <p className="mb-2 text-justify text-gray-600 md:mb-4">
           {product.description}
         </p>
-        <div className='flex justify-between items-center md:block'>
+        <div className='flex items-center'>
           <button
             className={cn(
               !product.available && 'cursor-not-allowed opacity-50',
@@ -62,7 +62,7 @@ export const ProductCard = ({ product }: { product: Product }) => {
             {product.available ? 'Ajouter au Panier' : 'Rupture de Stock'}
 
           </button>
-          {cartProduct?.quantity ? <p className='text-xl text-orange-500'>x {cartProduct?.quantity}</p> : null}
+          {cartProduct?.quantity ? <p className='ml-5 text-2xl text-orange-600'>x {cartProduct?.quantity}</p> : null}
         </div>
         <Link
           href={`/products/${product.url}`}

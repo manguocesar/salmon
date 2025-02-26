@@ -12,8 +12,8 @@ export const DiscoverProducts = async () => {
           Découvrir Nos Produits
         </p>
       </Link>
-      <p className="mt-3 mx-2 text-xl text-red-600">
-        Passez commande avant le <strong>Mardi 25 Mars 2025</strong> pour livraison à domicile pour Pâques !
+      <p className="my-3 mx-2 text-xl text-red-600">
+        Passez commande avant le <strong>Mardi 25 Mars 2025</strong> pour livraison à domicile pour Pâques
       </p>
     </div>
   );
