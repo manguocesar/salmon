@@ -9,7 +9,6 @@ import { motion } from 'framer-motion';
 export default function Contact() {
   const images = products.map(product => product.imgUrl);
 
-
   return (
     <div className="mx-auto max-w-2xl text-black">
       <h1 className="my-2 text-center text-3xl font-bold text-orange-600 md:my-4">
@@ -32,10 +31,12 @@ export default function Contact() {
             <strong>Téléphone :</strong> 06 62 19 63 58
           </li>
           <li>
-            <strong>Email :</strong> mikaelhertz@me.com
+            <strong>Email :</strong> <a className="cursor-pointer" href="mailto:mikaelhertz@me.com">
+              mikaelhertz@me.com
+            </a>
           </li>
           <li>
-            <strong>Adresse :</strong> 21 ROUTE DE CREST, 26400 SAOU
+            <strong>Adresse :</strong> <a className='cursor-pointer' target="_blank" href="https://www.google.com/maps/place/21+Route+de+Crest,+26400+Saou,+France/@44.6454843,5.0572751,17z/data=!3m1!4b1!4m6!3m5!1s0x12b55f5ff87b7691:0x317c2e86f88193b6!8m2!3d44.6454805!4d5.05985!16s%2Fg%2F11c2fc3zcj?entry=ttu&g_ep=EgoyMDI1MDIyNC4wIKXMDSoASAFQAw%3D%3D">21 ROUTE DE CREST, 26400 SAOU</a>
           </li>
         </ul>
       </motion.div>
@@ -46,7 +47,6 @@ export default function Contact() {
         initial={initialRight}
         transition={transitionRight}
         whileInView={animateRight}
-
         className="m-1 rounded-lg bg-white p-2 shadow-md md:mt-8 md:p-8">
         <p className="mb-6">
           Fournisseur de saumon depuis <strong>30 ans</strong> dans la région
