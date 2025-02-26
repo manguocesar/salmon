@@ -15,13 +15,16 @@ export const Header = () => {
       <nav>
         <ul className="mx-3 flex items-center justify-around md:container md:ml-0 md:space-x-4">
           <Link href="/" className={cn(`flex items-center`)}>
-            <Image
-              className="rounded-xl md:w-36"
-              src="/logo.jpg"
-              alt="Mikael Hertz Poissons Fumés Artisanaux"
-              width={70}
-              height={30}
-            />
+            <div className='w-16 sm:w-32 md:w-56 lg:w-80'>
+              <Image
+                className="rounded-xl "
+                src="/logo.jpg"
+                alt="Mikael Hertz Poissons Fumés Artisanaux"
+                height={90}
+                width={180}
+
+              />
+            </div>
           </Link>
           <Link
             href="/products"

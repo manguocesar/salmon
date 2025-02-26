@@ -27,17 +27,19 @@ export const ProductDetails = ({ product }: { product: DetailsProduct }) => {
     return (
         <div className="gap-3 space-y-3 rounded-md bg-gray-100 p-2 shadow-lg md:grid-cols-2 md:gap-8 lg:grid-cols-2">
             <div className="flex flex-col">
-                <h2 className="text-xl font-bold text-orange-600 md:mb-4 md:text-3xl">
+                <h2 className="text-2xl font-bold text-orange-600 md:mb-4 md:text-3xl">
                     {product.name}
                 </h2>
                 <p className="text-lg font-semibold text-orange-500 md:mb-4 md:text-2xl">
                     {product.price} €
                 </p>
                 <p className="mb-4 text-lg text-gray-500">{product.description}</p>
+                <h3 className="text-2xl text-orange-600 font-semibold">Consommation:</h3>
                 <p className="mb-4 text-lg text-gray-500">{product.consumption}</p>
                 <Suspense fallback={<p>Loading video...</p>}>
                     <Video source={product.video} />
                 </Suspense>
+                <h3 className="text-2xl text-orange-600 font-semibold">Détails:</h3>
                 <p className="mb-4 text-lg text-gray-500">{product.details}</p>
             </div>
             <Link href="/products" className="flex items-center text-black">

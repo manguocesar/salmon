@@ -35,7 +35,7 @@ export default function Cart() {
       ) : (
         <>
           <div className="overflow-hidden rounded-lg bg-white shadow-md">
-            <table className="w-full mx-2">
+            <table className="w-full mx-1">
               <TableHeader />
               <tbody className="divide-y divide-gray-200 bg-white">
                 {cart.map(item => (

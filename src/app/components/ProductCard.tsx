@@ -37,14 +37,14 @@ export const ProductCard = ({ product }: { product: Product }) => {
         alt={product.name}
         width={300}
         height={200}
-        className="animate-wiggle duration-15000 mb-2 w-full rounded-lg sm:h-40 md:mb-4 md:h-56 lg:h-72"
+        className="animate-wiggle duration-15000 mb-2 w-full rounded-lg"
       />
       <motion.div
         initial={initialRight}
         transition={transitionRight}
         whileInView={animateRight}>
         <h3 className="mb-1 text-xl font-semibold text-orange-600 md:mb-2">
-          {product.name} <span className='md:hidden text-black text-lg italic'>-- {product.price}€</span>
+          {product.name} <span className='md:hidden text-gray-400 text-lg italic'>-- {product.price}€</span>
         </h3>
         <p className="mb-2 text-justify text-gray-600 md:mb-4">
           {product.description}
@@ -53,7 +53,7 @@ export const ProductCard = ({ product }: { product: Product }) => {
           <button
             className={cn(
               !product.available && 'cursor-not-allowed opacity-50',
-              'animate-shake duration-10000 active:scale-105 rounded bg-orange-600 px-4 py-2 font-semibold text-white transition  hover:bg-orange-700',
+              'animate-shake duration-10000 active:scale-110 rounded bg-orange-600 px-4 py-2 font-semibold text-white transition  hover:bg-orange-700',
             )}
             onClick={() => handleAddToCart(product)}
             disabled={!product.available}
