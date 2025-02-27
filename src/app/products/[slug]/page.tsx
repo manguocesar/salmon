@@ -46,7 +46,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
     <div className="mx-auto my-2 max-w-4xl px-4 md:py-8">
       <div className='flex flex-row items-center text-orange-600'>
         <Link href="/products">
-          <CircleChevronLeft />
+          <CircleChevronLeft size={30} className='text-gray-500' />
         </Link>
         <h1 className="ml-2 text-3xl font-bold text-orange-600 underline md:my-3">
           En Savoir Plus:

@@ -2,7 +2,7 @@ import { loadStripe } from '@stripe/stripe-js';
 
 let stripePromise: Promise<import('@stripe/stripe-js').Stripe | null>;
 
-const getStripe = () => {
+export const getStripe = () => {
   if (!stripePromise) {
     const key = process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY;
     if (!key) {
@@ -13,5 +13,3 @@ const getStripe = () => {
 
   return stripePromise;
 };
-
-export default getStripe;

@@ -1,5 +1,5 @@
 import toast from 'react-hot-toast';
-import getStripe from './getStripe';
+import { getStripe } from './getStripe';
 import { CartItem } from '../types/products';
 
 export async function handleCheckout(
