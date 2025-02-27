@@ -31,12 +31,12 @@ export default function Contact() {
             <strong>Téléphone :</strong> 06 62 19 63 58
           </li>
           <li>
-            <strong>Email :</strong> <a className="cursor-pointer" href="mailto:mikaelhertz@me.com">
+            <strong>Email :</strong> <a className="underline cursor-pointer" href="mailto:mikaelhertz@me.com">
               mikaelhertz@me.com
             </a>
           </li>
           <li>
-            <strong>Adresse :</strong> <a className='cursor-pointer' target="_blank" href="https://www.google.com/maps/place/21+Route+de+Crest,+26400+Saou,+France/@44.6454843,5.0572751,17z/data=!3m1!4b1!4m6!3m5!1s0x12b55f5ff87b7691:0x317c2e86f88193b6!8m2!3d44.6454805!4d5.05985!16s%2Fg%2F11c2fc3zcj?entry=ttu&g_ep=EgoyMDI1MDIyNC4wIKXMDSoASAFQAw%3D%3D">21 ROUTE DE CREST, 26400 SAOU</a>
+            <strong>Adresse :</strong> <a className='cursor-pointer underline' target="_blank" href="https://www.google.com/maps/place/21+Route+de+Crest,+26400+Saou,+France/@44.6454843,5.0572751,17z/data=!3m1!4b1!4m6!3m5!1s0x12b55f5ff87b7691:0x317c2e86f88193b6!8m2!3d44.6454805!4d5.05985!16s%2Fg%2F11c2fc3zcj?entry=ttu&g_ep=EgoyMDI1MDIyNC4wIKXMDSoASAFQAw%3D%3D">21 ROUTE DE CREST, 26400 SAOU</a>
           </li>
         </ul>
       </motion.div>
