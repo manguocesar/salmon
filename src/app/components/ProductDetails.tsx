@@ -50,16 +50,16 @@ export const ProductDetails = ({ product }: { product: DetailsProduct }) => {
             </Link>
             <button
                 onClick={() => handleAddToCart(product)}
-                className="active:scale-105 flex items-center mx-auto w-8/12 justify-center rounded-lg bg-orange-600 px-6 py-3 text-lg  text-white transition duration-300 hover:bg-orange-700"
+                className="active:scale-105 flex items-center mx-auto w-9/12 justify-center rounded-lg bg-orange-600 px-6 py-3 text-lg  text-white transition duration-300 hover:bg-orange-700"
             >
                 <span className='font-semibold'>
                     Ajouter au Panier
                 </span>
-                {cartProduct?.quantity ? <span className='ml-5 text-xl text-white '>x {cartProduct?.quantity}</span> : null}
+                {cartProduct?.quantity ? <span className='ml-2 text-xl text-white '>x {cartProduct?.quantity}</span> : null}
 
             </button>
             <Link href="/cart" className="flex text-black">
-                <button className="mx-auto w-8/12 rounded-lg bg-gray-500 px-6 py-3 text-lg font-semibold text-white transition duration-300 hover:bg-orange-700">
+                <button className="mx-auto w-9/12 rounded-lg bg-gray-500 px-6 py-3 text-lg font-semibold text-white transition duration-300 hover:bg-orange-700">
                     Voir mon panier
                 </button>
             </Link>

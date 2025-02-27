@@ -3,12 +3,12 @@ import { CartItem } from "../types/products";
 
 export const TableRow = ({ item, updateQuantity, removeFromCart }: { item: CartItem; updateQuantity: (id: number, quantity: number) => void; removeFromCart: (item: CartItem) => void; }) => (
     <tr key={item.id}>
-        <td className="px-1 font-semibold text-orange-600 md:px-6">
-            <span className="block md:hidden">{item.shortName}</span>   <span className="hidden md:block">{item.name}</span>
+        <td className="px-1 font-semibold text-orange-600 md:px-6 w-6/12">
+            <span className="block sm:hidden text-sm flex-wrap">{item.name}</span>   <span className="hidden sm:block">{item.name}</span>
         </td>
 
         <td className="md:px-6 py-3">
-            <div className="flex items-center">
+            <div className="flex items-center justify-center">
                 <button
                     onClick={() => updateQuantity(item.id, item.quantity - 1)}
                     className="rounded-l border font-bold px-2 py-1 text-gray-500 hover:text-gray-700"
@@ -27,7 +27,7 @@ export const TableRow = ({ item, updateQuantity, removeFromCart }: { item: CartI
             </div>
         </td>
         <td className=" px-1 text-center md:text-left font-semibold text-orange-600 md:px-6">
-            <span className="block md:hidden"> {(item.price * item.quantity).toFixed(2)} €</span>   <span className="hidden md:block">{item.price * item.quantity}€</span>
+            <span className="block md:hidden"> {item.price * item.quantity} €</span>   <span className="hidden md:block">{(item.price * item.quantity).toFixed(2)}€</span>
         </td>
         <td className="hidden md:table">
             <Delete
