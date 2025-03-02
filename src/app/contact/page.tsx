@@ -1,10 +1,10 @@
 'use client';
 
+import { MotionWrapper } from '../components/MotionWrapper';
 import { ProductSlider } from '../components/ProductSlider';
 import { animateRight, initialRight, transitionRight } from '../constants/animation';
 import { processUrls } from '../constants/processUrls';
 import { products } from '../constants/products';
-import { motion } from 'framer-motion';
 
 export default function Contact() {
   const images = products.map(product => product.imgUrl);
@@ -14,7 +14,7 @@ export default function Contact() {
       <h1 className="my-2 text-center text-3xl font-bold text-orange-600 md:my-4">
         Contactez moi
       </h1>
-      <motion.div
+      <MotionWrapper.div
         initial={initialRight}
         transition={transitionRight}
         whileInView={animateRight}
@@ -39,11 +39,11 @@ export default function Contact() {
             <strong>Adresse :</strong> <a className='cursor-pointer underline' target="_blank" href="https://www.google.com/maps/place/21+Route+de+Crest,+26400+Saou,+France/@44.6454843,5.0572751,17z/data=!3m1!4b1!4m6!3m5!1s0x12b55f5ff87b7691:0x317c2e86f88193b6!8m2!3d44.6454805!4d5.05985!16s%2Fg%2F11c2fc3zcj?entry=ttu&g_ep=EgoyMDI1MDIyNC4wIKXMDSoASAFQAw%3D%3D">21 ROUTE DE CREST, 26400 SAOU</a>
           </li>
         </ul>
-      </motion.div>
+      </MotionWrapper.div>
 
       <ProductSlider urlRoot="process" products={processUrls} />
 
-      <motion.div
+      <MotionWrapper.div
         initial={initialRight}
         transition={transitionRight}
         whileInView={animateRight}
@@ -61,11 +61,11 @@ export default function Contact() {
             anniversaires</strong>  ..., nous assurons des produits frais livrés et servis
           au plus près de vos évenements.
         </p>
-      </motion.div>
+      </MotionWrapper.div>
 
       <ProductSlider urlRoot="products" products={images} />
 
-      <motion.div
+      <MotionWrapper.div
         initial={initialRight}
         transition={transitionRight}
         whileInView={animateRight}
@@ -85,7 +85,7 @@ export default function Contact() {
             pour passer votre commande</strong>. Nous sommes là pour vous fournir du
           poisson de la meilleure qualité !
         </p>
-      </motion.div>
+      </MotionWrapper.div>
     </div >
   );
 }

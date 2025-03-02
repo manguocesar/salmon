@@ -6,8 +6,8 @@ import Image from 'next/image';
 import { cn } from '../lib/utils';
 import toast from 'react-hot-toast';
 import { useCart } from '../contexts/CartContext';
-import { motion } from 'framer-motion';
 import { animateRight, initialRight, transitionRight } from '../constants/animation';
+import { MotionWrapper } from './MotionWrapper';
 
 export const ProductCard = ({ product }: { product: Product }) => {
   const { addToCart, cart } = useCart();
@@ -39,7 +39,7 @@ export const ProductCard = ({ product }: { product: Product }) => {
         height={200}
         className="animate-wiggle duration-15000 mb-2 rounded-lg w-full"
       />
-      <motion.div
+      <MotionWrapper.div
         initial={initialRight}
         transition={transitionRight}
         whileInView={animateRight}>
@@ -70,7 +70,7 @@ export const ProductCard = ({ product }: { product: Product }) => {
         >
           <p className="animate-right duration-10000 m-2 underline underline-offset-4 md:no-underline">En Savoir Plus</p>
         </Link>
-      </motion.div>
+      </MotionWrapper.div>
     </div>
   );
 };
