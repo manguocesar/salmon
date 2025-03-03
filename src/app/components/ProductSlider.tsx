@@ -10,9 +10,9 @@ export const ProductSlider = ({
   urlRoot: string;
 }) => {
   // lengthening the array to make the animation last longer
-  products = [...products, ...products, ...products, ...products];
-
-
+  while (products.length < 25) {
+    products = [...products, ...products];
+  }
 
   return (
     <>
