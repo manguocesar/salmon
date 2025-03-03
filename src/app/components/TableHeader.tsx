@@ -11,7 +11,7 @@ export const TableHeader = () => (
                 Prix
             </th>
             <th className="hidden md:block py-3 text-left text-base font-semibold uppercase tracking-wider text-black">
-                Action
+                Retirer
             </th>
         </tr>
     </thead>
