@@ -44,9 +44,9 @@ export const ProductCard = ({ product }: { product: Product }) => {
         transition={transitionRight}
         whileInView={animateRight}>
         <h3 className="mb-1 text-xl font-semibold text-orange-600 md:mb-2">
-          {product.name} <span className='md:hidden text-gray-400 text-lg italic'>-- {product.price}€</span>
+          {product.name} <span className='md:text-gray-700 text-gray-400 text-lg italic'>-- {product.price}€</span>
         </h3>
-        <p className="mb-2 text-justify text-gray-800 md:mb-4">
+        <p className="mb-2 text-justify text-g ray-800 md:mb-4">
           {product.description}
         </p>
         <div className='flex items-center'>
@@ -66,7 +66,7 @@ export const ProductCard = ({ product }: { product: Product }) => {
         </div>
         <Link
           href={`/products/${product.url}`}
-          className=" font-bold text-gray-600 hover:underline"
+          className=" font-bold text-gray-800 hover:underline"
         >
           <p className="animate-right duration-10000 m-2 underline underline-offset-4 md:no-underline">En Savoir Plus</p>
         </Link>
