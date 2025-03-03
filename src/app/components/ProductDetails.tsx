@@ -33,16 +33,17 @@ export const ProductDetails = ({ product }: { product: DetailsProduct }) => {
                     {product.name}
                 </h2>
                 <p className="text-lg font-semibold text-orange-500 md:mb-4 md:text-2xl">
-                    {product.price} €
+                    {product.price} € à l'unité
                 </p>
                 <p className="mb-4 text-lg text-gray-500">{product.description}</p>
-                <h3 className="text-2xl text-orange-600 font-semibold">Consommation:</h3>
-                <p className="mb-4 text-lg text-gray-500">{product.consumption}</p>
+                <h3 className="text-2xl text-orange-600 font-semibold">Détails:</h3>
+                <p className="mb-4 text-lg text-gray-500">{product.details}</p>
+
                 <Suspense fallback={<p>Loading video...</p>}>
                     <Video source={product.video} />
                 </Suspense>
-                <h3 className="text-2xl text-orange-600 font-semibold">Détails:</h3>
-                <p className="mb-4 text-lg text-gray-500">{product.details}</p>
+                <h3 className="text-2xl text-orange-600 font-semibold">Consommation:</h3>
+                <p className="mb-4 text-lg text-gray-500">{product.consumption}</p>
             </div>
             <Link href="/products" className="animate-right duration-10000 border-2 border-black w-full md:w-5/12 rounded-xl p-2 flex items-center bg-slate-50 text-gray-600">
                 <CircleChevronLeft />
