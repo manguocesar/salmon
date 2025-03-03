@@ -12,7 +12,7 @@ export const products = [
       "Fumage à l'ancienne au bois d'hêtre, sel sec & savoir faire artisanale.",
     available: true,
     details:
-      "Filet de saumon fumé entier. Saumon élevé en Norvège, fumé au Danmark. Poids : env 1kg. Salmo salar. Fumé au bois de hêtre à l'atelier au Danmark. Le saumon fumé entier est idéal pour les grandes tablées, les buffets, les brunchs, les fêtes de famille ou les réceptions. Il est aussi parfait pour les traiteurs, les restaurateurs et les hôtels. Le fumage à froid (entre 22 et 24°c) au bois de hêtre de façon traditionnelle. Cette technique permet d'étirer les fibres du poisson, ce qui lui procure une texture plus sèche et un goût de fumage plus prononcé. Cette technique permet également d'éliminer une partie plus importante des graisses (3 à 4%) par rapport à un fumage classique. Il est tranché à la main afin de mieux respecter sa chair si caractéristique.",
+      "Saumon élevé en Norvège, fumé au Danmark. Fumé au bois de hêtre dans des fumoirs à l'ancienne. Filet de saumon fumé entier. Poids : env 1kg. Salmo salar. Le fumage à froid inférieur à 10°c au bois de hêtre de façon traditionnelle.",
     consumption:
       'Consommer dans les 10 jours après ouverture. Produit frais – peut être congelé. Produit entier non tranché. Conditionné sous vide pour une meilleure conservation.',
   },
