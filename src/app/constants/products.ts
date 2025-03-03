@@ -14,7 +14,7 @@ export const products = [
     details:
       "Saumon élevé en Norvège, fumé au Danmark. Salmo salar. Fumé au bois de hêtre à froid inférieur à 10°c dans des fumoirs à l'ancienne. Filet de saumon fumé entier. Poids : env 1kg.",
     consumption:
-      'Consommer dans les 10 jours après ouverture. Produit frais – peut être congelé. Produit entier non tranché. Conditionné sous vide pour une meilleure conservation.',
+      'Consommer dans les 10 jours après ouverture. Produit frais – peut être congelé. Fillet entier. Conditionné sous vide pour une meilleure conservation. DLC: 21-28 jours après reception.',
   },
   {
     id: 2,
