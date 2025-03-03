@@ -8,6 +8,7 @@ const stripe = new Stripe(process.env.NEXT_PUBLIC_STRIPE_SECRET_KEY);
 import { NextRequest } from 'next/server';
 import { CartItem, LineItem } from '../types/products';
 import { freeDelivreryThreshold } from '../constants/enums';
+import { liveFreeDelivery } from '../constants/deliveries';
 
 export async function POST(req: NextRequest) {
   const body: CartItem[] = await req.json();
@@ -17,20 +18,12 @@ export async function POST(req: NextRequest) {
     .reduce((a, b) => a + b, 0);
 
   const options =
-    totalValue < freeDelivreryThreshold
-      ? [
-          { shipping_rate: 'shr_1QuerSAZSYffeW1tgi7xnZid' }, //Mercredi 16 Avril de 12 & 18 heure collecte gratuite à Saint Cyr
-          { shipping_rate: 'shr_1Qufi0AZSYffeW1tF3iU2018' }, //Commande inférieure à 250€ - livraison Jeudi 17 Avril 2025
-        ]
-      : [
-          { shipping_rate: 'shr_1QuerSAZSYffeW1tgi7xnZid' }, //Mercredi 16 Avril de 12 & 18 heure collecte gratuite à Saint Cyr
-          { shipping_rate: 'shr_1QufiQAZSYffeW1txqW3r6nz' }, //Commande supérieur à 250€ - livraison gratuite Jeudi 17 Avril 2025
-        ];
+    totalValue < freeDelivreryThreshold ? liveFreeDelivery : liveFreeDelivery;
 
   const items: LineItem[] = body.map((item: CartItem) => ({
     price_data: {
       currency: 'eur',
-      unit_amount: item.price * 100,
+      unit_amount: 1 * 100,
       product_data: {
         name: item.name,
         images: [`https://www.mikaelhertz.com/${item.imgUrl}`],
@@ -42,6 +35,8 @@ export async function POST(req: NextRequest) {
     },
     quantity: item.quantity,
   }));
+
+  console.log('stripe', stripe);
 
   try {
     const session = await stripe.checkout.sessions.create({

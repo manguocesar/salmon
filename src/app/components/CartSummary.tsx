@@ -22,16 +22,16 @@ export function CartSummary() {
         'right-4 top-24 hidden w-64 rounded-lg bg-white p-2 text-black shadow-md transition-all sm:fixed sm:block md:p-4',
       )}
     >
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-between mb-2">
         <button
           className={
-            'rounded-full border-2 border-slate-600 bg-slate-400 px-2 font-bold text-white'
+            'rounded-full border-2 border-slate-600 bg-orange-500 h-8 w-8 font-bold text-white'
           }
           onClick={() => setHidden(!hidden)}
         >
           X
         </button>
-        <h3 className="mb-2 text-left text-lg font-semibold">Panier</h3>
+        <h3 className="text-left text-orange-500 text-xl font-semibold">Panier</h3>
       </div>
       <ul className="mb-4">
         {cart.map(item => (
