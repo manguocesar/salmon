@@ -14,6 +14,7 @@ export type Product = {
 export type DetailsProduct = Product & {
   video: string;
   consumption: string;
+  size?: string;
 };
 
 export type CartItem = {

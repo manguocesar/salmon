@@ -33,7 +33,7 @@ export const ProductDetails = ({ product }: { product: DetailsProduct }) => {
                     {product.name}
                 </h2>
                 <p className="text-lg font-semibold text-orange-500 md:mb-4 md:text-2xl">
-                    {product.price} € à l'unité
+                    {product.price} € à l'unité {product.size ? `(${product.size})` : null}
                 </p>
                 <p className="mb-4 text-lg text-gray-500">{product.description}</p>
                 <h3 className="text-2xl text-orange-600 font-semibold">Détails:</h3>

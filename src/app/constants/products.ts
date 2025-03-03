@@ -2,7 +2,7 @@ export const products = [
   {
     id: 1,
     url: 'saumonFumeEntier',
-    name: 'A - Saumon Fumé Fillet Entier',
+    name: 'A - Saumon Fumé Filet Entier',
     shortName: 'A - Saumon Entier',
     img: 'saumon-fume-entier-1.jpg',
     imgUrl: 'saumonFumeEntier/saumon-fume-entier-1.jpg',
