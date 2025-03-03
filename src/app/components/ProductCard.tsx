@@ -46,7 +46,7 @@ export const ProductCard = ({ product }: { product: Product }) => {
         <h3 className="mb-1 text-xl font-semibold text-orange-600 md:mb-2">
           {product.name} <span className='md:hidden text-gray-400 text-lg italic'>-- {product.price}€</span>
         </h3>
-        <p className="mb-2 text-justify text-gray-600 md:mb-4">
+        <p className="mb-2 text-justify text-gray-800 md:mb-4">
           {product.description}
         </p>
         <div className='flex items-center'>
