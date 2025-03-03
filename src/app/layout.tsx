@@ -9,12 +9,18 @@ import { GDPRBanner } from './components/GDPRBanner';
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
 
+
 const inter = Inter({ subsets: ['latin'], display: 'swap' });
+
+const defaultUrl = process.env.NEXT_PUBLIC_URL
+  ? `https://${process.env.NEXT_PUBLIC_URL}`
+  : "http://localhost:3000";
 
 export const metadata: Metadata = {
   title: "Mikael Hertz Saumons Fumés à l'ancienne",
   description:
     'Les meilleurs saumons, truites et flétans fumés et élevés artisanalement à Lyon, France',
+  metadataBase: new URL(defaultUrl),
 };
 
 export default async function RootLayout({
