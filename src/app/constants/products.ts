@@ -12,7 +12,7 @@ export const products = [
       "Fumage à l'ancienne au bois d'hêtre, sel sec & savoir faire artisanale.",
     available: true,
     details:
-      "Saumon élevé en Norvège, fumé au Danmark. Fumé au bois de hêtre dans des fumoirs à l'ancienne. Filet de saumon fumé entier. Poids : env 1kg. Salmo salar. Le fumage à froid inférieur à 10°c au bois de hêtre de façon traditionnelle.",
+      "Saumon élevé en Norvège, fumé au Danmark. Salmo salar. Fumé au bois de hêtre à froid inférieur à 10°c dans des fumoirs à l'ancienne. Filet de saumon fumé entier. Poids : env 1kg.",
     consumption:
       'Consommer dans les 10 jours après ouverture. Produit frais – peut être congelé. Produit entier non tranché. Conditionné sous vide pour une meilleure conservation.',
   },
