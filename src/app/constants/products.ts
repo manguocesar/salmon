@@ -2,12 +2,13 @@ export const products = [
   {
     id: 1,
     url: 'saumonFumeEntier',
-    name: 'A - Saumon Fumé Entier',
+    name: 'A - Saumon Fumé Fillet Entier',
     shortName: 'A - Saumon Entier',
     img: 'saumon-fume-entier-1.jpg',
     imgUrl: 'saumonFumeEntier/saumon-fume-entier-1.jpg',
     video: '',
     price: 60,
+    size: 'environ 1kg',
     description:
       "Fumage à l'ancienne au bois d'hêtre, sel sec & savoir faire artisanale.",
     available: true,
@@ -28,9 +29,9 @@ export const products = [
     description: 'Fumé minutieusement puis coupé en fines tranches.',
     available: true,
     details:
-      "Saumon fumé Prétranché. 4 paquets de 250g. Saumon élevé en Norvège, fumé au Danmark. Poids : 1kg (4*250g). Salmo salar. Fumé au bois de hêtre à l'atelier au Danmark. Sans peau. Le saumon fumé prétranché est idéal pour les petites tablées, les buffets, les brunchs, les fêtes de famille ou les réceptions. Il est aussi parfait pour les traiteurs, les restaurateurs et les hôtels. Il est prêt à être dégusté, il ne reste plus qu’à le sortir de son emballage et à le disposer sur un plateau. Le fumage à froid (entre 22 et 24°c) au bois de hêtre de façon traditionnelle. Cette technique permet d'étirer les fibres du poisson, ce qui lui procure une texture plus sèche et un goût de fumage plus prononcé. Cette technique permet également d'éliminer une partie plus importante des graisses (3 à 4%) par rapport à un fumage classique. Il est tranché à la main afin de mieux respecter sa chair si caractéristique.",
+      "Saumon élevé en Norvège, fumé au Danmark. Salmo salar. Fumé au bois de hêtre à froid inférieur à 10°c dans des fumoirs à l'ancienne. Saumon fumé Prétranché. 4 paquets de 250g. Poids : 1kg (4*250g). Salmo salar. Fumé au bois de hêtre à l'atelier au Danmark. Sans peau. Le saumon fumé prétranché est idéal pour les petites tablées, les buffets, les brunchs, les fêtes de famille ou les réceptions. Il est aussi parfait pour les traiteurs, les restaurateurs et les hôtels. Il est prêt à être dégusté, il ne reste plus qu’à le sortir de son emballage et à le disposer sur un plateau. Le fumage à froid (entre 22 et 24°c) au bois de hêtre de façon traditionnelle. Cette technique permet d'étirer les fibres du poisson, ce qui lui procure une texture plus sèche et un goût de fumage plus prononcé. Cette technique permet également d'éliminer une partie plus importante des graisses (3 à 4%) par rapport à un fumage classique. Il est tranché à la main afin de mieux respecter sa chair si caractéristique.",
     consumption:
-      "4 paquets sous vide de 5 à 7 tranches d'environ 50g. Consommer dans les 10 jours après ouverture. Produit frais – peut être congelé. Conditionné sous vide pour une meilleure conservation.  Produit frais – peut être congelé DLC : 10 jours après ouverture ou sortie du congelateur.",
+      "4 paquets sous vide de 5 à 7 tranches d'environ 50g. Consommer dans les 10 jours après ouverture. Produit frais – peut être congelé. Conditionné sous vide pour une meilleure conservation. DLC: 21-28 jours après reception",
   },
   {
     id: 3,
