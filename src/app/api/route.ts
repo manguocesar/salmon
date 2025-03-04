@@ -24,6 +24,7 @@ export async function POST(req: NextRequest) {
     price_data: {
       currency: 'eur',
       unit_amount: 1 * 100,
+      // unit_amount: item.price * 100,
       product_data: {
         name: item.name,
         images: [`https://www.mikaelhertz.com/${item.imgUrl}`],
@@ -34,6 +35,7 @@ export async function POST(req: NextRequest) {
       minimum: 1,
     },
     quantity: item.quantity,
+    tax_rates: ['txr_1QywioAZSYffeW1tSfHPit8U'],
   }));
 
   console.log('stripe', stripe);
@@ -43,11 +45,20 @@ export async function POST(req: NextRequest) {
       submit_type: 'pay',
       mode: 'payment',
       customer_creation: 'always',
-      allow_promotion_codes: true,
+      allow_promotion_codes: false,
       payment_method_types: ['card'],
       phone_number_collection: {
         enabled: true,
       },
+
+      tax_id_collection: {
+        enabled: true,
+      },
+
+      invoice_creation: {
+        enabled: true,
+      },
+
       shipping_address_collection: {
         allowed_countries: ['FR'],
       },
