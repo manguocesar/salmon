@@ -60,7 +60,7 @@ export const products = [
     video: '',
     price: 48,
     description:
-      'Saumon fumé coupé dans la largeure du filet, de la dorsale aux côtes.',
+      'Saumon fumé coupé dans la largeur du filet, de la dorsale aux côtes.',
     available: true,
     details:
       "Quatre pavés de 200 grammes chaqun. Saumon élevé en Norvège, fumé au Danmark. Poids : 800g (4*200g). Salmo salar. Fumé au bois de hêtre. Produit frais – peut être congelé. DLC : 10 jours après ouverture ou sortie du congelateur (même si on sait qu’il sera engloutit bien avant. Conditionné sous vide pour une meilleure conservation. Le saumon fumé pavé est idéal pour les petites tablées, les buffets, les brunchs, les fêtes de famille ou les réceptions. Il est aussi parfait pour les traiteurs, les restaurateurs et les hôtels. Il est prêt à être dégusté, il ne reste plus qu’à le sortir de son emballage et à le disposer sur un plateau. Le fumage à froid (entre 22 et 24°c) au bois de hêtre de façon traditionnelle. Cette technique permet d'étirer les fibres du poisson, ce qui lui procure une texture plus sèche et un goût de fumage plus",
