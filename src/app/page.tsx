@@ -7,6 +7,11 @@ import { ProductSlider } from './components/ProductSlider';
 import { products } from './constants/products';
 import { processUrls } from './constants/processUrls';
 
+// const DynamicComponent = dynamic(() => import('../components/MyComponent'), {
+//   loading: () => <p>Loading...</p>, // Optional loading component
+//   ssr: false, // Disable server-side rendering if needed
+// });
+
 async function Home() {
   const images = products.map(product => product.imgUrl);
   return (

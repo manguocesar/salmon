@@ -20,7 +20,11 @@ export const ProductSlider = ({
       <div className="slide-left my-2 flex w-[200vw] flex-row space-x-2 md:my-6 md:space-x-4">
         {products.map((url, id) => {
           const src = urlRoot === 'products' ? `/${url}` : `/${urlRoot}/${url}`;
+          {/* Placeholder Support: -- layout="responsive" */ }
+
+
           return (
+
             <Image
               key={id}
               src={src}

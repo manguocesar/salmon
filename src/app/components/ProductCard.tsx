@@ -32,6 +32,9 @@ export const ProductCard = ({ product }: { product: Product }) => {
       key={product.id}
       className="mx-2 rounded-lg bg-white p-2 shadow-md md:p-6"
     >
+      {/* Placeholder Support: -- layout="responsive" */}
+
+
       <Image
         src={`/${product.url}/${product.img}`}
         alt={product.name}
