@@ -17,6 +17,8 @@ const Success = () => {
 
   return (
     <div className="mx-auto flex w-11/12 flex-col items-center justify-center text-center text-2xl text-black">
+      {/* Placeholder Support: -- layout="responsive" intrinsic responsive fixed fill */}
+
       <Image
         className="my-4 rounded-xl"
         src="/logo.jpg"

@@ -11,6 +11,30 @@ export type Product = {
   details: string;
 };
 
+export type ProductSession = {
+  quantity: number;
+  price: {
+    unit_amount: number;
+  };
+  amount_total: number;
+};
+
+export type CheckoutItem = {
+  email: string;
+  amountTotal: string;
+  line1: string;
+  postalCode: string;
+  city: string;
+  phone: string;
+  name: string;
+  productA: ProductSession;
+  productB: ProductSession;
+  productC: ProductSession;
+  productD: ProductSession;
+  productF: ProductSession;
+  productH: ProductSession;
+};
+
 export type DetailsProduct = Product & {
   video: string;
   consumption: string;

@@ -16,13 +16,18 @@ export const Header = () => {
         <ul className="mx-3 flex items-center justify-around md:container md:ml-0 md:space-x-4">
           <Link href="/" className={cn(`flex items-center`)}>
             <div className='w-16 sm:w-32 md:w-56 lg:w-80'>
+              {/* Placeholder Support: -- layout="responsive" */}
+
               <Image
                 className="rounded-xl "
                 src="/logo.jpg"
                 alt="Mikael Hertz Poissons Fumés Artisanaux"
                 height={90}
                 width={180}
-
+              // priority
+              // quality={100}
+              // placeholder="blur"
+              // blurDataURL="data:image/png;base64,..."
               />
             </div>
           </Link>

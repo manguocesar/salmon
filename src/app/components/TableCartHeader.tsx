@@ -1,4 +1,4 @@
-export const TableHeader = () => (
+export const TableCartHeader = () => (
     <thead className="bg-gray-50">
         <tr>
             <th className="py-3 text-left text-base font-semibold uppercase tracking-wider text-black md:px-6">
