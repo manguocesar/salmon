@@ -1,6 +1,6 @@
 export function TableSessionHeader() {
     const headers = [
-        "Name", "Total", "Email", "Phone", "Address",
+        "Name", "Total", "Entreprise", "Email", "Phone", "Address",
         "Produit A", "Produit B", "Produit C", "Produit D",
         "Produit F", "Produit H"
     ];

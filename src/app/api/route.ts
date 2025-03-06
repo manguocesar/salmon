@@ -80,6 +80,12 @@ export const GET = async (req: NextRequest) => {
         postalCode: session?.customer_details?.address?.postal_code,
         city: session?.customer_details?.address?.city,
         amountTotal: (session.amount_total ?? 0) / 100,
+        companyName:
+          session.custom_fields?.find(item => item.key === 'company_name')?.text
+            ?.value ?? '',
+        department:
+          session.custom_fields?.find(item => item.key === 'department')
+            ?.dropdown?.value ?? '',
         productA: session?.line_items?.data.find(
           item => item.description === 'A - Saumon Fumé Entier',
         ),

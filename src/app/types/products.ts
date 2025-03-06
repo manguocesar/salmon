@@ -27,6 +27,7 @@ export type CheckoutItem = {
   city: string;
   phone: string;
   name: string;
+  companyName: string;
   productA: ProductSession;
   productB: ProductSession;
   productC: ProductSession;

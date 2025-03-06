@@ -11,6 +11,7 @@ export function TableSessionRow({ item }: { item: CheckoutItem }) {
         <tr className="border-b">
             <td className="py-2 px-1">{item.name}</td>
             <td className="py-2 px-1">{item.amountTotal}€</td>
+            <td className="py-2 px-1">{item.companyName}</td>
             <td className="py-2 px-1">{item.email}</td>
             <td className="py-2 px-1">{item.phone}</td>
             <td className="py-2 px-1">
