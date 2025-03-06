@@ -45,11 +45,7 @@ const fetchAllCheckoutSessions = async () => {
   return allSessions;
 };
 
-export const GET = async (
-  req: NextRequest & {
-    cookies: { get: (name: string) => { value: string } | undefined };
-  },
-) => {
+export const GET = async (req: NextRequest) => {
   const token = req.cookies?.get('auth_token')?.value;
 
   if (!token) {
