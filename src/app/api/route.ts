@@ -1,7 +1,6 @@
 import Stripe from 'stripe';
 import { verifyToken } from '../lib/auth';
 import { NextRequest, NextResponse } from 'next/server';
-import { NextApiRequest } from 'next';
 import { CartItem, LineItem } from '../types/products';
 import { freeDelivreryThreshold } from '../constants/enums';
 import { liveFreeDelivery } from '../constants/deliveries';
@@ -47,7 +46,7 @@ const fetchAllCheckoutSessions = async () => {
 };
 
 export const GET = async (
-  req: NextApiRequest & {
+  req: NextRequest & {
     cookies: { get: (name: string) => { value: string } | undefined };
   },
 ) => {
