@@ -36,8 +36,8 @@ const fetchAllCheckoutSessions = async () => {
     } else {
       hasMore = false;
     }
-
-    if (allSessions.length > 10000) {
+    const safetyLimit = 10000;
+    if (allSessions.length > safetyLimit) {
       console.warn('Reached safety limit of 10,000 sessions');
       break;
     }
@@ -158,6 +158,36 @@ export async function POST(req: NextRequest) {
       shipping_address_collection: {
         allowed_countries: ['FR'],
       },
+
+      custom_fields: [
+        {
+          key: 'company_name',
+          label: {
+            type: 'custom',
+            custom: "Nom de l'entreprise",
+          },
+          type: 'text',
+          optional: true,
+        },
+        {
+          key: 'department',
+          label: {
+            type: 'custom',
+            custom: 'Department',
+          },
+          type: 'dropdown',
+          dropdown: {
+            options: [
+              { label: 'Marketing', value: 'marketing' },
+              { label: 'Sales', value: 'sales' },
+              { label: 'Engineering', value: 'engineering' },
+              { label: 'Other', value: 'other' },
+            ],
+          },
+          optional: true,
+        },
+      ],
+
       locale: 'fr',
       billing_address_collection: 'required' as 'auto' | 'required',
       shipping_options: options,
