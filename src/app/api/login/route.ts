@@ -5,7 +5,7 @@ const USERS = [
   {
     id: '1',
     email: process.env.EMAIL,
-    password: process.env.PWD,
+    password: process.env.Password,
   },
 ];
 
