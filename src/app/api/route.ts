@@ -1,14 +1,121 @@
 import Stripe from 'stripe';
+import { verifyToken } from '../lib/auth';
+import { NextRequest, NextResponse } from 'next/server';
+import { NextApiRequest, NextApiResponse } from 'next';
+import { CartItem, LineItem } from '../types/products';
+import { freeDelivreryThreshold } from '../constants/enums';
+import { liveFreeDelivery } from '../constants/deliveries';
 
 if (!process.env.NEXT_PUBLIC_STRIPE_SECRET_KEY) {
   throw new Error('Stripe secret key is not defined');
 }
 const stripe = new Stripe(process.env.NEXT_PUBLIC_STRIPE_SECRET_KEY);
 
-import { NextRequest } from 'next/server';
-import { CartItem, LineItem } from '../types/products';
-import { freeDelivreryThreshold } from '../constants/enums';
-import { liveFreeDelivery } from '../constants/deliveries';
+const fetchAllCheckoutSessions = async () => {
+  let allSessions: Stripe.Checkout.Session[] = [];
+  let hasMore = true;
+  let lastSessionId: string | undefined = undefined;
+
+  while (hasMore) {
+    const params: Stripe.Checkout.SessionListParams = {
+      limit: 100, // Maximum allowed by Stripe API
+      expand: ['data.line_items'],
+    };
+
+    if (lastSessionId) {
+      params.starting_after = lastSessionId;
+    }
+
+    const sessions = await stripe.checkout.sessions.list(params);
+
+    hasMore = sessions.has_more;
+    allSessions = [...allSessions, ...sessions.data];
+
+    if (sessions.data.length > 0) {
+      lastSessionId = sessions.data[sessions.data.length - 1].id;
+    } else {
+      hasMore = false;
+    }
+
+    if (allSessions.length > 10000) {
+      console.warn('Reached safety limit of 10,000 sessions');
+      break;
+    }
+  }
+  return allSessions;
+};
+
+export const GET = async (
+  req: NextApiRequest & {
+    cookies: { get: (name: string) => { value: string } | undefined };
+  },
+  res: NextApiResponse,
+) => {
+  const token = req.cookies?.get('auth_token')?.value;
+
+  if (!token) {
+    return NextResponse.json(
+      { error: 'No Token' },
+      { status: 401, statusText: 'No Token' },
+    );
+  }
+
+  const verifiedToken = await verifyToken(token);
+
+  if (!verifiedToken) {
+    return NextResponse.json(
+      { error: 'No verifiedToken' },
+      { status: 401, statusText: 'No verifiedToken' },
+    );
+  }
+
+  try {
+    const sessions = await fetchAllCheckoutSessions();
+
+    const successfulCheckouts = sessions.filter(
+      session => session.payment_status === 'paid',
+    );
+
+    const extractedData = successfulCheckouts.map(session => {
+      return {
+        name: session?.customer_details?.name,
+        email: session?.customer_details?.email,
+        phone: session?.customer_details?.phone,
+        line1: session?.customer_details?.address?.line1,
+        postalCode: session?.customer_details?.address?.postal_code,
+        city: session?.customer_details?.address?.city,
+        amountTotal: (session.amount_total ?? 0) / 100,
+        productA: session?.line_items?.data.find(
+          item => item.description === 'A - Saumon Fumé Entier',
+        ),
+        productB: session?.line_items?.data.find(
+          item => item.description === 'B - Saumon Fumé Prétranché',
+        ),
+        productC: session?.line_items?.data.find(
+          item => item.description === 'C - Cœur de Saumon',
+        ),
+        productD: session?.line_items?.data.find(
+          item => item.description === 'D - Saumon Fumé Pavé',
+        ),
+        productF: session?.line_items?.data.find(
+          item =>
+            item.description === 'F - Saumon Mariné (gravad lax) Prétranché',
+        ),
+        productH: session?.line_items?.data.find(
+          item => item.description === 'H - Saumon Mi-Cuit Poivre Pavé',
+        ),
+      };
+    });
+
+    return NextResponse.json({ success: true, extractedData }, { status: 200 });
+  } catch (error: any) {
+    console.error('❌ Error fetching data:', error);
+    return NextResponse.json(
+      { success: false, error: error.message },
+      { status: 500 },
+    );
+  }
+};
 
 export async function POST(req: NextRequest) {
   const body: CartItem[] = await req.json();
@@ -38,8 +145,6 @@ export async function POST(req: NextRequest) {
     tax_rates: ['txr_1QywioAZSYffeW1tSfHPit8U'],
   }));
 
-  console.log('stripe', stripe);
-
   try {
     const session = await stripe.checkout.sessions.create({
       submit_type: 'pay',
@@ -50,15 +155,12 @@ export async function POST(req: NextRequest) {
       phone_number_collection: {
         enabled: true,
       },
-
       tax_id_collection: {
         enabled: true,
       },
-
       invoice_creation: {
         enabled: true,
       },
-
       shipping_address_collection: {
         allowed_countries: ['FR'],
       },
