@@ -1,29 +1,14 @@
 'use client';
 import { useState, useEffect, useCallback } from "react";
+import { CheckoutItem } from "../types/products";
 
-type ProductSession = {
-    quantity: number;
-    price: {
-        unit_amount: number;
-    };
-    amount_total: number;
-}
+export const generateCSVHeader = () => {
+    return "Name, Total, Email, Phone, Street, Postal Code, City, Quantité A - 60€, Total A, Quantité B - 65€, Total B, Quantité C - 19€, Total C, Quantité D - 48€, Total D, Quantité F - 65€, Total F, Quantité H - 48€, total H";
+};
 
-type CheckoutItem = {
-    email: string;
-    amountTotal: string;
-    line1: string;
-    postalCode: string;
-    city: string;
-    phone: string;
-    name: string;
-    productA: ProductSession;
-    productB: ProductSession;
-    productC: ProductSession;
-    productD: ProductSession;
-    productF: ProductSession;
-    productH: ProductSession;
-}
+export const generateCSVRow = (item: CheckoutItem) => {
+    return `${item.name},${item.amountTotal} €,${item.email},${item.phone},${item.line1},${item.postalCode},${item.city},${item.productA?.quantity ?? ''},${item.productA?.amount_total ? item.productA.amount_total / 100 + '€' : ''},${item.productB?.quantity ?? ''},${item.productB?.amount_total ? item.productB.amount_total / 100 + '€' : ''},${item.productC?.quantity ?? ''},${item.productC?.amount_total ? item.productC.amount_total / 100 + '€' : ''},${item.productD?.quantity ?? ''},${item.productD?.amount_total ? item.productD.amount_total / 100 + '€' : ''},${item.productF?.quantity ?? ''},${item.productF?.amount_total ? item.productF.amount_total / 100 + '€' : ''},${item.productH?.quantity ?? ''},${item.productH?.amount_total ? item.productH.amount_total / 100 + '€' : ''}`;
+};
 
 export default function CheckoutSummary() {
     const [checkoutData, setCheckoutData] = useState<CheckoutItem[]>([]);
@@ -35,12 +20,9 @@ export default function CheckoutSummary() {
             try {
                 const response = await fetch("/api");
                 if (!response.ok) {
-
-                    if (response.statusText == 'No Token') {
+                    if (response.statusText === 'No Token') {
                         throw new Error("You need to log in first");
-
                     }
-
                     throw new Error("Network response was not ok");
                 }
                 const data = await response.json();
@@ -64,15 +46,13 @@ export default function CheckoutSummary() {
         fetchData();
     }, []);
 
+
+
     const downloadCSV = useCallback(() => {
         const csvContent =
             "data:text/csv;charset=utf-8," +
-            ["Name, Total, Email, Phone, Street, Postal Code, City, Quantité A - 60€, Total A, Quantité B - 65€, Total B, Quantité C - 19€, Total C, Quantité D - 48€, Total D, Quantité F - 65€, Total F, Quantité H - 48€, total H"]
-                .concat(
-                    checkoutData.map(item =>
-                        `${item.name},${item.amountTotal} €,${item.email},${item.phone},${item.line1},${item.postalCode},${item.city},${item.productA?.quantity ?? ''},${item.productA?.amount_total ? item.productA.amount_total / 100 + '€' : ''},${item.productB?.quantity ?? ''},${item.productB?.amount_total ? item.productB.amount_total / 100 + '€' : ''},${item.productC?.quantity ?? ''},${item.productC?.amount_total ? item.productC.amount_total / 100 + '€' : ''},${item.productD?.quantity ?? ''},${item.productD?.amount_total ? item.productD.amount_total / 100 + '€' : ''},${item.productF?.quantity ?? ''},${item.productF?.amount_total ? item.productF.amount_total / 100 + '€' : ''},${item.productH?.quantity ?? ''},${item.productH?.amount_total ? item.productH.amount_total / 100 + '€' : ''}`
-                    )
-                )
+            [generateCSVHeader()]
+                .concat(checkoutData.map(generateCSVRow))
                 .join("\n");
 
         const encodedUri = encodeURI(csvContent);
@@ -117,16 +97,16 @@ export default function CheckoutSummary() {
                                 {item.line1}<br />
                                 {item.postalCode} {item.city}
                             </td>
-                            <td className="py-2 px-1">{item?.productA ? `${item.productA.quantity} * ${item.productA.price.unit_amount / 100} = ${item.productA.amount_total / 100}€` : ''}</td>
-                            <td className="py-2 px-1">{item?.productB ? `${item.productB.quantity} * ${item.productB.price.unit_amount / 100} = ${item.productB.amount_total / 100}€` : ''}</td>
-                            <td className="py-2 px-1">{item?.productC ? `${item.productC.quantity} * ${item.productC.price.unit_amount / 100} = ${item.productC.amount_total / 100}€` : ''}</td>
-                            <td className="py-2 px-1">{item?.productD ? `${item.productD.quantity} * ${item.productD.price.unit_amount / 100} = ${item.productD.amount_total / 100}€` : ''}</td>
-                            <td className="py-2 px-1">{item?.productF ? `${item.productF.quantity} * ${item.productF.price.unit_amount / 100} = ${item.productF.amount_total / 100}€` : ''}</td>
-                            <td className="py-2 px-1">{item?.productH ? `${item.productH.quantity} * ${item.productH.price.unit_amount / 100} = ${item.productH.amount_total / 100}€` : ''}</td>
+                            <td className="py-2 px-1">{item.productA ? `${item.productA.quantity} * ${item.productA.price.unit_amount / 100} = ${item.productA.amount_total / 100}€` : ''}</td>
+                            <td className="py-2 px-1">{item.productB ? `${item.productB.quantity} * ${item.productB.price.unit_amount / 100} = ${item.productB.amount_total / 100}€` : ''}</td>
+                            <td className="py-2 px-1">{item.productC ? `${item.productC.quantity} * ${item.productC.price.unit_amount / 100} = ${item.productC.amount_total / 100}€` : ''}</td>
+                            <td className="py-2 px-1">{item.productD ? `${item.productD.quantity} * ${item.productD.price.unit_amount / 100} = ${item.productD.amount_total / 100}€` : ''}</td>
+                            <td className="py-2 px-1">{item.productF ? `${item.productF.quantity} * ${item.productF.price.unit_amount / 100} = ${item.productF.amount_total / 100}€` : ''}</td>
+                            <td className="py-2 px-1">{item.productH ? `${item.productH.quantity} * ${item.productH.price.unit_amount / 100} = ${item.productH.amount_total / 100}€` : ''}</td>
                         </tr>
                     ))}
                 </tbody>
             </table>
-        </div >
+        </div>
     );
 }
