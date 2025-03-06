@@ -9,6 +9,7 @@ export async function fetchCheckoutData() {
       Cookie: incomingHeaders.get('cookie') || '',
     },
   });
+  console.log('response', response);
 
   if (!response.ok) {
     if (response.statusText === 'No Token') {
@@ -17,6 +18,8 @@ export async function fetchCheckoutData() {
     throw new Error('Network response was not ok');
   }
   const data = await response.json();
+  console.log('fetched data', data);
+
   if (data.success) {
     return data.extractedData;
   } else {
