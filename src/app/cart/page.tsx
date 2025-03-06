@@ -5,7 +5,7 @@ import { useCart } from '../contexts/CartContext';
 import Link from 'next/link';
 import { ProductSlider } from '../components/ProductSlider';
 import { bgUrls } from '../constants/bgSaumonUrls';
-import { TableHeader } from '../components/TableHeader';
+import { TableCartHeader } from '../components/TableCartHeader';
 import { TableRow } from '../components/TableRow';
 import { handleCheckout } from '../lib/handleCheckout';
 
@@ -36,7 +36,7 @@ export default function Cart() {
         <>
           <div className="overflow-hidden rounded-lg bg-white shadow-md">
             <table className="w-full mx-1">
-              <TableHeader />
+              <TableCartHeader />
               <tbody className="divide-y divide-gray-200 bg-white">
                 {cart.map(item => (
                   <TableRow

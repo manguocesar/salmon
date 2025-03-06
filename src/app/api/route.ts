@@ -5,6 +5,7 @@ import { NextApiRequest, NextApiResponse } from 'next';
 import { CartItem, LineItem } from '../types/products';
 import { freeDelivreryThreshold } from '../constants/enums';
 import { liveFreeDelivery } from '../constants/deliveries';
+import { defaultUrl } from '../constants/nextUrl';
 
 if (!process.env.NEXT_PUBLIC_STRIPE_SECRET_KEY) {
   throw new Error('Stripe secret key is not defined');
@@ -168,8 +169,8 @@ export async function POST(req: NextRequest) {
       billing_address_collection: 'required' as 'auto' | 'required',
       shipping_options: options,
       line_items: items,
-      success_url: `${process.env.NEXT_PUBLIC_URL}success`,
-      cancel_url: `${process.env.NEXT_PUBLIC_URL}cancel`,
+      success_url: `${defaultUrl}success`,
+      cancel_url: `${defaultUrl}cancel`,
     });
 
     return Response.json(session);
