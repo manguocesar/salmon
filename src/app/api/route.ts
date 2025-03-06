@@ -1,16 +1,16 @@
 import Stripe from 'stripe';
 import { verifyToken } from '../lib/auth';
 import { NextRequest, NextResponse } from 'next/server';
-import { NextApiRequest, NextApiResponse } from 'next';
+import { NextApiRequest } from 'next';
 import { CartItem, LineItem } from '../types/products';
 import { freeDelivreryThreshold } from '../constants/enums';
 import { liveFreeDelivery } from '../constants/deliveries';
 import { defaultUrl } from '../constants/nextUrl';
 
-if (!process.env.NEXT_PUBLIC_STRIPE_SECRET_KEY) {
+if (!process.env.STRIPE_SECRET_KEY) {
   throw new Error('Stripe secret key is not defined');
 }
-const stripe = new Stripe(process.env.NEXT_PUBLIC_STRIPE_SECRET_KEY);
+const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
 const fetchAllCheckoutSessions = async () => {
   let allSessions: Stripe.Checkout.Session[] = [];
@@ -50,7 +50,6 @@ export const GET = async (
   req: NextApiRequest & {
     cookies: { get: (name: string) => { value: string } | undefined };
   },
-  res: NextApiResponse,
 ) => {
   const token = req.cookies?.get('auth_token')?.value;
 
@@ -109,11 +108,10 @@ export const GET = async (
     });
 
     return NextResponse.json({ success: true, extractedData }, { status: 200 });
-  } catch (error: any) {
-    console.error('❌ Error fetching data:', error);
+  } catch (error) {
     return NextResponse.json(
-      { success: false, error: error.message },
-      { status: 500 },
+      { success: false, error },
+      { status: 500, statusText: 'Internal Server Error' },
     );
   }
 };

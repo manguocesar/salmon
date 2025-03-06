@@ -1,9 +1,7 @@
 import { jwtVerify, SignJWT } from 'jose';
 import { cookies } from 'next/headers';
 
-const SECRET_KEY = new TextEncoder().encode(
-  process.env.NEXT_PUBLIC_JWT_SECRET || 'your-256-bit-secret',
-);
+const SECRET_KEY = new TextEncoder().encode(process.env.JWT_SECRET);
 
 interface User {
   id: string;
@@ -23,10 +21,9 @@ export async function createToken(user: User) {
 export async function verifyToken(token: string) {
   try {
     const { payload } = await jwtVerify(token, SECRET_KEY);
-
     return payload;
   } catch (error) {
-    return null;
+    return error;
   }
 }
 

@@ -4,15 +4,15 @@ import { createToken, setAuthCookie } from '../../lib/auth';
 const USERS = [
   {
     id: '1',
-    email: process.env.NEXT_PUBLIC_EMAIL,
-    password: process.env.NEXT_PUBLIC_PWD,
+    email: process.env.EMAIL,
+    password: process.env.PWD,
   },
 ];
 
 export async function POST(request: NextRequest) {
   const { email, password } = await request.json();
 
-  if (!process.env.NEXT_PUBLIC_EMAIL || !process.env.NEXT_PUBLIC_PWD) {
+  if (!process.env.EMAIL || !process.env.PWD) {
     return NextResponse.json(
       { error: 'Process Env Not Set Up' },
       { status: 401 },

@@ -48,7 +48,7 @@ Create a new file named `.env` in the root of your project and add the following
 ```env
 # Stripe payment
 NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=
-NEXT_PUBLIC_STRIPE_SECRET_KEY=
+STRIPE_SECRET_KEY=
 
 # Payment redirection
 NEXT_PUBLIC_URL=

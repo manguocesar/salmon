@@ -3,7 +3,7 @@ import { defaultUrl } from '../constants/nextUrl';
 
 export async function fetchCheckoutData() {
   const incomingHeaders = await headers();
-  const response = await fetch(`${defaultUrl}/api`, {
+  const response = await fetch(`${defaultUrl}api`, {
     credentials: 'include',
     headers: {
       Cookie: incomingHeaders.get('cookie') || '',

@@ -1,6 +1,6 @@
-import { CheckoutItem } from "../types/products";
+import { CheckoutItem, ProductSession } from "../types/products";
 
-function renderProductDetails(product: any) {
+function renderProductDetails(product: ProductSession | null): string {
     return product ? `${product.quantity} * ${product.price.unit_amount / 100} = ${product.amount_total / 100}€` : '';
 }
 
