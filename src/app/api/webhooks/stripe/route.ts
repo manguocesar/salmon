@@ -93,52 +93,53 @@ type LineItem = {
 
 async function sendCustomReceipt(paymentData: PaymentData) {
   try {
-    let customerEmail: string | undefined,
-      customerName: string | undefined,
-      amount: string | undefined,
-      currency: string | undefined,
-      items: LineItem[] = [];
+    const {
+      object,
+      amount_paid,
+      currency,
+      customer,
+      customer_details,
+      amount_total,
+      lines,
+      collected_information,
+      custom_fields,
+      id,
+      shipping_rate,
+    } = paymentData;
 
-    if (paymentData.object === 'invoice') {
-      const invoice = paymentData;
-      amount = (invoice.amount_paid! / 100).toFixed(2);
-      currency = invoice.currency!.toUpperCase();
+    let customerEmail: string | undefined = customer_details?.email;
+    let customerName: string | undefined = customer_details?.name;
+    let amount: string | undefined;
+    let currencyCode: string | undefined;
+    let items: LineItem[] = [];
 
-      if (invoice.customer) {
-        const customer = await stripe.customers.retrieve(invoice.customer);
-        if (customer.deleted) {
+    if (object === 'invoice') {
+      amount = (amount_paid! / 100).toFixed(2);
+      currencyCode = currency!.toUpperCase();
+
+      if (customer) {
+        const customerData = await stripe.customers.retrieve(customer);
+        if (customerData.deleted) {
           throw new Error('Customer has been deleted');
         }
-        customerEmail = customer.email ?? '';
-        customerName = customer.name ?? '';
+        customerEmail = customerData.email ?? '';
+        customerName = customerData.name ?? '';
       }
 
-      items = invoice.lines?.data || [];
-    } else if (paymentData.object === 'checkout.session') {
-      amount = (paymentData.amount_total! / 100).toFixed(2);
-      currency = paymentData.currency!.toUpperCase();
+      items = lines?.data || [];
+    } else if (object === 'checkout.session') {
+      amount = (amount_total! / 100).toFixed(2);
+      currencyCode = currency!.toUpperCase();
 
-      if (!paymentData.customer) {
+      if (!customer) {
         throw new Error('Missing customer ID');
       }
-      const customer = await stripe.customers.retrieve(paymentData.customer);
-      if (customer.deleted) {
+      const customerData = await stripe.customers.retrieve(customer);
+      if (customerData.deleted) {
         throw new Error('Customer has been deleted');
       }
-      customerEmail = customer.email ?? '';
-      customerName = customer.name ?? '';
-    } else if (paymentData.customer_details) {
-      customerEmail = paymentData.customer_details.email;
-      customerName = paymentData.customer_details.name;
-    }
-
-    if (paymentData.customer) {
-      const customer = await stripe.customers.retrieve(paymentData.customer);
-      if (customer.deleted) {
-        throw new Error('Customer has been deleted');
-      }
-      customerEmail = customer.email ?? '';
-      customerName = customer.name ?? '';
+      customerEmail = customerData.email ?? '';
+      customerName = customerData.name ?? '';
     }
 
     if (!customerEmail) {
@@ -147,9 +148,7 @@ async function sendCustomReceipt(paymentData: PaymentData) {
     }
 
     try {
-      const lineItems = await stripe.checkout.sessions.listLineItems(
-        paymentData.id!,
-      );
+      const lineItems = await stripe.checkout.sessions.listLineItems(id!);
       items = lineItems.data
         .map(item => ({
           description: item.description ?? 'Produit sans nom',
@@ -163,15 +162,15 @@ async function sendCustomReceipt(paymentData: PaymentData) {
         {
           description: 'Your purchase',
           quantity: 1,
-          amount_total: paymentData.amount_total!,
+          amount_total: amount_total!,
         },
       ];
     }
 
     const shippingMessage =
-      paymentData.shipping_rate === process.env.LIVRAISON_MERCREDI
+      shipping_rate === process.env.LIVRAISON_MERCREDI
         ? 'Mercredi 16 Avril 2025'
-        : paymentData.shipping_rate === process.env.LIVRAISON_JEUDI
+        : shipping_rate === process.env.LIVRAISON_JEUDI
           ? 'Jeudi 17 Avril 2025'
           : 'Mercredi 16 ou Jeudi 17 Avril 2025';
 
@@ -180,66 +179,56 @@ async function sendCustomReceipt(paymentData: PaymentData) {
       to: customerEmail,
       subject: 'Merci pour votre achat!',
       html: `
-                    <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-                        <img src="https://www.mikaelhertz.com/logo.jpg" alt="MikaelHERTZ" style="max-width: 200px; border-radius: 20px;">
-                        <h1>Reçu pour votre commande</h1>
-                        <p>Bonjour ${customerName || 'Cher Client'},</p>
-                        <p>Votre commande a bien été prise en compte</p>
-                        <p>Vous pouvez trouver un récapitulatif ci-dessous:</p>
-                        <p><strong>Adresse de livraison :</strong> ${paymentData.collected_information!.shipping_details.address.line1}, ${paymentData.collected_information!.shipping_details.address.postal_code}, ${paymentData.collected_information!.shipping_details.address.city}</p>
-
-                        <p><strong>Livraison:</strong> ${shippingMessage}</p>
-                        
-                        ${paymentData
-                          .custom_fields!.filter(
-                            field => field.text.value !== null,
-                          )
-                          .map(
-                            field =>
-                              `<p><strong>${field.label.custom}:</strong> ${field.text.value}</p>`,
-                          )
-                          .join('')}
-
-                        <p>Merci pour votre commande.</p>
-                        <p>Voici les détails de votre commande :</p>
-                        
-                        <div style="background-color: #f8f9fa; padding: 15px; border-radius: 5px;">
-
-                            <p>
-                            <strong>Date du paiement :</strong> ${new Date()
-                              .toLocaleDateString('fr-FR', {
-                                weekday: 'long',
-                                day: 'numeric',
-                                month: 'long',
-                                year: 'numeric',
-                              })
-                              .replace(
-                                /(\d+)(?=\D+$)/,
-                                d =>
-                                  `${d}${['e', 'er', 'e', 'e'][((Number(d) % 10) - 1) % 10] || 'e'}`,
-                              )}</p>
-
-                            <p><strong>Total de la commande :</strong> ${currency} ${amount}</p>
+                <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+                    <img src="https://www.mikaelhertz.com/logo.jpg" alt="MikaelHERTZ" style="max-width: 200px; border-radius: 20px;">
+                    <h1>Reçu pour votre commande</h1>
+                    <p>Bonjour ${customerName || 'Cher Client'},</p>
+                    <p>Votre commande a bien été prise en compte</p>
+                    <p>Vous pouvez trouver un récapitulatif ci-dessous:</p>
+                    <p><strong>Adresse de livraison :</strong> ${collected_information!.shipping_details.address.line1}, ${collected_information!.shipping_details.address.postal_code}, ${collected_information!.shipping_details.address.city}</p>
+                    <p><strong>Livraison:</strong> ${shippingMessage}</p>
+                    ${custom_fields!
+                      .filter(field => field.text.value !== null)
+                      .map(
+                        field =>
+                          `<p><strong>${field.label.custom}:</strong> ${field.text.value}</p>`,
+                      )
+                      .join('')}
+                    <p>Merci pour votre commande.</p>
+                    <p>Voici les détails de votre commande :</p>
+                    <div style="background-color: #f8f9fa; padding: 15px; border-radius: 5px;">
+                        <p><strong>Date du paiement :</strong> ${new Date()
+                          .toLocaleDateString('fr-FR', {
+                            weekday: 'long',
+                            day: 'numeric',
+                            month: 'long',
+                            year: 'numeric',
+                          })
+                          .replace(
+                            /(\d+)(?=\D+$)/,
+                            d =>
+                              `${d}${['e', 'er', 'e', 'e'][((Number(d) % 10) - 1) % 10] || 'e'}`,
+                          )}</p>
+                        <p><strong>Total de la commande :</strong> ${currencyCode} ${amount}</p>
                         ${items
                           .map(
                             item => `
-                                <hr>
-                                                <p>${item.description}</p>
-                                                <p><strong>Quantité :</strong> ${item.quantity}</p>
-                                                <p><strong>Montant :</strong> ${currency} ${(item.amount_total / 100).toFixed(2)}</p>
-                                        `,
+                            <hr>
+                            <p>${item.description}</p>
+                            <p><strong>Quantité :</strong> ${item.quantity}</p>
+                            <p><strong>Montant :</strong> ${currencyCode} ${(item.amount_total / 100).toFixed(2)}</p>
+                        `,
                           )
                           .join('')}
-                        </div>
-                        
-                        <p>Si vous avez des questions, veuillez me contacter</p>
-                        <p>Cordialement,<br>Mikael HERTZ</p>
-                        <p>${process.env.NEXT_PUBLIC_MIKAEL_EMAIL}</p>
-                        <p>06 62 19 63 58</p>
-                        <p>26400 SAOU</p>
-                        <p>SIREN: 383 519 501</p>
                     </div>
-                `,
+                    <p>Si vous avez des questions, veuillez me contacter</p>
+                    <p>Cordialement,<br>Mikael HERTZ</p>
+                    <p>${process.env.NEXT_PUBLIC_MIKAEL_EMAIL}</p>
+                    <p>06 62 19 63 58</p>
+                    <p>26400 SAOU</p>
+                    <p>SIREN: 383 519 501</p>
+                </div>
+            `,
     });
 
     console.log('Resend API response:', emailResponse);
