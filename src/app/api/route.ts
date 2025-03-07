@@ -1,49 +1,17 @@
-import Stripe from 'stripe';
 import { verifyToken } from '../lib/auth';
 import { NextRequest, NextResponse } from 'next/server';
 import { CartItem, LineItem } from '../types/products';
 import { freeDelivreryThreshold } from '../constants/enums';
-import { liveFreeDelivery } from '../constants/deliveries';
+import { wednesdayThursdayDelivery } from '../constants/deliveries';
 import { defaultUrl } from '../constants/nextUrl';
+import { fetchAllCheckoutSessions } from '../lib/fetchAllCheckout';
+import Stripe from 'stripe';
 
-if (!process.env.STRIPE_SECRET_KEY) {
+const stripeSecretKey = process.env.STRIPE_SECRET_KEY;
+if (!stripeSecretKey) {
   throw new Error('Stripe secret key is not defined');
 }
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
-
-const fetchAllCheckoutSessions = async () => {
-  let allSessions: Stripe.Checkout.Session[] = [];
-  let hasMore = true;
-  let lastSessionId: string | undefined = undefined;
-
-  while (hasMore) {
-    const params: Stripe.Checkout.SessionListParams = {
-      limit: 100, // Maximum allowed by Stripe API
-      expand: ['data.line_items'],
-    };
-
-    if (lastSessionId) {
-      params.starting_after = lastSessionId;
-    }
-
-    const sessions = await stripe.checkout.sessions.list(params);
-
-    hasMore = sessions.has_more;
-    allSessions = [...allSessions, ...sessions.data];
-
-    if (sessions.data.length > 0) {
-      lastSessionId = sessions.data[sessions.data.length - 1].id;
-    } else {
-      hasMore = false;
-    }
-    const safetyLimit = 10000;
-    if (allSessions.length > safetyLimit) {
-      console.warn('Reached safety limit of 10,000 sessions');
-      break;
-    }
-  }
-  return allSessions;
-};
+const stripe = new Stripe(stripeSecretKey);
 
 export const GET = async (req: NextRequest) => {
   const token = req.cookies?.get('auth_token')?.value;
@@ -51,7 +19,7 @@ export const GET = async (req: NextRequest) => {
   if (!token) {
     return NextResponse.json(
       { error: 'No Token' },
-      { status: 401, statusText: 'No Token' },
+      { status: 401, statusText: 'No auth Token' },
     );
   }
 
@@ -59,14 +27,13 @@ export const GET = async (req: NextRequest) => {
 
   if (!verifiedToken) {
     return NextResponse.json(
-      { error: 'No verifiedToken' },
-      { status: 401, statusText: 'No verifiedToken' },
+      { error: 'No verified Token' },
+      { status: 401, statusText: 'No verified Token' },
     );
   }
 
   try {
     const sessions = await fetchAllCheckoutSessions();
-
     const successfulCheckouts = sessions.filter(
       session => session.payment_status === 'paid',
     );
@@ -81,11 +48,11 @@ export const GET = async (req: NextRequest) => {
         city: session?.customer_details?.address?.city,
         amountTotal: (session.amount_total ?? 0) / 100,
         companyName:
-          session.custom_fields?.find(item => item.key === 'company_name')?.text
+          session.custom_fields?.find(item => item.key === 'companyName')?.text
             ?.value ?? '',
-        department:
-          session.custom_fields?.find(item => item.key === 'department')
-            ?.dropdown?.value ?? '',
+        contactPerson:
+          session.custom_fields?.find(item => item.key === 'contactPerson')
+            ?.text?.value ?? '',
         productA: session?.line_items?.data.find(
           item => item.description === 'A - Saumon Fumé Entier',
         ),
@@ -125,13 +92,15 @@ export async function POST(req: NextRequest) {
     .reduce((a, b) => a + b, 0);
 
   const options =
-    totalValue < freeDelivreryThreshold ? liveFreeDelivery : liveFreeDelivery;
+    totalValue < freeDelivreryThreshold
+      ? wednesdayThursdayDelivery
+      : wednesdayThursdayDelivery;
 
   const items: LineItem[] = body.map((item: CartItem) => ({
     price_data: {
       currency: 'eur',
-      unit_amount: 1 * 100,
-      // unit_amount: item.price * 100,
+      // unit_amount: 1 * 100,
+      unit_amount: item.price * 100,
       product_data: {
         name: item.name,
         images: [`https://www.mikaelhertz.com/${item.imgUrl}`],
@@ -142,7 +111,6 @@ export async function POST(req: NextRequest) {
       minimum: 1,
     },
     quantity: item.quantity,
-    tax_rates: ['txr_1QywioAZSYffeW1tSfHPit8U'],
   }));
 
   try {
@@ -164,10 +132,15 @@ export async function POST(req: NextRequest) {
       shipping_address_collection: {
         allowed_countries: ['FR'],
       },
-
+      custom_text: {
+        submit: {
+          message:
+            "Vous recevrez un email de confirmation d'achat juste après votre commande",
+        },
+      },
       custom_fields: [
         {
-          key: 'company_name',
+          key: 'companyName',
           label: {
             type: 'custom',
             custom: "Nom de l'entreprise",
@@ -176,20 +149,12 @@ export async function POST(req: NextRequest) {
           optional: true,
         },
         {
-          key: 'department',
+          key: 'contactPerson',
           label: {
             type: 'custom',
-            custom: 'Department',
+            custom: 'Personne de contact',
           },
-          type: 'dropdown',
-          dropdown: {
-            options: [
-              { label: 'Marketing', value: 'marketing' },
-              { label: 'Sales', value: 'sales' },
-              { label: 'Engineering', value: 'engineering' },
-              { label: 'Other', value: 'other' },
-            ],
-          },
+          type: 'text',
           optional: true,
         },
       ],
