@@ -13,6 +13,71 @@ if (!stripeSecretKey) {
 }
 const stripe = new Stripe(stripeSecretKey);
 
+interface CustomerDetails {
+  name: string;
+  email: string;
+  phone: string;
+  address: {
+    line1: string;
+    postal_code: string;
+    city: string;
+  };
+}
+
+interface CustomField {
+  key: string;
+  text: {
+    value: string;
+  };
+}
+
+interface LineItemData {
+  description: string;
+}
+
+interface Session {
+  customer_details: CustomerDetails;
+  amount_total: number;
+  custom_fields: CustomField[];
+  line_items: {
+    data: LineItemData[];
+  };
+}
+
+const extractSessionData = (session: Stripe.Checkout.Session) => ({
+  name: session.customer_details?.name ?? '',
+  email: session.customer_details?.email ?? '',
+  phone: session.customer_details?.phone ?? '',
+  line1: session.customer_details?.address?.line1 ?? '',
+  postalCode: session.customer_details?.address?.postal_code ?? '',
+  city: session.customer_details?.address?.city ?? '',
+  amountTotal: (session.amount_total ?? 0) / 100,
+  companyName:
+    session.custom_fields?.find(item => item.key === 'companyName')?.text
+      ?.value ?? '',
+  contactPerson:
+    session.custom_fields?.find(item => item.key === 'contactPerson')?.text
+      ?.value ?? '',
+  productA: session?.line_items?.data.find(
+    item => item.description === 'A - Saumon Fumé Entier',
+  ),
+  productB: session?.line_items?.data.find(
+    item => item.description === 'B - Saumon Fumé Prétranché',
+  ),
+  productC: session?.line_items?.data.find(
+    item => item.description === 'C - Cœur de Saumon',
+  ),
+  productD: session?.line_items?.data.find(
+    item => item.description === 'D - Saumon Fumé Pavé',
+  ),
+  productF: session?.line_items?.data.find(
+    item => item.description === 'F - Saumon Mariné (gravad lax) Prétranché',
+  ),
+  productH: session?.line_items?.data.find(
+    item => item.description === 'H - Saumon Mi-Cuit Poivre Pavé',
+  ),
+});
+
 export const GET = async (req: NextRequest) => {
   const token = req.cookies?.get('auth_token')?.value;
 
@@ -37,101 +102,58 @@ export const GET = async (req: NextRequest) => {
     const successfulCheckouts = sessions.filter(
       session => session.payment_status === 'paid',
     );
-
-    const extractedData = successfulCheckouts.map(session => {
-      return {
-        name: session?.customer_details?.name,
-        email: session?.customer_details?.email,
-        phone: session?.customer_details?.phone,
-        line1: session?.customer_details?.address?.line1,
-        postalCode: session?.customer_details?.address?.postal_code,
-        city: session?.customer_details?.address?.city,
-        amountTotal: (session.amount_total ?? 0) / 100,
-        companyName:
-          session.custom_fields?.find(item => item.key === 'companyName')?.text
-            ?.value ?? '',
-        contactPerson:
-          session.custom_fields?.find(item => item.key === 'contactPerson')
-            ?.text?.value ?? '',
-        productA: session?.line_items?.data.find(
-          item => item.description === 'A - Saumon Fumé Entier',
-        ),
-        productB: session?.line_items?.data.find(
-          item => item.description === 'B - Saumon Fumé Prétranché',
-        ),
-        productC: session?.line_items?.data.find(
-          item => item.description === 'C - Cœur de Saumon',
-        ),
-        productD: session?.line_items?.data.find(
-          item => item.description === 'D - Saumon Fumé Pavé',
-        ),
-        productF: session?.line_items?.data.find(
-          item =>
-            item.description === 'F - Saumon Mariné (gravad lax) Prétranché',
-        ),
-        productH: session?.line_items?.data.find(
-          item => item.description === 'H - Saumon Mi-Cuit Poivre Pavé',
-        ),
-      };
-    });
+    const extractedData = successfulCheckouts.map(extractSessionData);
 
     return NextResponse.json({ success: true, extractedData }, { status: 200 });
   } catch (error) {
+    const errorMessage = (error as Error).message;
     return NextResponse.json(
-      { success: false, error },
+      { success: false, error: errorMessage },
       { status: 500, statusText: 'Internal Server Error' },
     );
   }
 };
 
-export async function POST(req: NextRequest) {
-  const body: CartItem[] = await req.json();
-
-  const totalValue = body
-    .map(item => item.price * item.quantity)
-    .reduce((a, b) => a + b, 0);
-
-  const options =
-    totalValue < freeDelivreryThreshold
-      ? wednesdayThursdayDelivery
-      : wednesdayThursdayDelivery;
-
-  const items: LineItem[] = body.map((item: CartItem) => ({
-    price_data: {
-      currency: 'eur',
-      // unit_amount: 1 * 100,
-      unit_amount: item.price * 100,
-      product_data: {
-        name: item.name,
-        images: [`https://www.mikaelhertz.com/${item.imgUrl}`],
-      },
-    },
-    adjustable_quantity: {
-      enabled: true,
-      minimum: 1,
-    },
-    quantity: item.quantity,
-  }));
-
+export const POST = async (req: NextRequest) => {
   try {
+    const body: CartItem[] = await req.json();
+
+    const totalValue = body.reduce(
+      (acc, item) => acc + item.price * item.quantity,
+      0,
+    );
+    const options =
+      totalValue < freeDelivreryThreshold
+        ? wednesdayThursdayDelivery
+        : wednesdayThursdayDelivery;
+
+    const items: LineItem[] = body.map((item: CartItem) => ({
+      price_data: {
+        currency: 'eur',
+        // unit_amount: 1 * 100,
+        unit_amount: item.price * 100,
+        product_data: {
+          name: item.name,
+          images: [`https://www.mikaelhertz.com/${item.imgUrl}`],
+        },
+      },
+      adjustable_quantity: {
+        enabled: true,
+        minimum: 1,
+      },
+      quantity: item.quantity,
+    }));
+
     const session = await stripe.checkout.sessions.create({
       submit_type: 'pay',
       mode: 'payment',
       customer_creation: 'always',
       allow_promotion_codes: false,
       payment_method_types: ['card'],
-      phone_number_collection: {
-        enabled: true,
-      },
-      tax_id_collection: {
-        enabled: true,
-      },
-      invoice_creation: {
-        enabled: true,
-      },
-      shipping_address_collection: {
-        allowed_countries: ['FR'],
-      },
+      phone_number_collection: { enabled: true },
+      tax_id_collection: { enabled: true },
+      invoice_creation: { enabled: true },
+      shipping_address_collection: { allowed_countries: ['FR'] },
       custom_text: {
         submit: {
           message:
@@ -141,24 +163,17 @@ export async function POST(req: NextRequest) {
       custom_fields: [
         {
           key: 'companyName',
-          label: {
-            type: 'custom',
-            custom: "Nom de l'entreprise",
-          },
+          label: { type: 'custom', custom: "Nom de l'entreprise" },
           type: 'text',
           optional: true,
         },
         {
           key: 'contactPerson',
-          label: {
-            type: 'custom',
-            custom: 'Personne de contact',
-          },
+          label: { type: 'custom', custom: 'Personne de contact' },
           type: 'text',
           optional: true,
         },
       ],
-
       locale: 'fr',
       billing_address_collection: 'required' as 'auto' | 'required',
       shipping_options: options,
@@ -167,8 +182,11 @@ export async function POST(req: NextRequest) {
       cancel_url: `${defaultUrl}cancel`,
     });
 
-    return Response.json(session);
-  } catch (err) {
-    console.log('err', err);
+    return NextResponse.json(session, { status: 200 });
+  } catch (error) {
+    return NextResponse.json(
+      { success: false, error: (error as Error).message },
+      { status: 500, statusText: 'Internal Server Error' },
+    );
   }
-}
+};
