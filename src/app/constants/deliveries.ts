@@ -9,9 +9,9 @@ export const testPaidDelivery = [
 ];
 
 export const liveFreeDelivery = [
-  { shipping_rate: 'shr_1QyXnbAZSYffeW1t3Vyvwdh6' }, //Mercredi 16 ou Jeudi 18 AVRIL Métropole de Lyon >250€
+  { shipping_rate: 'shr_1R01KPAZSYffeW1t2LWrPDWr' }, //Mercredi 16 ou Jeudi 17 AVRIL Métropole de Lyon >250€
 ];
 
 export const livePaidDelivery = [
-  { shipping_rate: 'shr_1QyXosAZSYffeW1tHzMHo9GM' }, //Mercredi 16 ou Jeudi 18 AVRIL Métropole de Lyon - inférieur à 250€
+  { shipping_rate: 'shr_1R01HwAZSYffeW1t5cyaF9lH' }, //Mercredi 16 ou Jeudi 17 AVRIL Métropole de Lyon - inférieur à 250€ - €20.00 EUR
 ];
