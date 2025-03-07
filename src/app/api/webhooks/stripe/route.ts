@@ -33,10 +33,11 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
       sig,
       webhookSecret,
     ) as StripeEvent;
-  } catch (err: any) {
-    console.error(`Webhook Error: ${err.message}`);
+  } catch (err: unknown) {
+    const errorMessage = (err as Error).message;
+    console.error(`Webhook Error: ${errorMessage}`);
     return NextResponse.json(
-      { error: `Webhook Error: ${err.message}` },
+      { error: `Webhook Error: ${(err as Error).message}` },
       { status: 400 },
     );
   }

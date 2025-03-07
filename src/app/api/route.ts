@@ -13,37 +13,6 @@ if (!stripeSecretKey) {
 }
 const stripe = new Stripe(stripeSecretKey);
 
-interface CustomerDetails {
-  name: string;
-  email: string;
-  phone: string;
-  address: {
-    line1: string;
-    postal_code: string;
-    city: string;
-  };
-}
-
-interface CustomField {
-  key: string;
-  text: {
-    value: string;
-  };
-}
-
-interface LineItemData {
-  description: string;
-}
-
-interface Session {
-  customer_details: CustomerDetails;
-  amount_total: number;
-  custom_fields: CustomField[];
-  line_items: {
-    data: LineItemData[];
-  };
-}
-
 const extractSessionData = (session: Stripe.Checkout.Session) => ({
   name: session.customer_details?.name ?? '',
   email: session.customer_details?.email ?? '',
