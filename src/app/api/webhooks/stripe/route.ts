@@ -189,15 +189,19 @@ async function sendCustomReceipt(paymentData: PaymentData) {
                     <p>Bonjour ${customerName || 'Cher Client'},</p>
                     <p>Votre commande a bien été prise en compte</p>
                     <p>Vous pouvez trouver un récapitulatif ci-dessous:</p>
-                    <p><strong>Adresse de livraison :</strong> ${collected_information!.shipping_details.address.line1}, ${collected_information!.shipping_details.address.postal_code}, ${collected_information!.shipping_details.address.city}</p>
+                    <p><strong>Adresse de livraison :</strong> ${collected_information?.shipping_details?.address?.line1 || ''}, ${collected_information?.shipping_details?.address?.postal_code || ''}, ${collected_information?.shipping_details?.address?.city || ''}</p>
                     <p><strong>Livraison:</strong> ${shippingMessage}</p>
-                    ${custom_fields!
-                      .filter(field => field.text.value !== null)
-                      .map(
-                        field =>
-                          `<p><strong>${field.label.custom}:</strong> ${field.text.value}</p>`,
-                      )
-                      .join('')}
+                    ${
+                      custom_fields && custom_fields?.length > 0
+                        ? custom_fields
+                            .filter(field => field.text.value !== null)
+                            .map(
+                              field =>
+                                `<p><strong>${field.label.custom}:</strong> ${field.text.value}</p>`,
+                            )
+                            .join('')
+                        : ''
+                    }
                     <p>Merci pour votre commande.</p>
                     <p>Voici les détails de votre commande :</p>
                     <div style="background-color: #f8f9fa; padding: 15px; border-radius: 5px;">
@@ -214,16 +218,20 @@ async function sendCustomReceipt(paymentData: PaymentData) {
                               `${d}${['e', 'er', 'e', 'e'][((Number(d) % 10) - 1) % 10] || 'e'}`,
                           )}</p>
                         <p><strong>Total de la commande :</strong> ${currencyCode} ${amount}</p>
-                        ${items
-                          .map(
-                            item => `
+                        ${
+                          items && items.length > 0
+                            ? items
+                                .map(
+                                  item => `
                             <hr>
                             <p>${item.description}</p>
                             <p><strong>Quantité :</strong> ${item.quantity}</p>
                             <p><strong>Montant :</strong> ${currencyCode} ${(item.amount_total / 100).toFixed(2)}</p>
                         `,
-                          )
-                          .join('')}
+                                )
+                                .join('')
+                            : '<p>Aucun détail de produit disponible</p>'
+                        }
                     </div>
                     <p>Si vous avez des questions, veuillez me contacter</p>
                     <p>Cordialement,<br>Mikael HERTZ</p>
