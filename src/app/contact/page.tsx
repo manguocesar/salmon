@@ -31,8 +31,8 @@ export default function Contact() {
             <strong>Téléphone :</strong> 06 62 19 63 58
           </li>
           <li>
-            <strong>Email :</strong> <a className="underline cursor-pointer" href="mailto:mikaelhertz@me.com">
-              mikaelhertz@me.com
+            <strong>Email :</strong> <a className="underline cursor-pointer" href={`mailto:${process.env.NEXT_PUBLIC_MIKAEL_EMAIL}`}>
+              {process.env.NEXT_PUBLIC_MIKAEL_EMAIL}
             </a>
           </li>
           <li>

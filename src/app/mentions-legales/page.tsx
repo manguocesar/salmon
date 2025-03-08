@@ -44,7 +44,7 @@ const MentionsLegales = async () => {
             <section className='space-y-2 ml-2'>
                 <h2 className='text-xl font-semibold'>5. Protection des données personnelles</h2>
                 <p className='ml-2'>
-                    HERTZ MIKAEL (ACTION COMMERCIALE INTERNATIONALE A.C.I.) collecte des données personnelles afin de pouvoir livrer les commandes, rembourser les clients si nécessaire, ou les aider dans les démarches de leur commande. Vous pouvez exercer vos droits d'accès, de rectification, de suppression de vos données en nous contactant à l'adresse suivante : <a href="mailto:mikaelhertz@me.com">mikaelhertz@me.com</a>.
+                    HERTZ MIKAEL (ACTION COMMERCIALE INTERNATIONALE A.C.I.) collecte des données personnelles afin de pouvoir livrer les commandes, rembourser les clients si nécessaire, ou les aider dans les démarches de leur commande. Vous pouvez exercer vos droits d'accès, de rectification, de suppression de vos données en nous contactant à l'adresse suivante : <a href={`mailto:${process.env.NEXT_PUBLIC_MIKAEL_EMAIL}`}>{process.env.NEXT_PUBLIC_MIKAEL_EMAIL}</a>.
                 </p>
             </section>
 

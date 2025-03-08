@@ -11,9 +11,9 @@ const Cancel = () => {
         L'achat n'a pas eu lieu, veuillez réessayer
       </h2>
       <h2 className="m-3 text-2xl">
-        Si le problème persiste, veuillez contacter <a href="mailto:mikaelhertz@me.com">Mikael HERTZ</a>
+        Si le problème persiste, veuillez contacter <a href={`mailto:${process.env.NEXT_PUBLIC_MIKAEL_EMAIL}`}>Mikael HERTZ</a>
       </h2>
-      <h2 className='text-2xl'>mikaelhertz@me.com</h2>
+      <h2 className='text-2xl'>{process.env.NEXT_PUBLIC_MIKAEL_EMAIL}</h2>
       <h2 className='text-2xl'>06 62 19 63 58</h2>
       <Link href="/">
         <button

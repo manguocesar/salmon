@@ -31,8 +31,8 @@ const Success = () => {
       <p className="m-3 ">
         Si vous avez des questions, n'hésitez pas à me contacter:
       </p>
-      <a className="font-bold" href="mailto:mikaelhertz@me.com">
-        mikaelhertz@me.com
+      <a className="font-bold" href={`mailto:${process.env.NEXT_PUBLIC_MIKAEL_EMAIL}`}>
+        {process.env.NEXT_PUBLIC_MIKAEL_EMAIL}
       </a>
       <p className='m-3 '>06 62 19 63 58</p>
       <p>A bientôt</p>

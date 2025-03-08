@@ -54,7 +54,7 @@ export default function Cart() {
               Total TTC : {getCartTotal()} €
             </p>
             <p className="m-2 text-base text-gray-600">
-              Date de livraison : mercredi 16 ou jeudi 18 AVRIL
+              Date de livraison : mercredi 16 ou jeudi 17 AVRIL
             </p>
             <div className="md:mt-8">
               <button
