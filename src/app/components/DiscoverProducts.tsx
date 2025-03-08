@@ -13,7 +13,7 @@ export const DiscoverProducts = async () => {
         </p>
       </Link>
       <p className="my-3 mx-4 text-xl text-red-600">
-        Passez commande avant le <strong>Mardi 25 Mars 2025</strong> pour livraison <strong>mercredi 16 ou jeudi 18 AVRIL</strong> sur la Métropole de Lyon
+        Passez commande avant le <strong>Mardi 25 Mars 2025</strong> pour livraison <strong>mercredi 16 ou jeudi 17 AVRIL</strong> sur la Métropole de Lyon
       </p>
     </div>
   );
