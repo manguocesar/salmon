@@ -99,8 +99,8 @@ export const POST = async (req: NextRequest) => {
     const items: LineItem[] = body.map((item: CartItem) => ({
       price_data: {
         currency: 'eur',
-        // unit_amount: 1 * 100,
-        unit_amount: item.price * 100,
+        unit_amount: 1 * 100,
+        // unit_amount: item.price * 100,
         product_data: {
           name: item.name,
           images: [`https://www.mikaelhertz.com/${item.imgUrl}`],
