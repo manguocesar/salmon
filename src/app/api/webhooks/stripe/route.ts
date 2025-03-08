@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server';
 import Stripe from 'stripe';
 import { Resend } from 'resend';
 import { NextRequest } from 'next/server';
+import { getNextWednesdayOrThursday } from '@/app/lib/getNextWednesdayOrThursday';
 
 if (!process.env.STRIPE_SECRET_KEY) {
   throw new Error('Missing Stripe Secret Key');
@@ -18,6 +19,8 @@ type StripeEvent = {
     object: PaymentData;
   };
 };
+
+const { formattedWednesday, formattedThursday } = getNextWednesdayOrThursday();
 
 export async function POST(request: NextRequest): Promise<NextResponse> {
   const body = await request.text();
@@ -132,8 +135,8 @@ async function sendCustomReceipt(paymentData: PaymentData) {
       amount = (amount_total! / 100).toFixed(2);
       currencyCode = currency!.toUpperCase();
 
-      if (!customer) {
-        throw new Error('Missing customer ID');
+      if (!customer || !amount_total || !currency) {
+        throw new Error('Missing required checkout session data');
       }
       const customerData = await stripe.customers.retrieve(customer);
       if (customerData.deleted) {
@@ -170,10 +173,10 @@ async function sendCustomReceipt(paymentData: PaymentData) {
 
     const shippingMessage =
       shipping_rate === process.env.LIVRAISON_MERCREDI
-        ? 'Mercredi 16 Avril 2025'
+        ? formattedWednesday
         : shipping_rate === process.env.LIVRAISON_JEUDI
-          ? 'Jeudi 17 Avril 2025'
-          : 'Mercredi 16 ou Jeudi 17 Avril 2025';
+          ? formattedThursday
+          : `${formattedWednesday} ou ${formattedThursday}`;
 
     const emailResponse = await resend.emails.send({
       from: 'Mikael HERTZ <info@cesarhertz.com>',
