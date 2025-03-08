@@ -90,7 +90,11 @@ export async function sendCustomReceipt(paymentData: PaymentData) {
         .sort((a, b) => a.description.localeCompare(b.description));
     } catch (error) {
       console.error('Error fetching line items:', (error as Error).message);
-      items = [
+      items = lines?.data.map(item => ({
+        description: item.description ?? 'Produit sans nom',
+        quantity: item.quantity ?? 1,
+        amount_total: item.amount_total,
+      })) || [
         {
           description: 'Your purchase',
           quantity: 1,
@@ -106,10 +110,10 @@ export async function sendCustomReceipt(paymentData: PaymentData) {
       html: generateOrderConfirmationEmail({
         customerName,
         shippingAddress: {
-          line1: collected_information?.shipping_details.address.line1,
+          line1: collected_information?.shipping_details?.address?.line1 || '',
           postalCode:
-            collected_information?.shipping_details.address.postal_code,
-          city: collected_information?.shipping_details.address.city,
+            collected_information?.shipping_details?.address?.postal_code || '',
+          city: collected_information?.shipping_details?.address?.city || '',
         },
         shippingMessage,
         customFields: custom_fields?.map(field => ({
