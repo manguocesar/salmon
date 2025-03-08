@@ -1,7 +1,6 @@
 import { verifyToken } from '../lib/auth';
 import { NextRequest, NextResponse } from 'next/server';
 import { CartItem, LineItem } from '../types/products';
-import { freeDelivreryThreshold } from '../constants/enums';
 import { wednesdayThursdayDelivery } from '../constants/deliveries';
 import { defaultUrl } from '../constants/nextUrl';
 import { fetchAllCheckoutSessions } from '../lib/fetchAllCheckout';
