@@ -19,6 +19,7 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
   const sig = request.headers.get('stripe-signature');
 
   if (!sig) {
+    console.error('Missing stripe-signature header');
     return NextResponse.json(
       { error: 'Missing stripe-signature header' },
       { status: 400 },
@@ -33,17 +34,32 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
       webhookSecret!,
     ) as StripeEvent;
   } catch (err) {
-    console.error(`Webhook Error: ${(err as Error).message}`);
+    console.error(`Webhook Signature Error: ${(err as Error).message}`);
     return NextResponse.json(
-      { error: `Webhook Error: ${(err as Error).message}` },
+      { error: `Webhook Signature Error: ${(err as Error).message}` },
       { status: 400 },
     );
   }
 
-  if (event.type === 'checkout.session.completed') {
-    const session = event.data.object;
-    await sendCustomReceipt(session);
-  }
+  try {
+    if (event.type === 'checkout.session.completed') {
+      const session = event.data.object;
+      console.log('Processing checkout.session.completed:', session.id);
+      await sendCustomReceipt(session);
+      console.log('Successfully sent receipt for session:', session.id);
+    }
 
-  return NextResponse.json({ received: true });
+    return NextResponse.json({ received: true });
+  } catch (error) {
+    console.error(`Error processing webhook: ${(error as Error).message}`);
+    // Still return 200 to Stripe so they don't retry the webhook
+    // but log the error for debugging
+    return NextResponse.json(
+      {
+        error: `Error processing webhook: ${(error as Error).message}`,
+        received: true,
+      },
+      { status: 200 },
+    );
+  }
 }
