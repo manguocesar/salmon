@@ -43,16 +43,29 @@ export function generateOrderConfirmationEmail(params: {
         d => `${d}${['e', 'er', 'e', 'e'][((Number(d) % 10) - 1) % 10] || 'e'}`,
       );
 
+  // Helper function to escape HTML
+  const escapeHtml = (unsafe: string): string => {
+    return unsafe
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#039;');
+  };
+
   const customFieldsHtml =
     customFields
-      ?.map(field => `<p><strong>${field.label}:</strong> ${field.value}</p>`)
+      ?.map(
+        field =>
+          `<p><strong>${escapeHtml(field.label)}:</strong> ${escapeHtml(field.value)}</p>`,
+      )
       .join('') || '';
 
   const itemsHtml = items
     .map(
       item => `
                   <hr>
-                  <p>${item.description}</p>
+                  <p>${escapeHtml(item.description)}</p>
                   <p><strong>Quantité :</strong> ${item.quantity}</p>
                   <p><strong>Montant :</strong> ${currencyCode} ${item.amount}</p>
               `,
