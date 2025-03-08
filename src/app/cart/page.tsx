@@ -9,6 +9,16 @@ import { TableCartHeader } from '../components/TableCartHeader';
 import { TableRow } from '../components/TableRow';
 import { handleCheckout } from '../lib/handleCheckout';
 
+/**
+ * Displays the shopping cart and handles checkout actions.
+ *
+ * This component renders the current shopping cart state. If there are items in the cart,
+ * it shows a table with each item's details, allows updating item quantities and removing items,
+ * and displays the total cost along with a preset delivery date. When the cart is empty,
+ * it shows an informative message and a link to continue shopping.
+ *
+ * A product slider with additional products is also displayed at the bottom.
+ */
 export default function Cart() {
   const { cart, removeFromCart, getCartTotal, updateQuantity } = useCart();
   const [loading, setLoading] = useState(false);

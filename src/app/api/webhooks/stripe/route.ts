@@ -22,6 +22,16 @@ type StripeEvent = {
 
 const { formattedWednesday, formattedThursday } = getNextWednesdayOrThursday();
 
+/**
+ * Processes incoming Stripe webhook POST requests.
+ *
+ * This handler reads the raw request body and retrieves the 'stripe-signature' header to verify the event
+ * against the configured webhook secret. If verification succeeds and the event type is 'checkout.session.completed',
+ * the session data is passed to sendCustomReceipt for further processing. On verification failure or a missing signature,
+ * an error is logged and a JSON response with a 400 status is returned.
+ *
+ * @returns A JSON response indicating whether the webhook was successfully processed or an error occurred.
+ */
 export async function POST(request: NextRequest): Promise<NextResponse> {
   const body = await request.text();
   const sig = request.headers.get('stripe-signature');
@@ -95,6 +105,16 @@ type LineItem = {
   amount_total: number;
 };
 
+/**
+ * Sends a custom receipt email to the customer based on Stripe payment data.
+ *
+ * This function processes payment information from a Stripe webhook, handling both invoice and checkout session objects.
+ * It calculates payment totals, retrieves and verifies customer details from Stripe as needed, and fetches line item information.
+ * A shipping message is created based on the shipping rate provided, and an HTML email with the order summary and shipping details is sent via Resend.
+ * If a customer email cannot be determined or an error occurs during processing, the email is not sent and the issue is logged.
+ *
+ * @param paymentData - An object containing Stripe payment details, including amounts, currency, customer data, line items, and shipping rate.
+ */
 async function sendCustomReceipt(paymentData: PaymentData) {
   try {
     const {
