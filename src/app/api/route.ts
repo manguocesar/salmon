@@ -87,14 +87,7 @@ export const POST = async (req: NextRequest) => {
   try {
     const body: CartItem[] = await req.json();
 
-    const totalValue = body.reduce(
-      (acc, item) => acc + item.price * item.quantity,
-      0,
-    );
-    const options =
-      totalValue < freeDelivreryThreshold
-        ? wednesdayThursdayDelivery
-        : wednesdayThursdayDelivery;
+    const options = wednesdayThursdayDelivery;
 
     const items: LineItem[] = body.map((item: CartItem) => ({
       price_data: {
