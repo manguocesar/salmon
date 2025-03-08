@@ -6,6 +6,16 @@ import { animateRight, initialRight, transitionRight } from '../constants/animat
 import { processUrls } from '../constants/processUrls';
 import { products } from '../constants/products';
 
+/**
+ * Renders the contact page.
+ *
+ * This component presents contact details for Mikael Hertz, including phone, a dynamically sourced email address, 
+ * and a physical address linked to Google Maps. It features animated sections provided by MotionWrapper and 
+ * displays product-related content in two separate sliders—one for process visuals and another for product images 
+ * derived from the products data.
+ *
+ * @returns A JSX element representing the complete layout of the contact page.
+ */
 export default function Contact() {
   const images = products.map(product => product.imgUrl);
 
