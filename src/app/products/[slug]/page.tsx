@@ -35,6 +35,14 @@ const productsUrls: { [key: string]: string[] } = {
   couteau: [],
 };
 
+
+export async function generateStaticParams() {
+
+  return products.map((product) => ({
+    slug: product.url,
+  }));
+}
+
 export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const images = productsUrls[slug];
